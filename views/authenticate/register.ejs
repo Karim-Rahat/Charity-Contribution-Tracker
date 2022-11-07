@@ -1,0 +1,158 @@
+<%- include('../template/header'); %>
+  <body>
+
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+      <div class="container-fluid">
+        <div class="row min-vh-100 flex-center g-0">
+          <div class="col-lg-8 col-xxl-5 py-3 position-relative"><img class="bg-auth-circle-shape" src="../../../assets/img/icons/spot-illustrations/bg-shape.png" alt="" width="250"><img class="bg-auth-circle-shape-2" src="../../../assets/img/icons/spot-illustrations/shape-1.png" alt="" width="150">
+            <div class="card overflow-hidden z-index-1">
+              <div class="card-body p-0">
+                <div class="row g-0 h-100">
+                  <div class="col-md-5 text-center bg-card-gradient">
+                    <div class="position-relative p-4 pt-md-5 pb-md-7 light">
+                      <div class="bg-holder bg-auth-card-shape" style="background-image:url(../../../assets/img/icons/spot-illustrations/half-circle.png);">
+                      </div>
+                      <!--/.bg-holder-->
+
+                      <div class="z-index-1 position-relative"><a class="link-light mb-4 font-sans-serif fs-4 d-inline-block fw-bolder" href="../../../index.html">Contribution Tracker</a>
+                        <p class="opacity-75 text-white">Giving is not just a making donation,it is about making a difference!</p>
+                      </div>
+                    </div>
+                    <div class="mt-3 mb-4 mt-md-4 mb-md-5 light">
+                      <p class="pt-3 text-white">Have an account?<br><a class="btn btn-outline-light mt-2 px-4" href="/">Log In</a></p>
+                    </div>
+                  </div>
+                  <div class="col-md-7 d-flex flex-center">
+                    <div class="p-4 p-md-5 flex-grow-1">
+                      <h3>Register</h3>
+                      <form  id="registerForm">
+
+
+                        <div class="row gx-2">
+                          <div class="mb-3 col-sm-6">
+                            <label class="form-label" for="firstName">First Name</label>
+                            <input class="form-control" placeholder="Enter your first name" type="text"  name="firstName" autocomplete="on" id="firstName" required />
+                           
+                          </div>
+                          <div class="mb-3 col-sm-6">
+                            <label class="form-label" for="lastName">Last Name</label>
+                            <input class="form-control" placeholder="Enter your last name" type="text" name="lastName" autocomplete="on" id="lastName"  required  />
+                          </div>
+                        </div>
+                        <div class="mb-3 relative">
+                          <label class="form-label" for="email">Email address</label>
+                          <input class="form-control" type="email" placeholder="Enter your email" name="email" autocomplete="on" id="email"   required />
+
+                          <!-- email alert -->
+                          <div class="alert alert-danger alert-dismissible fade show lh-1 " id="emailError" style="display: none" role="alert">
+                            <span id="emailalertText"></span>
+                            <button class="btn-close" type="button" id="resetEmailVal"  aria-label="Close">X</button>
+                          </div>
+
+                          <span class="flex flex-auto flex-row-reverse ">
+                            <span style="display: none;"  class="close cursor-pointer" id="emailSuccess"><i class="fa-solid fa-check"></i></span>
+
+                          </span>
+                        </div>
+                        <div class="row gx-2">
+                          <div class="mb-3 col-sm-4">
+                            <label class="form-label" for="countryCode">Country code</label>
+                            <select name="countryCode" class="form-control" id="countryCode">
+                              <%countryCode.map(item=>{ %>
+                                  <option name="phoneCode" class="form-control" value="<%=item.phonecode%>">
+                                    <p class="px-4  lh-1 "> <%=item.name.substring(0,3)%> &nbsp;&nbsp;</p> 
+                                      <p class=" ml-6  lh-1">+<%=item.phonecode %> </p>
+                                  </option>
+                          <% })%>
+
+                            </select>
+                          </div>
+                          <div class="mb-3 col-sm-8">
+                            <label class="form-label" for="phoneNum">Phone</label>
+                            <input class="form-control" placeholder="Enter your phone number" minlength="6" size="10" maxlength="10" type="number" autocomplete="on" name="phone" id="phoneNum"  required />
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label" for="card-bdate">Birthdate</label>
+                          <input class="form-control" type="date" autocomplete="on" name="birthdate" id="bdate"  required />
+                        </div>
+
+
+                        <div class="row gx-2 " id="passwordForm">
+                          <div class="mb-3 col-sm-6">
+                            <label class="form-label" for="card-password">Password</label>
+                            <input class="form-control" type="password" autocomplete="on" name="pass" id="password"  required />
+                            <span class="correct" id="passSign1" style="display:none"> 
+                              <i class="fa-solid fa-check"></i>
+                            </span>
+                            <span class="incorrect" id="crossSign1" style="display:none">
+                              <i class="fa-solid fa-xmark"></i>
+                            </span>
+
+                          </div>
+                          <div class="mb-3 col-sm-6">
+                            <label class="form-label" for="card-confirm-password">Confirm Password</label>
+                            <input class="form-control" type="password" name="confirmPassword" autocomplete="on" id="confirmPassword" required  />
+                            <span class="correct" id="passSign2" style="display:none"> 
+                              <i class="fa-solid fa-check"></i>
+                            </span>
+                            <span class="incorrect" id="crossSign2" style="display:none">
+                              <i class="fa-solid fa-xmark"></i>
+                            </span>
+                          
+                          </div>
+                   
+
+
+                        <!-- alert -->
+
+                        <div class="alert  alert-warning py-1" id="passAlert1" style="display: none;" role="alert">Password Not Matched !</div>
+                        <div class="alert  alert-warning py-1" id="passAlert2" style="display: none;" role="alert">    Passwords must be at least one numeric digit, one uppercase and one lowercase letter !</div>
+
+                        </div>
+                        <div class="mb-3 d-flex">
+
+                          <div class="form-check "><input class="form-check-input genderCheck"  name="genderCheck" type="radio" value="male" required /><label class="form-check-label" for="flexCheckDefault">Male</label></div>
+                          <div class="form-check mx-4"><input class="form-check-input genderCheck"  name="genderCheck" type="radio" value="female" required/><label class="form-check-label" for="flexCheckDefault">Female</label></div>
+                        </div>
+                    
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox"  id="checkReg"  required />
+                          <label class="form-label" for="card-register-checkbox">I accept the <a href="#!">terms </a>and <a href="#!">privacy policy</a></label>
+                        </div>
+                        <div class="mb-3">
+                          <button class="btn btn-primary d-block w-100 mt-3" type="submit" id="registerBtn">Register</button>
+                        </div>
+                      </form>
+                      <div class="position-relative mt-4">
+                        <hr class="bg-300" />
+                        <div class="divider-content-center">or register with</div>
+                      </div>
+                      <div class="row g-2 mt-2">
+                        <div class="col-sm-6"><a class="btn btn-outline-google-plus btn-sm d-block w-100" href="/auth/google"><span class="fab fa-google-plus-g me-2" data-fa-transform="grow-8"></span> google</a></div>
+                        <div class="col-sm-6"><a class="btn btn-outline-facebook btn-sm d-block w-100" href="/auth/facebook"><span class="fab fa-facebook-square me-2" data-fa-transform="grow-8"></span> facebook</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- ===============================================-->
+    <!--    End of Main Content-->
+    <!-- ===============================================-->
+
+
+
+<%-include("../template/customize"); %>
+<%- include('../template/footer'); %>
+<script src="../scripts/register.js"></script>
+  </body>
+
+</html>

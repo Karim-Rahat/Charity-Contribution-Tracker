@@ -1,0 +1,4104 @@
+[
+    {
+        "active": "true",
+        "activities": "The Flex Fund powers GlobalGiving's matching campaigns and motivates others to give. This is how every $1 you donate grows into $7 of impact. The Flex Fund is also a source for emergency grantmaking and special projects, such as our COVID-19 Hardship Microgrants Initiative, which delivered grants to nonprofits during one of the toughest periods of the pandemic. Flex donations also support GlobalGiving's general operations, all in service of our mission to accelerate community-led change.",
+        "additionalDocumentation": "https://www.globalgiving.org/pfil/554/projdoc.pdf",
+        "approvedDate": "2004-06-01T12:45:32-04:00",
+        "contactAddress": "1 Thomas Circle",
+        "contactAddress2": "Suite 800",
+        "contactCity": "Washington",
+        "contactCountry": "United States",
+        "contactPostal": "20005",
+        "contactState": "D.C.",
+        "contactUrl": "https://www.globalgiving.org",
+        "countries": {
+            "country": {
+                "iso3166CountryCode": "US",
+                "name": "United States"
+            }
+        },
+        "country": "United States",
+        "dateOfMostRecentReport": "2022-08-11T14:07:20-04:00",
+        "donationOptions": {
+            "donationOption": [
+                {
+                    "amount": "15",
+                    "description": "Matching funds + support for causes worldwide"
+                },
+                {
+                    "amount": "50",
+                    "description": "Matching funds + support for causes worldwide"
+                },
+                {
+                    "amount": "150",
+                    "description": "Matching funds + support for causes worldwide"
+                },
+                {
+                    "amount": "500",
+                    "description": "Matching funds + support for causes worldwide"
+                },
+                {
+                    "amount": "1000",
+                    "description": "Matching funds + support for causes worldwide"
+                }
+            ]
+        },
+        "funding": "4844782.63",
+        "goal": "7000000.00",
+        "id": "554",
+        "image": {
+            "$": {
+                "id": "0"
+            },
+            "imagelink": [
+                {
+                    "$": {
+                        "size": "small"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/554/pict_grid1.jpg"
+                },
+                {
+                    "$": {
+                        "size": "thumbnail"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/554/pict_thumbnail.jpg"
+                },
+                {
+                    "$": {
+                        "size": "medium"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/554/pict_med.jpg"
+                },
+                {
+                    "$": {
+                        "size": "large"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/554/pict_grid7.jpg"
+                },
+                {
+                    "$": {
+                        "size": "extraLarge"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/554/pict_large.jpg"
+                },
+                {
+                    "$": {
+                        "size": "original"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/554/pict_original.jpg"
+                }
+            ],
+            "title": "GlobalGiving Flex Fund"
+        },
+        "imageGallerySize": "3",
+        "imageLink": "https://www.globalgiving.org/pfil/554/pict.jpg",
+        "iso3166CountryCode": "US",
+        "latitude": "38.92020034790039",
+        "longTermImpact": "By being part of the Flex Fund, you shift vital resources to community-led nonprofits and motivate other donors to follow your lead. Your donation generates 7x worth of local, long-term impact. It is an efficient and effective choice for change. Please consider becoming a sustaining, monthly donor to help community leaders consistently get the resources they need to solve some of the world's biggest problems.",
+        "longitude": "-77.03750610351562",
+        "modifiedDate": "2022-11-01T14:31:41-04:00",
+        "need": "No-strings-attached, flexible funding is one of the most efficient and cost-effective ways to fuel social change. Yet, it is in short supply. Most aid is earmarked, meaning it can only be used for pre-determined, narrow purposes. Your donation to the GlobalGiving Flex Fund stands in opposition, providing flexible funding to GlobalGiving and our vetted nonprofit partners around the world. This gives us the freedom to innovate and adapt to crises and everyday needs around the world.",
+        "numberOfDonations": "93924",
+        "numberOfReports": "4",
+        "organization": {
+            "activeProjects": "38",
+            "addressLine1": "1 Thomas Circle NW",
+            "addressLine2": "Suite 800",
+            "city": "Washington",
+            "countries": {
+                "country": [
+                    {
+                        "iso3166CountryCode": "AF",
+                        "name": "Afghanistan"
+                    },
+                    {
+                        "iso3166CountryCode": "BD",
+                        "name": "Bangladesh"
+                    },
+                    {
+                        "iso3166CountryCode": "BR",
+                        "name": "Brazil"
+                    },
+                    {
+                        "iso3166CountryCode": "BF",
+                        "name": "Burkina Faso"
+                    },
+                    {
+                        "iso3166CountryCode": "KH",
+                        "name": "Cambodia"
+                    },
+                    {
+                        "iso3166CountryCode": "TD",
+                        "name": "Chad"
+                    },
+                    {
+                        "iso3166CountryCode": "CL",
+                        "name": "Chile"
+                    },
+                    {
+                        "iso3166CountryCode": "CN",
+                        "name": "China"
+                    },
+                    {
+                        "iso3166CountryCode": "CR",
+                        "name": "Costa Rica"
+                    },
+                    {
+                        "iso3166CountryCode": "CD",
+                        "name": "Congo, Democratic Republic of the"
+                    },
+                    {
+                        "iso3166CountryCode": "DJ",
+                        "name": "Djibouti"
+                    },
+                    {
+                        "iso3166CountryCode": "ET",
+                        "name": "Ethiopia"
+                    },
+                    {
+                        "iso3166CountryCode": "FI",
+                        "name": "Finland"
+                    },
+                    {
+                        "iso3166CountryCode": "GT",
+                        "name": "Guatemala"
+                    },
+                    {
+                        "iso3166CountryCode": "GY",
+                        "name": "Guyana"
+                    },
+                    {
+                        "iso3166CountryCode": "HT",
+                        "name": "Haiti"
+                    },
+                    {
+                        "iso3166CountryCode": "HK",
+                        "name": "Hong Kong SAR"
+                    },
+                    {
+                        "iso3166CountryCode": "IN",
+                        "name": "India"
+                    },
+                    {
+                        "iso3166CountryCode": "ID",
+                        "name": "Indonesia"
+                    },
+                    {
+                        "iso3166CountryCode": "IT",
+                        "name": "Italy"
+                    },
+                    {
+                        "iso3166CountryCode": "JP",
+                        "name": "Japan"
+                    },
+                    {
+                        "iso3166CountryCode": "KE",
+                        "name": "Kenya"
+                    },
+                    {
+                        "iso3166CountryCode": "MW",
+                        "name": "Malawi"
+                    },
+                    {
+                        "iso3166CountryCode": "MY",
+                        "name": "Malaysia"
+                    },
+                    {
+                        "iso3166CountryCode": "ML",
+                        "name": "Mali"
+                    },
+                    {
+                        "iso3166CountryCode": "MR",
+                        "name": "Mauritania"
+                    },
+                    {
+                        "iso3166CountryCode": "MA",
+                        "name": "Morocco"
+                    },
+                    {
+                        "iso3166CountryCode": "MM",
+                        "name": "Myanmar"
+                    },
+                    {
+                        "iso3166CountryCode": "NA",
+                        "name": "Namibia"
+                    },
+                    {
+                        "iso3166CountryCode": "NP",
+                        "name": "Nepal"
+                    },
+                    {
+                        "iso3166CountryCode": "NZ",
+                        "name": "New Zealand"
+                    },
+                    {
+                        "iso3166CountryCode": "NE",
+                        "name": "Niger"
+                    },
+                    {
+                        "iso3166CountryCode": "PK",
+                        "name": "Pakistan"
+                    },
+                    {
+                        "iso3166CountryCode": "PY",
+                        "name": "Paraguay"
+                    },
+                    {
+                        "iso3166CountryCode": "PH",
+                        "name": "Philippines"
+                    },
+                    {
+                        "iso3166CountryCode": "RW",
+                        "name": "Rwanda"
+                    },
+                    {
+                        "iso3166CountryCode": "SN",
+                        "name": "Senegal"
+                    },
+                    {
+                        "iso3166CountryCode": "SL",
+                        "name": "Sierra Leone"
+                    },
+                    {
+                        "iso3166CountryCode": "SO",
+                        "name": "Somalia"
+                    },
+                    {
+                        "iso3166CountryCode": "ZA",
+                        "name": "South Africa"
+                    },
+                    {
+                        "iso3166CountryCode": "KR",
+                        "name": "South Korea"
+                    },
+                    {
+                        "iso3166CountryCode": "ES",
+                        "name": "Spain"
+                    },
+                    {
+                        "iso3166CountryCode": "LK",
+                        "name": "Sri Lanka"
+                    },
+                    {
+                        "iso3166CountryCode": "SD",
+                        "name": "Sudan"
+                    },
+                    {
+                        "iso3166CountryCode": "TZ",
+                        "name": "Tanzania, United Republic of"
+                    },
+                    {
+                        "iso3166CountryCode": "TH",
+                        "name": "Thailand"
+                    },
+                    {
+                        "iso3166CountryCode": "TR",
+                        "name": "Turkey"
+                    },
+                    {
+                        "iso3166CountryCode": "UG",
+                        "name": "Uganda"
+                    },
+                    {
+                        "iso3166CountryCode": "GB",
+                        "name": "United Kingdom"
+                    },
+                    {
+                        "iso3166CountryCode": "US",
+                        "name": "United States"
+                    },
+                    {
+                        "iso3166CountryCode": "VN",
+                        "name": "Vietnam"
+                    },
+                    {
+                        "iso3166CountryCode": "WS",
+                        "name": "Samoa"
+                    },
+                    {
+                        "iso3166CountryCode": "ZM",
+                        "name": "Zambia"
+                    }
+                ]
+            },
+            "country": "United States",
+            "ein": "30-0108263",
+            "id": "189",
+            "iso3166CountryCode": "US",
+            "logoUrl": "https://www.globalgiving.org/pfil/organ/189/orglogo.png",
+            "mission": "Our mission is to build an efficient, open, thriving marketplace that connects people who have community and world-changing ideas with people who can support them.",
+            "name": "GlobalGiving",
+            "postal": "20005",
+            "state": "D.C.",
+            "themes": {
+                "theme": [
+                    {
+                        "id": "animals",
+                        "name": "Animal Welfare"
+                    },
+                    {
+                        "id": "children",
+                        "name": "Child Protection"
+                    },
+                    {
+                        "id": "democ",
+                        "name": "Peace and Reconciliation"
+                    },
+                    {
+                        "id": "disaster",
+                        "name": "Disaster Response"
+                    },
+                    {
+                        "id": "ecdev",
+                        "name": "Economic Growth"
+                    },
+                    {
+                        "id": "edu",
+                        "name": "Education"
+                    },
+                    {
+                        "id": "env",
+                        "name": "Ecosystem Restoration"
+                    },
+                    {
+                        "id": "gender",
+                        "name": "Gender Equality"
+                    },
+                    {
+                        "id": "health",
+                        "name": "Physical Health"
+                    },
+                    {
+                        "id": "rights",
+                        "name": "Justice and Human Rights"
+                    },
+                    {
+                        "id": "tech",
+                        "name": "Digital Literacy"
+                    },
+                    {
+                        "id": "hunger",
+                        "name": "Food Security"
+                    }
+                ]
+            },
+            "totalProjects": "219",
+            "url": "https://www.globalgiving.org"
+        },
+        "progressReportLink": "https://www.globalgiving.org/funds/flex/updates/",
+        "projectLink": "https://www.globalgiving.org/funds/flex/",
+        "region": "North America",
+        "remaining": "2155217.37",
+        "status": "active",
+        "summary": "There are thousands of urgent causes in need of support in the GlobalGiving community, and your gift to our Flex Fund is one of the best ways to help them all. Every $1 donated to this fund generates $7 in return for GlobalGiving's high-impact nonprofit partners.",
+        "themeName": "Economic Growth",
+        "themes": {
+            "theme": {
+                "id": "ecdev",
+                "name": "Economic Growth"
+            }
+        },
+        "title": "GlobalGiving Flex Fund",
+        "trustedAndReliable": "<p>GlobalGiving is one of the most reliable and trustworthy charities in the world. We have a four-star rating and nearly perfect score from Charity Navigator due to our commitment to transparency and low overhead. We have been recommended by the New York Times, the Associated Press, NPR, Washington Post, Oprah, ABC News, and the U.S. State Department.</p>",
+        "type": "fund",
+        "videos": {
+            "video": {
+                "url": ""
+            }
+        }
+    },
+    {
+        "active": "true",
+        "activities": "The Fund's current focus is education, health, and development projects in Afghanistan and Pakistan, especially projects for girls and women. This will help build community support for marginalized groups and foster better connection and well-being for community members.",
+        "additionalDocumentation": "https://www.globalgiving.org/pfil/2185/projdoc.doc",
+        "approvedDate": "2008-08-28T16:01:35-04:00",
+        "contactAddress": "1425 Cobb Hill Road",
+        "contactCity": "Waterbury",
+        "contactCountry": "United States",
+        "contactName": "Joyce Manchester",
+        "contactPostal": "05676",
+        "contactState": "VT",
+        "contactTitle": "SMCWF Fund Manager",
+        "contactUrl": "",
+        "countries": {
+            "country": {
+                "iso3166CountryCode": "AF",
+                "name": "Afghanistan"
+            }
+        },
+        "country": "Afghanistan",
+        "dateOfMostRecentReport": "2020-02-07T13:58:10-05:00",
+        "donationOptions": {
+            "donationOption": [
+                {
+                    "amount": "50",
+                    "description": "provides quality education to 2 students in Afghanistan for a month"
+                },
+                {
+                    "amount": "100",
+                    "description": "provides sustenance for 1 displaced family in Afghanistan for one week"
+                },
+                {
+                    "amount": "500",
+                    "description": "provides transportation for 5 girls to school in Pakistan for one year"
+                },
+                {
+                    "amount": "1000",
+                    "description": "provides basic health care and health education to 550+ women in Afghanistan"
+                }
+            ]
+        },
+        "funding": "150098.72",
+        "goal": "250000.00",
+        "id": "2185",
+        "image": {
+            "$": {
+                "id": "0"
+            },
+            "imagelink": [
+                {
+                    "$": {
+                        "size": "small"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/2185/pict_grid1.jpg"
+                },
+                {
+                    "$": {
+                        "size": "thumbnail"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/2185/pict_thumbnail.jpg"
+                },
+                {
+                    "$": {
+                        "size": "medium"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/2185/pict_med.jpg"
+                },
+                {
+                    "$": {
+                        "size": "large"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/2185/pict_grid7.jpg"
+                },
+                {
+                    "$": {
+                        "size": "extraLarge"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/2185/pict_large.jpg"
+                },
+                {
+                    "$": {
+                        "size": "original"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/2185/pict_original.jpg"
+                }
+            ],
+            "title": "The Safer World Fund"
+        },
+        "imageGallerySize": "3",
+        "imageLink": "https://www.globalgiving.org/pfil/2185/pict.jpg",
+        "iso3166CountryCode": "AF",
+        "latitude": "33.72433853149414",
+        "longTermImpact": "Over the past 12 years, the Safer World Fund and related campaigns have raised more than $2 million to support organizations especially focused on women and girls in Afghanistan and Pakistan. Promoting grassroots development projects allows the appeal of lives lived in dignity, opportunity, and hope to triumph over extremism.",
+        "longitude": "65.390625",
+        "modifiedDate": "2022-11-01T14:31:47-04:00",
+        "need": "Education, health care, and economic opportunity counter the influence of extremists in Afghanistan, Pakistan, and other countries by weakening their base of community support. Help us build a world in which the appeal of lives lived in dignity, opportunity, and hope triumphs over extremism.",
+        "numberOfDonations": "881",
+        "numberOfReports": "30",
+        "organization": {
+            "activeProjects": "38",
+            "addressLine1": "1 Thomas Circle NW",
+            "addressLine2": "Suite 800",
+            "city": "Washington",
+            "countries": {
+                "country": [
+                    {
+                        "iso3166CountryCode": "AF",
+                        "name": "Afghanistan"
+                    },
+                    {
+                        "iso3166CountryCode": "BD",
+                        "name": "Bangladesh"
+                    },
+                    {
+                        "iso3166CountryCode": "BR",
+                        "name": "Brazil"
+                    },
+                    {
+                        "iso3166CountryCode": "BF",
+                        "name": "Burkina Faso"
+                    },
+                    {
+                        "iso3166CountryCode": "KH",
+                        "name": "Cambodia"
+                    },
+                    {
+                        "iso3166CountryCode": "TD",
+                        "name": "Chad"
+                    },
+                    {
+                        "iso3166CountryCode": "CL",
+                        "name": "Chile"
+                    },
+                    {
+                        "iso3166CountryCode": "CN",
+                        "name": "China"
+                    },
+                    {
+                        "iso3166CountryCode": "CR",
+                        "name": "Costa Rica"
+                    },
+                    {
+                        "iso3166CountryCode": "CD",
+                        "name": "Congo, Democratic Republic of the"
+                    },
+                    {
+                        "iso3166CountryCode": "DJ",
+                        "name": "Djibouti"
+                    },
+                    {
+                        "iso3166CountryCode": "ET",
+                        "name": "Ethiopia"
+                    },
+                    {
+                        "iso3166CountryCode": "FI",
+                        "name": "Finland"
+                    },
+                    {
+                        "iso3166CountryCode": "GT",
+                        "name": "Guatemala"
+                    },
+                    {
+                        "iso3166CountryCode": "GY",
+                        "name": "Guyana"
+                    },
+                    {
+                        "iso3166CountryCode": "HT",
+                        "name": "Haiti"
+                    },
+                    {
+                        "iso3166CountryCode": "HK",
+                        "name": "Hong Kong SAR"
+                    },
+                    {
+                        "iso3166CountryCode": "IN",
+                        "name": "India"
+                    },
+                    {
+                        "iso3166CountryCode": "ID",
+                        "name": "Indonesia"
+                    },
+                    {
+                        "iso3166CountryCode": "IT",
+                        "name": "Italy"
+                    },
+                    {
+                        "iso3166CountryCode": "JP",
+                        "name": "Japan"
+                    },
+                    {
+                        "iso3166CountryCode": "KE",
+                        "name": "Kenya"
+                    },
+                    {
+                        "iso3166CountryCode": "MW",
+                        "name": "Malawi"
+                    },
+                    {
+                        "iso3166CountryCode": "MY",
+                        "name": "Malaysia"
+                    },
+                    {
+                        "iso3166CountryCode": "ML",
+                        "name": "Mali"
+                    },
+                    {
+                        "iso3166CountryCode": "MR",
+                        "name": "Mauritania"
+                    },
+                    {
+                        "iso3166CountryCode": "MA",
+                        "name": "Morocco"
+                    },
+                    {
+                        "iso3166CountryCode": "MM",
+                        "name": "Myanmar"
+                    },
+                    {
+                        "iso3166CountryCode": "NA",
+                        "name": "Namibia"
+                    },
+                    {
+                        "iso3166CountryCode": "NP",
+                        "name": "Nepal"
+                    },
+                    {
+                        "iso3166CountryCode": "NZ",
+                        "name": "New Zealand"
+                    },
+                    {
+                        "iso3166CountryCode": "NE",
+                        "name": "Niger"
+                    },
+                    {
+                        "iso3166CountryCode": "PK",
+                        "name": "Pakistan"
+                    },
+                    {
+                        "iso3166CountryCode": "PY",
+                        "name": "Paraguay"
+                    },
+                    {
+                        "iso3166CountryCode": "PH",
+                        "name": "Philippines"
+                    },
+                    {
+                        "iso3166CountryCode": "RW",
+                        "name": "Rwanda"
+                    },
+                    {
+                        "iso3166CountryCode": "SN",
+                        "name": "Senegal"
+                    },
+                    {
+                        "iso3166CountryCode": "SL",
+                        "name": "Sierra Leone"
+                    },
+                    {
+                        "iso3166CountryCode": "SO",
+                        "name": "Somalia"
+                    },
+                    {
+                        "iso3166CountryCode": "ZA",
+                        "name": "South Africa"
+                    },
+                    {
+                        "iso3166CountryCode": "KR",
+                        "name": "South Korea"
+                    },
+                    {
+                        "iso3166CountryCode": "ES",
+                        "name": "Spain"
+                    },
+                    {
+                        "iso3166CountryCode": "LK",
+                        "name": "Sri Lanka"
+                    },
+                    {
+                        "iso3166CountryCode": "SD",
+                        "name": "Sudan"
+                    },
+                    {
+                        "iso3166CountryCode": "TZ",
+                        "name": "Tanzania, United Republic of"
+                    },
+                    {
+                        "iso3166CountryCode": "TH",
+                        "name": "Thailand"
+                    },
+                    {
+                        "iso3166CountryCode": "TR",
+                        "name": "Turkey"
+                    },
+                    {
+                        "iso3166CountryCode": "UG",
+                        "name": "Uganda"
+                    },
+                    {
+                        "iso3166CountryCode": "GB",
+                        "name": "United Kingdom"
+                    },
+                    {
+                        "iso3166CountryCode": "US",
+                        "name": "United States"
+                    },
+                    {
+                        "iso3166CountryCode": "VN",
+                        "name": "Vietnam"
+                    },
+                    {
+                        "iso3166CountryCode": "WS",
+                        "name": "Samoa"
+                    },
+                    {
+                        "iso3166CountryCode": "ZM",
+                        "name": "Zambia"
+                    }
+                ]
+            },
+            "country": "United States",
+            "ein": "30-0108263",
+            "id": "189",
+            "iso3166CountryCode": "US",
+            "logoUrl": "https://www.globalgiving.org/pfil/organ/189/orglogo.png",
+            "mission": "Our mission is to build an efficient, open, thriving marketplace that connects people who have community and world-changing ideas with people who can support them.",
+            "name": "GlobalGiving",
+            "postal": "20005",
+            "state": "D.C.",
+            "themes": {
+                "theme": [
+                    {
+                        "id": "animals",
+                        "name": "Animal Welfare"
+                    },
+                    {
+                        "id": "children",
+                        "name": "Child Protection"
+                    },
+                    {
+                        "id": "democ",
+                        "name": "Peace and Reconciliation"
+                    },
+                    {
+                        "id": "disaster",
+                        "name": "Disaster Response"
+                    },
+                    {
+                        "id": "ecdev",
+                        "name": "Economic Growth"
+                    },
+                    {
+                        "id": "edu",
+                        "name": "Education"
+                    },
+                    {
+                        "id": "env",
+                        "name": "Ecosystem Restoration"
+                    },
+                    {
+                        "id": "gender",
+                        "name": "Gender Equality"
+                    },
+                    {
+                        "id": "health",
+                        "name": "Physical Health"
+                    },
+                    {
+                        "id": "rights",
+                        "name": "Justice and Human Rights"
+                    },
+                    {
+                        "id": "tech",
+                        "name": "Digital Literacy"
+                    },
+                    {
+                        "id": "hunger",
+                        "name": "Food Security"
+                    }
+                ]
+            },
+            "totalProjects": "219",
+            "url": "https://www.globalgiving.org"
+        },
+        "progressReportLink": "https://www.globalgiving.org/projects/the-safer-world-fund/updates/",
+        "projectLink": "https://www.globalgiving.org/projects/the-safer-world-fund/",
+        "region": "Asia and Oceania",
+        "remaining": "99901.28",
+        "status": "active",
+        "summary": "Twenty years ago, the tragic events of 9/11 changed the world and took the lives of some 3,000 people. Amid the heartache, a group of friends and family who lost loved ones started the Safer World Fund with the vision of creating a more peaceful and equitable world. The Fund promotes education, health care, and economic opportunity, especially for women and girls in Afghanistan and Pakistan.",
+        "themeName": "Justice and Human Rights",
+        "themes": {
+            "theme": [
+                {
+                    "id": "rights",
+                    "name": "Justice and Human Rights"
+                },
+                {
+                    "id": "edu",
+                    "name": "Education"
+                },
+                {
+                    "id": "gender",
+                    "name": "Gender Equality"
+                }
+            ]
+        },
+        "title": "The Safer World Fund",
+        "type": "project",
+        "videos": {
+            "video": {
+                "url": ""
+            }
+        }
+    },
+    {
+        "active": "true",
+        "activities": "Each month, your donation will go to a different high impact project selected by GlobalGiving. You'll get regular updates on which projects you are supporting and the impact that your donation is having.",
+        "additionalDocumentation": "https://www.globalgiving.org/pfil/5607/projdoc.pdf",
+        "approvedDate": "2010-05-21T12:42:50-04:00",
+        "contactAddress": "1023 15th Street, NW",
+        "contactCity": "Washington",
+        "contactCountry": "United States",
+        "contactName": "Britt Lake",
+        "contactPostal": "20005",
+        "contactState": "DC",
+        "contactUrl": "https://www.globalgiving.org/project-of-the-month-club",
+        "countries": {
+            "country": {
+                "iso3166CountryCode": "US",
+                "name": "United States"
+            }
+        },
+        "country": "United States",
+        "dateOfMostRecentReport": "2022-10-06T13:58:14-04:00",
+        "donationOptions": {
+            "donationOption": [
+                {
+                    "amount": "10",
+                    "description": "will go to the project of the month"
+                },
+                {
+                    "amount": "15",
+                    "description": "will go to the project of the month"
+                },
+                {
+                    "amount": "20",
+                    "description": "will go to the project of the month"
+                },
+                {
+                    "amount": "25",
+                    "description": "will go to the project of the month"
+                },
+                {
+                    "amount": "50",
+                    "description": "will go to the project of the month"
+                },
+                {
+                    "amount": "100",
+                    "description": "will go to the project of the month"
+                }
+            ]
+        },
+        "funding": "2216774.50",
+        "goal": "2500000.00",
+        "id": "5607",
+        "image": {
+            "$": {
+                "id": "0"
+            },
+            "imagelink": [
+                {
+                    "$": {
+                        "size": "small"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/5607/pict_grid1.jpg"
+                },
+                {
+                    "$": {
+                        "size": "thumbnail"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/5607/pict_thumbnail.jpg"
+                },
+                {
+                    "$": {
+                        "size": "medium"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/5607/pict_med.jpg"
+                },
+                {
+                    "$": {
+                        "size": "large"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/5607/pict_grid7.jpg"
+                },
+                {
+                    "$": {
+                        "size": "extraLarge"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/5607/pict_large.jpg"
+                },
+                {
+                    "$": {
+                        "size": "original"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/5607/pict_original.jpg"
+                }
+            ],
+            "title": "GlobalGiving Project of the Month Club"
+        },
+        "imageGallerySize": "1",
+        "imageLink": "https://www.globalgiving.org/pfil/5607/pict.jpg",
+        "iso3166CountryCode": "US",
+        "latitude": "38.90432357788086",
+        "longTermImpact": "By pooling a number of small, monthly donations together, the Project of the Month Club can provide a windfall donation to a different deserving project each month.",
+        "longitude": "-77.03318786621094",
+        "modifiedDate": "2022-11-01T14:31:57-04:00",
+        "need": "There are so many wonderful projects on GlobalGiving that it can often be hard to pick just one to support. By making a recurring donation to the Project of the Month Club, you can support a different earth-changing idea each month.",
+        "numberOfDonations": "52715",
+        "numberOfReports": "153",
+        "organization": {
+            "activeProjects": "38",
+            "addressLine1": "1 Thomas Circle NW",
+            "addressLine2": "Suite 800",
+            "city": "Washington",
+            "countries": {
+                "country": [
+                    {
+                        "iso3166CountryCode": "AF",
+                        "name": "Afghanistan"
+                    },
+                    {
+                        "iso3166CountryCode": "BD",
+                        "name": "Bangladesh"
+                    },
+                    {
+                        "iso3166CountryCode": "BR",
+                        "name": "Brazil"
+                    },
+                    {
+                        "iso3166CountryCode": "BF",
+                        "name": "Burkina Faso"
+                    },
+                    {
+                        "iso3166CountryCode": "KH",
+                        "name": "Cambodia"
+                    },
+                    {
+                        "iso3166CountryCode": "TD",
+                        "name": "Chad"
+                    },
+                    {
+                        "iso3166CountryCode": "CL",
+                        "name": "Chile"
+                    },
+                    {
+                        "iso3166CountryCode": "CN",
+                        "name": "China"
+                    },
+                    {
+                        "iso3166CountryCode": "CR",
+                        "name": "Costa Rica"
+                    },
+                    {
+                        "iso3166CountryCode": "CD",
+                        "name": "Congo, Democratic Republic of the"
+                    },
+                    {
+                        "iso3166CountryCode": "DJ",
+                        "name": "Djibouti"
+                    },
+                    {
+                        "iso3166CountryCode": "ET",
+                        "name": "Ethiopia"
+                    },
+                    {
+                        "iso3166CountryCode": "FI",
+                        "name": "Finland"
+                    },
+                    {
+                        "iso3166CountryCode": "GT",
+                        "name": "Guatemala"
+                    },
+                    {
+                        "iso3166CountryCode": "GY",
+                        "name": "Guyana"
+                    },
+                    {
+                        "iso3166CountryCode": "HT",
+                        "name": "Haiti"
+                    },
+                    {
+                        "iso3166CountryCode": "HK",
+                        "name": "Hong Kong SAR"
+                    },
+                    {
+                        "iso3166CountryCode": "IN",
+                        "name": "India"
+                    },
+                    {
+                        "iso3166CountryCode": "ID",
+                        "name": "Indonesia"
+                    },
+                    {
+                        "iso3166CountryCode": "IT",
+                        "name": "Italy"
+                    },
+                    {
+                        "iso3166CountryCode": "JP",
+                        "name": "Japan"
+                    },
+                    {
+                        "iso3166CountryCode": "KE",
+                        "name": "Kenya"
+                    },
+                    {
+                        "iso3166CountryCode": "MW",
+                        "name": "Malawi"
+                    },
+                    {
+                        "iso3166CountryCode": "MY",
+                        "name": "Malaysia"
+                    },
+                    {
+                        "iso3166CountryCode": "ML",
+                        "name": "Mali"
+                    },
+                    {
+                        "iso3166CountryCode": "MR",
+                        "name": "Mauritania"
+                    },
+                    {
+                        "iso3166CountryCode": "MA",
+                        "name": "Morocco"
+                    },
+                    {
+                        "iso3166CountryCode": "MM",
+                        "name": "Myanmar"
+                    },
+                    {
+                        "iso3166CountryCode": "NA",
+                        "name": "Namibia"
+                    },
+                    {
+                        "iso3166CountryCode": "NP",
+                        "name": "Nepal"
+                    },
+                    {
+                        "iso3166CountryCode": "NZ",
+                        "name": "New Zealand"
+                    },
+                    {
+                        "iso3166CountryCode": "NE",
+                        "name": "Niger"
+                    },
+                    {
+                        "iso3166CountryCode": "PK",
+                        "name": "Pakistan"
+                    },
+                    {
+                        "iso3166CountryCode": "PY",
+                        "name": "Paraguay"
+                    },
+                    {
+                        "iso3166CountryCode": "PH",
+                        "name": "Philippines"
+                    },
+                    {
+                        "iso3166CountryCode": "RW",
+                        "name": "Rwanda"
+                    },
+                    {
+                        "iso3166CountryCode": "SN",
+                        "name": "Senegal"
+                    },
+                    {
+                        "iso3166CountryCode": "SL",
+                        "name": "Sierra Leone"
+                    },
+                    {
+                        "iso3166CountryCode": "SO",
+                        "name": "Somalia"
+                    },
+                    {
+                        "iso3166CountryCode": "ZA",
+                        "name": "South Africa"
+                    },
+                    {
+                        "iso3166CountryCode": "KR",
+                        "name": "South Korea"
+                    },
+                    {
+                        "iso3166CountryCode": "ES",
+                        "name": "Spain"
+                    },
+                    {
+                        "iso3166CountryCode": "LK",
+                        "name": "Sri Lanka"
+                    },
+                    {
+                        "iso3166CountryCode": "SD",
+                        "name": "Sudan"
+                    },
+                    {
+                        "iso3166CountryCode": "TZ",
+                        "name": "Tanzania, United Republic of"
+                    },
+                    {
+                        "iso3166CountryCode": "TH",
+                        "name": "Thailand"
+                    },
+                    {
+                        "iso3166CountryCode": "TR",
+                        "name": "Turkey"
+                    },
+                    {
+                        "iso3166CountryCode": "UG",
+                        "name": "Uganda"
+                    },
+                    {
+                        "iso3166CountryCode": "GB",
+                        "name": "United Kingdom"
+                    },
+                    {
+                        "iso3166CountryCode": "US",
+                        "name": "United States"
+                    },
+                    {
+                        "iso3166CountryCode": "VN",
+                        "name": "Vietnam"
+                    },
+                    {
+                        "iso3166CountryCode": "WS",
+                        "name": "Samoa"
+                    },
+                    {
+                        "iso3166CountryCode": "ZM",
+                        "name": "Zambia"
+                    }
+                ]
+            },
+            "country": "United States",
+            "ein": "30-0108263",
+            "id": "189",
+            "iso3166CountryCode": "US",
+            "logoUrl": "https://www.globalgiving.org/pfil/organ/189/orglogo.png",
+            "mission": "Our mission is to build an efficient, open, thriving marketplace that connects people who have community and world-changing ideas with people who can support them.",
+            "name": "GlobalGiving",
+            "postal": "20005",
+            "state": "D.C.",
+            "themes": {
+                "theme": [
+                    {
+                        "id": "animals",
+                        "name": "Animal Welfare"
+                    },
+                    {
+                        "id": "children",
+                        "name": "Child Protection"
+                    },
+                    {
+                        "id": "democ",
+                        "name": "Peace and Reconciliation"
+                    },
+                    {
+                        "id": "disaster",
+                        "name": "Disaster Response"
+                    },
+                    {
+                        "id": "ecdev",
+                        "name": "Economic Growth"
+                    },
+                    {
+                        "id": "edu",
+                        "name": "Education"
+                    },
+                    {
+                        "id": "env",
+                        "name": "Ecosystem Restoration"
+                    },
+                    {
+                        "id": "gender",
+                        "name": "Gender Equality"
+                    },
+                    {
+                        "id": "health",
+                        "name": "Physical Health"
+                    },
+                    {
+                        "id": "rights",
+                        "name": "Justice and Human Rights"
+                    },
+                    {
+                        "id": "tech",
+                        "name": "Digital Literacy"
+                    },
+                    {
+                        "id": "hunger",
+                        "name": "Food Security"
+                    }
+                ]
+            },
+            "totalProjects": "219",
+            "url": "https://www.globalgiving.org"
+        },
+        "progressReportLink": "https://www.globalgiving.org/projects/project-of-the-month-club/updates/",
+        "projectLink": "https://www.globalgiving.org/projects/project-of-the-month-club/",
+        "region": "North America",
+        "remaining": "283225.50",
+        "status": "active",
+        "summary": "Every month GlobalGiving will select a different innovative, high-impact project as the project of the month. All donations to this fund during that month will go to this project.",
+        "themeName": "Gender Equality",
+        "themes": {
+            "theme": {
+                "id": "gender",
+                "name": "Gender Equality"
+            }
+        },
+        "title": "GlobalGiving Project of the Month Club",
+        "type": "project",
+        "videos": {
+            "video": {
+                "url": ""
+            }
+        }
+    },
+    {
+        "active": "true",
+        "activities": "It's past time to transform the way aid and philanthropy works for people around the world. Your gift to the GlobalGiving Forward Fund will help us invest in world-class research and technology to promote community-led change. It will put local voices in the lead, fuel peer-to-peer learning, and disrupt ineffective, top-down practices that are getting in the way of lasting change. By partnering with GlobalGiving, you create a brighter, shared future for all.",
+        "additionalDocumentation": "https://www.globalgiving.org/pfil/7481/projdoc.pdf",
+        "approvedDate": "2011-02-03T17:17:01-05:00",
+        "contactAddress": "1110 Vermont Ave NW",
+        "contactCity": "Washington",
+        "contactCountry": "United States",
+        "contactPostal": "20005",
+        "contactState": "District of Columbia",
+        "contactUrl": "http://www.globalgiving.org",
+        "countries": {
+            "country": {
+                "iso3166CountryCode": "US",
+                "name": "United States"
+            }
+        },
+        "country": "United States",
+        "dateOfMostRecentReport": "2022-06-23T20:29:06-04:00",
+        "donationOptions": {
+            "donationOption": [
+                {
+                    "amount": "10",
+                    "description": "helps a community leader evaluate their organization's progress in being community-led"
+                },
+                {
+                    "amount": "25",
+                    "description": "provides a one-on-one consultation to help an organization learn from its community of service"
+                },
+                {
+                    "amount": "35",
+                    "description": "covers one organization's transportation fees to attend a GlobalGiving workshop"
+                },
+                {
+                    "amount": "50",
+                    "description": "provides an online training for 20-30 organizations"
+                },
+                {
+                    "amount": "100",
+                    "description": "provides a one-day site visit and coaching session to a community-led nonprofit"
+                },
+                {
+                    "amount": "300",
+                    "description": "provides a workshop for 30-50 community-led organizations"
+                },
+                {
+                    "amount": "1000",
+                    "description": "powers research and special projects to promote community-led philanthropy"
+                },
+                {
+                    "amount": "2500",
+                    "description": "provides for the development of new resources on GlobalGiving's website"
+                }
+            ]
+        },
+        "funding": "4289317.48",
+        "goal": "5000000.00",
+        "id": "7481",
+        "image": {
+            "$": {
+                "id": "0"
+            },
+            "imagelink": [
+                {
+                    "$": {
+                        "size": "small"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/7481/pict_grid1.jpg"
+                },
+                {
+                    "$": {
+                        "size": "thumbnail"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/7481/pict_thumbnail.jpg"
+                },
+                {
+                    "$": {
+                        "size": "medium"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/7481/pict_med.jpg"
+                },
+                {
+                    "$": {
+                        "size": "large"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/7481/pict_grid7.jpg"
+                },
+                {
+                    "$": {
+                        "size": "extraLarge"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/7481/pict_large.jpg"
+                },
+                {
+                    "$": {
+                        "size": "original"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/7481/pict_original.jpg"
+                }
+            ],
+            "title": "GlobalGiving Forward Fund"
+        },
+        "imageGallerySize": "3",
+        "imageLink": "https://www.globalgiving.org/pfil/7481/pict.jpg",
+        "iso3166CountryCode": "US",
+        "latitude": "38.903385162353516",
+        "longTermImpact": "GlobalGiving is a top-rated nonprofit that helps fellow nonprofits thrive-by providing cutting-edge tools and resources to organizations that might otherwise go unsupported. With your help, we can champion more changemakers and work to eliminate barriers to their success. They are protecting the environment, defending human rights, and accomplishing amazing things-in ways that make the most sense for their communities. All they need for long-term impact is your trust and support.",
+        "longitude": "-77.0341796875",
+        "modifiedDate": "2022-11-01T14:32:04-04:00",
+        "need": "Community leaders know what their communities need better than anyone else, yet their vital voices often go unheard and their urgent work is chronically underfunded. In any given year, a mere 2% of humanitarian aid reaches local organizations. Together, we can change this reality and ensure community-led organizations have access to the flexible, trust-based funding they need to make the world a better place.",
+        "numberOfDonations": "8685",
+        "numberOfReports": "5",
+        "organization": {
+            "activeProjects": "38",
+            "addressLine1": "1 Thomas Circle NW",
+            "addressLine2": "Suite 800",
+            "city": "Washington",
+            "countries": {
+                "country": [
+                    {
+                        "iso3166CountryCode": "AF",
+                        "name": "Afghanistan"
+                    },
+                    {
+                        "iso3166CountryCode": "BD",
+                        "name": "Bangladesh"
+                    },
+                    {
+                        "iso3166CountryCode": "BR",
+                        "name": "Brazil"
+                    },
+                    {
+                        "iso3166CountryCode": "BF",
+                        "name": "Burkina Faso"
+                    },
+                    {
+                        "iso3166CountryCode": "KH",
+                        "name": "Cambodia"
+                    },
+                    {
+                        "iso3166CountryCode": "TD",
+                        "name": "Chad"
+                    },
+                    {
+                        "iso3166CountryCode": "CL",
+                        "name": "Chile"
+                    },
+                    {
+                        "iso3166CountryCode": "CN",
+                        "name": "China"
+                    },
+                    {
+                        "iso3166CountryCode": "CR",
+                        "name": "Costa Rica"
+                    },
+                    {
+                        "iso3166CountryCode": "CD",
+                        "name": "Congo, Democratic Republic of the"
+                    },
+                    {
+                        "iso3166CountryCode": "DJ",
+                        "name": "Djibouti"
+                    },
+                    {
+                        "iso3166CountryCode": "ET",
+                        "name": "Ethiopia"
+                    },
+                    {
+                        "iso3166CountryCode": "FI",
+                        "name": "Finland"
+                    },
+                    {
+                        "iso3166CountryCode": "GT",
+                        "name": "Guatemala"
+                    },
+                    {
+                        "iso3166CountryCode": "GY",
+                        "name": "Guyana"
+                    },
+                    {
+                        "iso3166CountryCode": "HT",
+                        "name": "Haiti"
+                    },
+                    {
+                        "iso3166CountryCode": "HK",
+                        "name": "Hong Kong SAR"
+                    },
+                    {
+                        "iso3166CountryCode": "IN",
+                        "name": "India"
+                    },
+                    {
+                        "iso3166CountryCode": "ID",
+                        "name": "Indonesia"
+                    },
+                    {
+                        "iso3166CountryCode": "IT",
+                        "name": "Italy"
+                    },
+                    {
+                        "iso3166CountryCode": "JP",
+                        "name": "Japan"
+                    },
+                    {
+                        "iso3166CountryCode": "KE",
+                        "name": "Kenya"
+                    },
+                    {
+                        "iso3166CountryCode": "MW",
+                        "name": "Malawi"
+                    },
+                    {
+                        "iso3166CountryCode": "MY",
+                        "name": "Malaysia"
+                    },
+                    {
+                        "iso3166CountryCode": "ML",
+                        "name": "Mali"
+                    },
+                    {
+                        "iso3166CountryCode": "MR",
+                        "name": "Mauritania"
+                    },
+                    {
+                        "iso3166CountryCode": "MA",
+                        "name": "Morocco"
+                    },
+                    {
+                        "iso3166CountryCode": "MM",
+                        "name": "Myanmar"
+                    },
+                    {
+                        "iso3166CountryCode": "NA",
+                        "name": "Namibia"
+                    },
+                    {
+                        "iso3166CountryCode": "NP",
+                        "name": "Nepal"
+                    },
+                    {
+                        "iso3166CountryCode": "NZ",
+                        "name": "New Zealand"
+                    },
+                    {
+                        "iso3166CountryCode": "NE",
+                        "name": "Niger"
+                    },
+                    {
+                        "iso3166CountryCode": "PK",
+                        "name": "Pakistan"
+                    },
+                    {
+                        "iso3166CountryCode": "PY",
+                        "name": "Paraguay"
+                    },
+                    {
+                        "iso3166CountryCode": "PH",
+                        "name": "Philippines"
+                    },
+                    {
+                        "iso3166CountryCode": "RW",
+                        "name": "Rwanda"
+                    },
+                    {
+                        "iso3166CountryCode": "SN",
+                        "name": "Senegal"
+                    },
+                    {
+                        "iso3166CountryCode": "SL",
+                        "name": "Sierra Leone"
+                    },
+                    {
+                        "iso3166CountryCode": "SO",
+                        "name": "Somalia"
+                    },
+                    {
+                        "iso3166CountryCode": "ZA",
+                        "name": "South Africa"
+                    },
+                    {
+                        "iso3166CountryCode": "KR",
+                        "name": "South Korea"
+                    },
+                    {
+                        "iso3166CountryCode": "ES",
+                        "name": "Spain"
+                    },
+                    {
+                        "iso3166CountryCode": "LK",
+                        "name": "Sri Lanka"
+                    },
+                    {
+                        "iso3166CountryCode": "SD",
+                        "name": "Sudan"
+                    },
+                    {
+                        "iso3166CountryCode": "TZ",
+                        "name": "Tanzania, United Republic of"
+                    },
+                    {
+                        "iso3166CountryCode": "TH",
+                        "name": "Thailand"
+                    },
+                    {
+                        "iso3166CountryCode": "TR",
+                        "name": "Turkey"
+                    },
+                    {
+                        "iso3166CountryCode": "UG",
+                        "name": "Uganda"
+                    },
+                    {
+                        "iso3166CountryCode": "GB",
+                        "name": "United Kingdom"
+                    },
+                    {
+                        "iso3166CountryCode": "US",
+                        "name": "United States"
+                    },
+                    {
+                        "iso3166CountryCode": "VN",
+                        "name": "Vietnam"
+                    },
+                    {
+                        "iso3166CountryCode": "WS",
+                        "name": "Samoa"
+                    },
+                    {
+                        "iso3166CountryCode": "ZM",
+                        "name": "Zambia"
+                    }
+                ]
+            },
+            "country": "United States",
+            "ein": "30-0108263",
+            "id": "189",
+            "iso3166CountryCode": "US",
+            "logoUrl": "https://www.globalgiving.org/pfil/organ/189/orglogo.png",
+            "mission": "Our mission is to build an efficient, open, thriving marketplace that connects people who have community and world-changing ideas with people who can support them.",
+            "name": "GlobalGiving",
+            "postal": "20005",
+            "state": "D.C.",
+            "themes": {
+                "theme": [
+                    {
+                        "id": "animals",
+                        "name": "Animal Welfare"
+                    },
+                    {
+                        "id": "children",
+                        "name": "Child Protection"
+                    },
+                    {
+                        "id": "democ",
+                        "name": "Peace and Reconciliation"
+                    },
+                    {
+                        "id": "disaster",
+                        "name": "Disaster Response"
+                    },
+                    {
+                        "id": "ecdev",
+                        "name": "Economic Growth"
+                    },
+                    {
+                        "id": "edu",
+                        "name": "Education"
+                    },
+                    {
+                        "id": "env",
+                        "name": "Ecosystem Restoration"
+                    },
+                    {
+                        "id": "gender",
+                        "name": "Gender Equality"
+                    },
+                    {
+                        "id": "health",
+                        "name": "Physical Health"
+                    },
+                    {
+                        "id": "rights",
+                        "name": "Justice and Human Rights"
+                    },
+                    {
+                        "id": "tech",
+                        "name": "Digital Literacy"
+                    },
+                    {
+                        "id": "hunger",
+                        "name": "Food Security"
+                    }
+                ]
+            },
+            "totalProjects": "219",
+            "url": "https://www.globalgiving.org"
+        },
+        "progressReportLink": "https://www.globalgiving.org/projects/globalgiving-forward-fund/updates/",
+        "projectLink": "https://www.globalgiving.org/projects/globalgiving-forward-fund/",
+        "region": "North America",
+        "remaining": "710682.52",
+        "status": "active",
+        "summary": "Your gift to the GlobalGiving Forward Fund helps ensure communities are in the driver's seat of change. At GlobalGiving, we work to create a future where giving to community-led causes anywhere in the world is easy, safe, and rewarding. A future where community leaders have access to the tools, training, and resources they need to implement their great ideas.",
+        "themeName": "Economic Growth",
+        "themes": {
+            "theme": {
+                "id": "ecdev",
+                "name": "Economic Growth"
+            }
+        },
+        "title": "GlobalGiving Forward Fund",
+        "type": "project",
+        "videos": {
+            "video": {
+                "url": ""
+            }
+        }
+    },
+    {
+        "active": "true",
+        "activities": "This fund will support life-saving assistance and relief efforts for Syrians displaced by conflict, both within Syria and in neighboring countries. Your support will help survivors and victims get necessary immediate relief supplies like food and hygiene kits, as well as provide long-term support through activities such as building water systems, providing school supplies, job training, and public outreach to increase awareness and understanding of the crisis.",
+        "additionalDocumentation": "https://www.globalgiving.org/pfil/14256/projdoc.pdf",
+        "approvedDate": "2013-08-30T16:02:04-04:00",
+        "contactAddress": "1023 15th Street NW, 12th Floor",
+        "contactCity": "Washington",
+        "contactCountry": "United States",
+        "contactName": "Kevin Conroy",
+        "contactPostal": "20005",
+        "contactState": "D.C.",
+        "contactUrl": "http://www.globalgiving.org",
+        "countries": {
+            "country": {
+                "iso3166CountryCode": "SY",
+                "name": "Syrian Arab Republic"
+            }
+        },
+        "country": "Syrian Arab Republic",
+        "dateOfMostRecentReport": "2021-07-12T10:58:22-04:00",
+        "donationOptions": {
+            "donationOption": [
+                {
+                    "amount": "25",
+                    "description": "emergency assistance and long-term support"
+                },
+                {
+                    "amount": "50",
+                    "description": "emergency assistance and long-term support"
+                },
+                {
+                    "amount": "75",
+                    "description": "emergency assistance and long-term support"
+                },
+                {
+                    "amount": "100",
+                    "description": "emergency assistance and long-term support"
+                },
+                {
+                    "amount": "200",
+                    "description": "emergency assistance and long-term support"
+                },
+                {
+                    "amount": "500",
+                    "description": "emergency assistance and long-term support"
+                },
+                {
+                    "amount": "1000",
+                    "description": "emergency assistance and long-term support"
+                }
+            ]
+        },
+        "funding": "2166893.56",
+        "goal": "2500000.00",
+        "id": "14256",
+        "image": {
+            "$": {
+                "id": "0"
+            },
+            "imagelink": [
+                {
+                    "$": {
+                        "size": "small"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/14256/pict_grid1.jpg"
+                },
+                {
+                    "$": {
+                        "size": "thumbnail"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/14256/pict_thumbnail.jpg"
+                },
+                {
+                    "$": {
+                        "size": "medium"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/14256/pict_med.jpg"
+                },
+                {
+                    "$": {
+                        "size": "large"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/14256/pict_grid7.jpg"
+                },
+                {
+                    "$": {
+                        "size": "extraLarge"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/14256/pict_large.jpg"
+                },
+                {
+                    "$": {
+                        "size": "original"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/14256/pict_original.jpg"
+                }
+            ],
+            "title": "Syrian Refugee Relief Fund"
+        },
+        "imageGallerySize": "7",
+        "imageLink": "https://www.globalgiving.org/pfil/14256/pict.jpg",
+        "iso3166CountryCode": "SY",
+        "longTermImpact": "Our partners are working to ensure that Syrian refugees and their families can lead safe, hopeful, and productive lives. GlobalGiving will post reports about how funds are used; subscribers will receive these reports via email.",
+        "modifiedDate": "2022-11-01T14:31:39-04:00",
+        "need": "Since 2011, the ongoing conflict involving the government of Syrian President Bashar al-Assad, Syrian opposition forces, and ISIS has resulted in more than 400,000 deaths and caused more than half of the country's 22 million citizens to flee their homes. The UNHCR estimates that more than 5.7 million people, half of whom are children, have fled to neighboring countries, and 6.1 million people are displaced internally within Syria, making it the largest exodus of refugees in more than two decades",
+        "numberOfDonations": "20491",
+        "numberOfReports": "29",
+        "organization": {
+            "activeProjects": "38",
+            "addressLine1": "1 Thomas Circle NW",
+            "addressLine2": "Suite 800",
+            "city": "Washington",
+            "countries": {
+                "country": [
+                    {
+                        "iso3166CountryCode": "AF",
+                        "name": "Afghanistan"
+                    },
+                    {
+                        "iso3166CountryCode": "BD",
+                        "name": "Bangladesh"
+                    },
+                    {
+                        "iso3166CountryCode": "BR",
+                        "name": "Brazil"
+                    },
+                    {
+                        "iso3166CountryCode": "BF",
+                        "name": "Burkina Faso"
+                    },
+                    {
+                        "iso3166CountryCode": "KH",
+                        "name": "Cambodia"
+                    },
+                    {
+                        "iso3166CountryCode": "TD",
+                        "name": "Chad"
+                    },
+                    {
+                        "iso3166CountryCode": "CL",
+                        "name": "Chile"
+                    },
+                    {
+                        "iso3166CountryCode": "CN",
+                        "name": "China"
+                    },
+                    {
+                        "iso3166CountryCode": "CR",
+                        "name": "Costa Rica"
+                    },
+                    {
+                        "iso3166CountryCode": "CD",
+                        "name": "Congo, Democratic Republic of the"
+                    },
+                    {
+                        "iso3166CountryCode": "DJ",
+                        "name": "Djibouti"
+                    },
+                    {
+                        "iso3166CountryCode": "ET",
+                        "name": "Ethiopia"
+                    },
+                    {
+                        "iso3166CountryCode": "FI",
+                        "name": "Finland"
+                    },
+                    {
+                        "iso3166CountryCode": "GT",
+                        "name": "Guatemala"
+                    },
+                    {
+                        "iso3166CountryCode": "GY",
+                        "name": "Guyana"
+                    },
+                    {
+                        "iso3166CountryCode": "HT",
+                        "name": "Haiti"
+                    },
+                    {
+                        "iso3166CountryCode": "HK",
+                        "name": "Hong Kong SAR"
+                    },
+                    {
+                        "iso3166CountryCode": "IN",
+                        "name": "India"
+                    },
+                    {
+                        "iso3166CountryCode": "ID",
+                        "name": "Indonesia"
+                    },
+                    {
+                        "iso3166CountryCode": "IT",
+                        "name": "Italy"
+                    },
+                    {
+                        "iso3166CountryCode": "JP",
+                        "name": "Japan"
+                    },
+                    {
+                        "iso3166CountryCode": "KE",
+                        "name": "Kenya"
+                    },
+                    {
+                        "iso3166CountryCode": "MW",
+                        "name": "Malawi"
+                    },
+                    {
+                        "iso3166CountryCode": "MY",
+                        "name": "Malaysia"
+                    },
+                    {
+                        "iso3166CountryCode": "ML",
+                        "name": "Mali"
+                    },
+                    {
+                        "iso3166CountryCode": "MR",
+                        "name": "Mauritania"
+                    },
+                    {
+                        "iso3166CountryCode": "MA",
+                        "name": "Morocco"
+                    },
+                    {
+                        "iso3166CountryCode": "MM",
+                        "name": "Myanmar"
+                    },
+                    {
+                        "iso3166CountryCode": "NA",
+                        "name": "Namibia"
+                    },
+                    {
+                        "iso3166CountryCode": "NP",
+                        "name": "Nepal"
+                    },
+                    {
+                        "iso3166CountryCode": "NZ",
+                        "name": "New Zealand"
+                    },
+                    {
+                        "iso3166CountryCode": "NE",
+                        "name": "Niger"
+                    },
+                    {
+                        "iso3166CountryCode": "PK",
+                        "name": "Pakistan"
+                    },
+                    {
+                        "iso3166CountryCode": "PY",
+                        "name": "Paraguay"
+                    },
+                    {
+                        "iso3166CountryCode": "PH",
+                        "name": "Philippines"
+                    },
+                    {
+                        "iso3166CountryCode": "RW",
+                        "name": "Rwanda"
+                    },
+                    {
+                        "iso3166CountryCode": "SN",
+                        "name": "Senegal"
+                    },
+                    {
+                        "iso3166CountryCode": "SL",
+                        "name": "Sierra Leone"
+                    },
+                    {
+                        "iso3166CountryCode": "SO",
+                        "name": "Somalia"
+                    },
+                    {
+                        "iso3166CountryCode": "ZA",
+                        "name": "South Africa"
+                    },
+                    {
+                        "iso3166CountryCode": "KR",
+                        "name": "South Korea"
+                    },
+                    {
+                        "iso3166CountryCode": "ES",
+                        "name": "Spain"
+                    },
+                    {
+                        "iso3166CountryCode": "LK",
+                        "name": "Sri Lanka"
+                    },
+                    {
+                        "iso3166CountryCode": "SD",
+                        "name": "Sudan"
+                    },
+                    {
+                        "iso3166CountryCode": "TZ",
+                        "name": "Tanzania, United Republic of"
+                    },
+                    {
+                        "iso3166CountryCode": "TH",
+                        "name": "Thailand"
+                    },
+                    {
+                        "iso3166CountryCode": "TR",
+                        "name": "Turkey"
+                    },
+                    {
+                        "iso3166CountryCode": "UG",
+                        "name": "Uganda"
+                    },
+                    {
+                        "iso3166CountryCode": "GB",
+                        "name": "United Kingdom"
+                    },
+                    {
+                        "iso3166CountryCode": "US",
+                        "name": "United States"
+                    },
+                    {
+                        "iso3166CountryCode": "VN",
+                        "name": "Vietnam"
+                    },
+                    {
+                        "iso3166CountryCode": "WS",
+                        "name": "Samoa"
+                    },
+                    {
+                        "iso3166CountryCode": "ZM",
+                        "name": "Zambia"
+                    }
+                ]
+            },
+            "country": "United States",
+            "ein": "30-0108263",
+            "id": "189",
+            "iso3166CountryCode": "US",
+            "logoUrl": "https://www.globalgiving.org/pfil/organ/189/orglogo.png",
+            "mission": "Our mission is to build an efficient, open, thriving marketplace that connects people who have community and world-changing ideas with people who can support them.",
+            "name": "GlobalGiving",
+            "postal": "20005",
+            "state": "D.C.",
+            "themes": {
+                "theme": [
+                    {
+                        "id": "animals",
+                        "name": "Animal Welfare"
+                    },
+                    {
+                        "id": "children",
+                        "name": "Child Protection"
+                    },
+                    {
+                        "id": "democ",
+                        "name": "Peace and Reconciliation"
+                    },
+                    {
+                        "id": "disaster",
+                        "name": "Disaster Response"
+                    },
+                    {
+                        "id": "ecdev",
+                        "name": "Economic Growth"
+                    },
+                    {
+                        "id": "edu",
+                        "name": "Education"
+                    },
+                    {
+                        "id": "env",
+                        "name": "Ecosystem Restoration"
+                    },
+                    {
+                        "id": "gender",
+                        "name": "Gender Equality"
+                    },
+                    {
+                        "id": "health",
+                        "name": "Physical Health"
+                    },
+                    {
+                        "id": "rights",
+                        "name": "Justice and Human Rights"
+                    },
+                    {
+                        "id": "tech",
+                        "name": "Digital Literacy"
+                    },
+                    {
+                        "id": "hunger",
+                        "name": "Food Security"
+                    }
+                ]
+            },
+            "totalProjects": "219",
+            "url": "https://www.globalgiving.org"
+        },
+        "progressReportLink": "https://www.globalgiving.org/projects/syrian-refugee-relief-fund/updates/",
+        "projectLink": "https://www.globalgiving.org/projects/syrian-refugee-relief-fund/",
+        "region": "Middle East",
+        "remaining": "333106.44",
+        "status": "active",
+        "summary": "Ten years of armed conflict in Syria have caused millions of people to leave their homes in search of a safe haven. Fleeing for their lives, refugees are forced to leave all that they have behind. This fund will support relief efforts by organizations working in the area who are providing emergency assistance and ongoing support to those in need.",
+        "themeName": "Disaster Response",
+        "themes": {
+            "theme": [
+                {
+                    "id": "disaster",
+                    "name": "Disaster Response"
+                },
+                {
+                    "id": "health",
+                    "name": "Physical Health"
+                },
+                {
+                    "id": "rights",
+                    "name": "Justice and Human Rights"
+                },
+                {
+                    "id": "water",
+                    "name": "Clean Water"
+                },
+                {
+                    "id": "refugee",
+                    "name": "Refugee Rights"
+                }
+            ]
+        },
+        "title": "Syrian Refugee Relief Fund",
+        "type": "project"
+    },
+    {
+        "active": "true",
+        "activities": "When you support the GlobalGiving Girl Fund, your donation will support community-led organizations that are committed to providing opportunities for girls.",
+        "additionalDocumentation": "https://www.globalgiving.org/pfil/26396/projdoc.pdf",
+        "approvedDate": "2017-01-03T09:25:55-05:00",
+        "contactAddress": "1110 Vermont Avenue NW",
+        "contactAddress2": "Suite 550",
+        "contactCity": "Washington",
+        "contactCountry": "United States",
+        "contactName": "Britt Lake",
+        "contactPostal": "20005",
+        "contactState": "D.C.",
+        "contactUrl": "https://www.globalgiving.org",
+        "countries": {
+            "country": {
+                "iso3166CountryCode": "US",
+                "name": "United States"
+            }
+        },
+        "country": "United States",
+        "dateOfMostRecentReport": "2022-05-11T10:06:28-04:00",
+        "donationOptions": {
+            "donationOption": [
+                {
+                    "amount": "25",
+                    "description": "can fund a girl's attendance in a one-year life skills and empowerment course"
+                },
+                {
+                    "amount": "50",
+                    "description": "can provide a girl with school books and supplies for an entire school year"
+                },
+                {
+                    "amount": "150",
+                    "description": "can provide one young woman with daily transportation to and from college for an entire academic year"
+                },
+                {
+                    "amount": "200",
+                    "description": "can provide an internship for a girl"
+                },
+                {
+                    "amount": "500",
+                    "description": "can facilitate a community education workshop"
+                }
+            ]
+        },
+        "funding": "395548.10",
+        "goal": "500000.00",
+        "id": "26396",
+        "image": {
+            "$": {
+                "id": "0"
+            },
+            "imagelink": [
+                {
+                    "$": {
+                        "size": "small"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/26396/pict_grid1.jpg"
+                },
+                {
+                    "$": {
+                        "size": "thumbnail"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/26396/pict_thumbnail.jpg"
+                },
+                {
+                    "$": {
+                        "size": "medium"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/26396/pict_med.jpg"
+                },
+                {
+                    "$": {
+                        "size": "large"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/26396/pict_grid7.jpg"
+                },
+                {
+                    "$": {
+                        "size": "extraLarge"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/26396/pict_large.jpg"
+                },
+                {
+                    "$": {
+                        "size": "original"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/26396/pict_original.jpg"
+                }
+            ],
+            "title": "GlobalGiving Girl Fund"
+        },
+        "imageGallerySize": "1",
+        "imageLink": "https://www.globalgiving.org/pfil/26396/pict.jpg",
+        "iso3166CountryCode": "US",
+        "longTermImpact": "With support from locally driven programs, girls are empowered to make positive changes not just in themselves, but in their families, friends, and communities.  In this way, supporting girls has an exponential impact for good.",
+        "modifiedDate": "2022-11-01T14:33:16-04:00",
+        "need": "Despite progress in recent years, girls continue to suffer disadvantages and exclusion in education, self development, and job markets.  Women complete 70% of the world's working hours, but receive only 10% of the world's income.",
+        "numberOfDonations": "6609",
+        "numberOfReports": "14",
+        "organization": {
+            "activeProjects": "38",
+            "addressLine1": "1 Thomas Circle NW",
+            "addressLine2": "Suite 800",
+            "city": "Washington",
+            "countries": {
+                "country": [
+                    {
+                        "iso3166CountryCode": "AF",
+                        "name": "Afghanistan"
+                    },
+                    {
+                        "iso3166CountryCode": "BD",
+                        "name": "Bangladesh"
+                    },
+                    {
+                        "iso3166CountryCode": "BR",
+                        "name": "Brazil"
+                    },
+                    {
+                        "iso3166CountryCode": "BF",
+                        "name": "Burkina Faso"
+                    },
+                    {
+                        "iso3166CountryCode": "KH",
+                        "name": "Cambodia"
+                    },
+                    {
+                        "iso3166CountryCode": "TD",
+                        "name": "Chad"
+                    },
+                    {
+                        "iso3166CountryCode": "CL",
+                        "name": "Chile"
+                    },
+                    {
+                        "iso3166CountryCode": "CN",
+                        "name": "China"
+                    },
+                    {
+                        "iso3166CountryCode": "CR",
+                        "name": "Costa Rica"
+                    },
+                    {
+                        "iso3166CountryCode": "CD",
+                        "name": "Congo, Democratic Republic of the"
+                    },
+                    {
+                        "iso3166CountryCode": "DJ",
+                        "name": "Djibouti"
+                    },
+                    {
+                        "iso3166CountryCode": "ET",
+                        "name": "Ethiopia"
+                    },
+                    {
+                        "iso3166CountryCode": "FI",
+                        "name": "Finland"
+                    },
+                    {
+                        "iso3166CountryCode": "GT",
+                        "name": "Guatemala"
+                    },
+                    {
+                        "iso3166CountryCode": "GY",
+                        "name": "Guyana"
+                    },
+                    {
+                        "iso3166CountryCode": "HT",
+                        "name": "Haiti"
+                    },
+                    {
+                        "iso3166CountryCode": "HK",
+                        "name": "Hong Kong SAR"
+                    },
+                    {
+                        "iso3166CountryCode": "IN",
+                        "name": "India"
+                    },
+                    {
+                        "iso3166CountryCode": "ID",
+                        "name": "Indonesia"
+                    },
+                    {
+                        "iso3166CountryCode": "IT",
+                        "name": "Italy"
+                    },
+                    {
+                        "iso3166CountryCode": "JP",
+                        "name": "Japan"
+                    },
+                    {
+                        "iso3166CountryCode": "KE",
+                        "name": "Kenya"
+                    },
+                    {
+                        "iso3166CountryCode": "MW",
+                        "name": "Malawi"
+                    },
+                    {
+                        "iso3166CountryCode": "MY",
+                        "name": "Malaysia"
+                    },
+                    {
+                        "iso3166CountryCode": "ML",
+                        "name": "Mali"
+                    },
+                    {
+                        "iso3166CountryCode": "MR",
+                        "name": "Mauritania"
+                    },
+                    {
+                        "iso3166CountryCode": "MA",
+                        "name": "Morocco"
+                    },
+                    {
+                        "iso3166CountryCode": "MM",
+                        "name": "Myanmar"
+                    },
+                    {
+                        "iso3166CountryCode": "NA",
+                        "name": "Namibia"
+                    },
+                    {
+                        "iso3166CountryCode": "NP",
+                        "name": "Nepal"
+                    },
+                    {
+                        "iso3166CountryCode": "NZ",
+                        "name": "New Zealand"
+                    },
+                    {
+                        "iso3166CountryCode": "NE",
+                        "name": "Niger"
+                    },
+                    {
+                        "iso3166CountryCode": "PK",
+                        "name": "Pakistan"
+                    },
+                    {
+                        "iso3166CountryCode": "PY",
+                        "name": "Paraguay"
+                    },
+                    {
+                        "iso3166CountryCode": "PH",
+                        "name": "Philippines"
+                    },
+                    {
+                        "iso3166CountryCode": "RW",
+                        "name": "Rwanda"
+                    },
+                    {
+                        "iso3166CountryCode": "SN",
+                        "name": "Senegal"
+                    },
+                    {
+                        "iso3166CountryCode": "SL",
+                        "name": "Sierra Leone"
+                    },
+                    {
+                        "iso3166CountryCode": "SO",
+                        "name": "Somalia"
+                    },
+                    {
+                        "iso3166CountryCode": "ZA",
+                        "name": "South Africa"
+                    },
+                    {
+                        "iso3166CountryCode": "KR",
+                        "name": "South Korea"
+                    },
+                    {
+                        "iso3166CountryCode": "ES",
+                        "name": "Spain"
+                    },
+                    {
+                        "iso3166CountryCode": "LK",
+                        "name": "Sri Lanka"
+                    },
+                    {
+                        "iso3166CountryCode": "SD",
+                        "name": "Sudan"
+                    },
+                    {
+                        "iso3166CountryCode": "TZ",
+                        "name": "Tanzania, United Republic of"
+                    },
+                    {
+                        "iso3166CountryCode": "TH",
+                        "name": "Thailand"
+                    },
+                    {
+                        "iso3166CountryCode": "TR",
+                        "name": "Turkey"
+                    },
+                    {
+                        "iso3166CountryCode": "UG",
+                        "name": "Uganda"
+                    },
+                    {
+                        "iso3166CountryCode": "GB",
+                        "name": "United Kingdom"
+                    },
+                    {
+                        "iso3166CountryCode": "US",
+                        "name": "United States"
+                    },
+                    {
+                        "iso3166CountryCode": "VN",
+                        "name": "Vietnam"
+                    },
+                    {
+                        "iso3166CountryCode": "WS",
+                        "name": "Samoa"
+                    },
+                    {
+                        "iso3166CountryCode": "ZM",
+                        "name": "Zambia"
+                    }
+                ]
+            },
+            "country": "United States",
+            "ein": "30-0108263",
+            "id": "189",
+            "iso3166CountryCode": "US",
+            "logoUrl": "https://www.globalgiving.org/pfil/organ/189/orglogo.png",
+            "mission": "Our mission is to build an efficient, open, thriving marketplace that connects people who have community and world-changing ideas with people who can support them.",
+            "name": "GlobalGiving",
+            "postal": "20005",
+            "state": "D.C.",
+            "themes": {
+                "theme": [
+                    {
+                        "id": "animals",
+                        "name": "Animal Welfare"
+                    },
+                    {
+                        "id": "children",
+                        "name": "Child Protection"
+                    },
+                    {
+                        "id": "democ",
+                        "name": "Peace and Reconciliation"
+                    },
+                    {
+                        "id": "disaster",
+                        "name": "Disaster Response"
+                    },
+                    {
+                        "id": "ecdev",
+                        "name": "Economic Growth"
+                    },
+                    {
+                        "id": "edu",
+                        "name": "Education"
+                    },
+                    {
+                        "id": "env",
+                        "name": "Ecosystem Restoration"
+                    },
+                    {
+                        "id": "gender",
+                        "name": "Gender Equality"
+                    },
+                    {
+                        "id": "health",
+                        "name": "Physical Health"
+                    },
+                    {
+                        "id": "rights",
+                        "name": "Justice and Human Rights"
+                    },
+                    {
+                        "id": "tech",
+                        "name": "Digital Literacy"
+                    },
+                    {
+                        "id": "hunger",
+                        "name": "Food Security"
+                    }
+                ]
+            },
+            "totalProjects": "219",
+            "url": "https://www.globalgiving.org"
+        },
+        "progressReportLink": "https://www.globalgiving.org/funds/girl-fund/updates/",
+        "projectLink": "https://www.globalgiving.org/funds/girl-fund/",
+        "region": "North America",
+        "remaining": "104451.90",
+        "status": "active",
+        "summary": "Can you imagine a world where every girl had the chance to create a future of her choosing? This fund supports highly effective GlobalGiving projects providing education, legal protection, health care, and access to training and job skills so that girls can thrive - making a difference in their lives and their communities.",
+        "themeName": "Gender Equality",
+        "themes": {
+            "theme": {
+                "id": "gender",
+                "name": "Gender Equality"
+            }
+        },
+        "title": "GlobalGiving Girl Fund",
+        "type": "fund"
+    },
+    {
+        "active": "true",
+        "activities": "We've brought together fundraising professionals and analysts-experts in their organizations on donor communications,  campaign fundraising, corporate relationship building, and more-to offer a small cohort of GlobalGiving partners personal, hands-on fundraising training.",
+        "approvedDate": "2017-03-16T11:07:31-04:00",
+        "contactAddress": "1110 Vermont Avenue NW",
+        "contactAddress2": "Suite 550",
+        "contactCity": "Washington",
+        "contactCountry": "United States",
+        "contactName": "Emma  Hersh",
+        "contactPostal": "20005",
+        "contactState": "D.C.",
+        "contactUrl": "https://www.globalgiving.org",
+        "countries": {
+            "country": {
+                "iso3166CountryCode": "US",
+                "name": "United States"
+            }
+        },
+        "country": "United States",
+        "donationOptions": {
+            "donationOption": [
+                {
+                    "amount": "50",
+                    "description": "Online Fundraising Academy Bond for 1 participant from your organization"
+                },
+                {
+                    "amount": "100",
+                    "description": "Online Fundraising Academy Bond for 2 participants from your organization"
+                },
+                {
+                    "amount": "150",
+                    "description": "Online Fundraising Academy Bond for 3 participants from your organization"
+                },
+                {
+                    "amount": "200",
+                    "description": "Online Fundraising Academy Bond for 4 participants from your organization"
+                }
+            ]
+        },
+        "funding": "3132.22",
+        "goal": "3500.00",
+        "id": "27400",
+        "image": {
+            "$": {
+                "id": "0"
+            },
+            "imagelink": [
+                {
+                    "$": {
+                        "size": "small"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/27400/pict_grid1.jpg"
+                },
+                {
+                    "$": {
+                        "size": "thumbnail"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/27400/pict_thumbnail.jpg"
+                },
+                {
+                    "$": {
+                        "size": "medium"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/27400/pict_med.jpg"
+                },
+                {
+                    "$": {
+                        "size": "large"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/27400/pict_grid7.jpg"
+                },
+                {
+                    "$": {
+                        "size": "extraLarge"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/27400/pict_large.jpg"
+                },
+                {
+                    "$": {
+                        "size": "original"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/27400/pict_original.jpg"
+                }
+            ],
+            "title": "Online Fundraising Academy (not tax deductible)"
+        },
+        "imageGallerySize": "1",
+        "imageLink": "https://www.globalgiving.org/pfil/27400/pict.jpg",
+        "iso3166CountryCode": "US",
+        "modifiedDate": "2022-11-01T14:33:20-04:00",
+        "need": "We know you're interested in growing the number of donors and amount of donations for your organization-and we are committed to supporting you through our nine-week Online Fundraising Academy!",
+        "numberOfDonations": "62",
+        "numberOfReports": "0",
+        "organization": {
+            "activeProjects": "38",
+            "addressLine1": "1 Thomas Circle NW",
+            "addressLine2": "Suite 800",
+            "city": "Washington",
+            "countries": {
+                "country": [
+                    {
+                        "iso3166CountryCode": "AF",
+                        "name": "Afghanistan"
+                    },
+                    {
+                        "iso3166CountryCode": "BD",
+                        "name": "Bangladesh"
+                    },
+                    {
+                        "iso3166CountryCode": "BR",
+                        "name": "Brazil"
+                    },
+                    {
+                        "iso3166CountryCode": "BF",
+                        "name": "Burkina Faso"
+                    },
+                    {
+                        "iso3166CountryCode": "KH",
+                        "name": "Cambodia"
+                    },
+                    {
+                        "iso3166CountryCode": "TD",
+                        "name": "Chad"
+                    },
+                    {
+                        "iso3166CountryCode": "CL",
+                        "name": "Chile"
+                    },
+                    {
+                        "iso3166CountryCode": "CN",
+                        "name": "China"
+                    },
+                    {
+                        "iso3166CountryCode": "CR",
+                        "name": "Costa Rica"
+                    },
+                    {
+                        "iso3166CountryCode": "CD",
+                        "name": "Congo, Democratic Republic of the"
+                    },
+                    {
+                        "iso3166CountryCode": "DJ",
+                        "name": "Djibouti"
+                    },
+                    {
+                        "iso3166CountryCode": "ET",
+                        "name": "Ethiopia"
+                    },
+                    {
+                        "iso3166CountryCode": "FI",
+                        "name": "Finland"
+                    },
+                    {
+                        "iso3166CountryCode": "GT",
+                        "name": "Guatemala"
+                    },
+                    {
+                        "iso3166CountryCode": "GY",
+                        "name": "Guyana"
+                    },
+                    {
+                        "iso3166CountryCode": "HT",
+                        "name": "Haiti"
+                    },
+                    {
+                        "iso3166CountryCode": "HK",
+                        "name": "Hong Kong SAR"
+                    },
+                    {
+                        "iso3166CountryCode": "IN",
+                        "name": "India"
+                    },
+                    {
+                        "iso3166CountryCode": "ID",
+                        "name": "Indonesia"
+                    },
+                    {
+                        "iso3166CountryCode": "IT",
+                        "name": "Italy"
+                    },
+                    {
+                        "iso3166CountryCode": "JP",
+                        "name": "Japan"
+                    },
+                    {
+                        "iso3166CountryCode": "KE",
+                        "name": "Kenya"
+                    },
+                    {
+                        "iso3166CountryCode": "MW",
+                        "name": "Malawi"
+                    },
+                    {
+                        "iso3166CountryCode": "MY",
+                        "name": "Malaysia"
+                    },
+                    {
+                        "iso3166CountryCode": "ML",
+                        "name": "Mali"
+                    },
+                    {
+                        "iso3166CountryCode": "MR",
+                        "name": "Mauritania"
+                    },
+                    {
+                        "iso3166CountryCode": "MA",
+                        "name": "Morocco"
+                    },
+                    {
+                        "iso3166CountryCode": "MM",
+                        "name": "Myanmar"
+                    },
+                    {
+                        "iso3166CountryCode": "NA",
+                        "name": "Namibia"
+                    },
+                    {
+                        "iso3166CountryCode": "NP",
+                        "name": "Nepal"
+                    },
+                    {
+                        "iso3166CountryCode": "NZ",
+                        "name": "New Zealand"
+                    },
+                    {
+                        "iso3166CountryCode": "NE",
+                        "name": "Niger"
+                    },
+                    {
+                        "iso3166CountryCode": "PK",
+                        "name": "Pakistan"
+                    },
+                    {
+                        "iso3166CountryCode": "PY",
+                        "name": "Paraguay"
+                    },
+                    {
+                        "iso3166CountryCode": "PH",
+                        "name": "Philippines"
+                    },
+                    {
+                        "iso3166CountryCode": "RW",
+                        "name": "Rwanda"
+                    },
+                    {
+                        "iso3166CountryCode": "SN",
+                        "name": "Senegal"
+                    },
+                    {
+                        "iso3166CountryCode": "SL",
+                        "name": "Sierra Leone"
+                    },
+                    {
+                        "iso3166CountryCode": "SO",
+                        "name": "Somalia"
+                    },
+                    {
+                        "iso3166CountryCode": "ZA",
+                        "name": "South Africa"
+                    },
+                    {
+                        "iso3166CountryCode": "KR",
+                        "name": "South Korea"
+                    },
+                    {
+                        "iso3166CountryCode": "ES",
+                        "name": "Spain"
+                    },
+                    {
+                        "iso3166CountryCode": "LK",
+                        "name": "Sri Lanka"
+                    },
+                    {
+                        "iso3166CountryCode": "SD",
+                        "name": "Sudan"
+                    },
+                    {
+                        "iso3166CountryCode": "TZ",
+                        "name": "Tanzania, United Republic of"
+                    },
+                    {
+                        "iso3166CountryCode": "TH",
+                        "name": "Thailand"
+                    },
+                    {
+                        "iso3166CountryCode": "TR",
+                        "name": "Turkey"
+                    },
+                    {
+                        "iso3166CountryCode": "UG",
+                        "name": "Uganda"
+                    },
+                    {
+                        "iso3166CountryCode": "GB",
+                        "name": "United Kingdom"
+                    },
+                    {
+                        "iso3166CountryCode": "US",
+                        "name": "United States"
+                    },
+                    {
+                        "iso3166CountryCode": "VN",
+                        "name": "Vietnam"
+                    },
+                    {
+                        "iso3166CountryCode": "WS",
+                        "name": "Samoa"
+                    },
+                    {
+                        "iso3166CountryCode": "ZM",
+                        "name": "Zambia"
+                    }
+                ]
+            },
+            "country": "United States",
+            "ein": "30-0108263",
+            "id": "189",
+            "iso3166CountryCode": "US",
+            "logoUrl": "https://www.globalgiving.org/pfil/organ/189/orglogo.png",
+            "mission": "Our mission is to build an efficient, open, thriving marketplace that connects people who have community and world-changing ideas with people who can support them.",
+            "name": "GlobalGiving",
+            "postal": "20005",
+            "state": "D.C.",
+            "themes": {
+                "theme": [
+                    {
+                        "id": "animals",
+                        "name": "Animal Welfare"
+                    },
+                    {
+                        "id": "children",
+                        "name": "Child Protection"
+                    },
+                    {
+                        "id": "democ",
+                        "name": "Peace and Reconciliation"
+                    },
+                    {
+                        "id": "disaster",
+                        "name": "Disaster Response"
+                    },
+                    {
+                        "id": "ecdev",
+                        "name": "Economic Growth"
+                    },
+                    {
+                        "id": "edu",
+                        "name": "Education"
+                    },
+                    {
+                        "id": "env",
+                        "name": "Ecosystem Restoration"
+                    },
+                    {
+                        "id": "gender",
+                        "name": "Gender Equality"
+                    },
+                    {
+                        "id": "health",
+                        "name": "Physical Health"
+                    },
+                    {
+                        "id": "rights",
+                        "name": "Justice and Human Rights"
+                    },
+                    {
+                        "id": "tech",
+                        "name": "Digital Literacy"
+                    },
+                    {
+                        "id": "hunger",
+                        "name": "Food Security"
+                    }
+                ]
+            },
+            "totalProjects": "219",
+            "url": "https://www.globalgiving.org"
+        },
+        "progressReportLink": "https://www.globalgiving.org/projects/online-fundraising-academy-not-tax-deductible/updates/",
+        "projectLink": "https://www.globalgiving.org/projects/online-fundraising-academy-not-tax-deductible/",
+        "region": "North America",
+        "remaining": "367.78",
+        "status": "unsearchable",
+        "summary": "Join us for a two-month online course designed to help you, our non-profit partner, supercharge your online fundraising. This two-month course will focus on topics ranging from developing an online fundraising strategy to harnessing social media for fundraising and building relationships with corporate partners.",
+        "themeName": "Education",
+        "themes": {
+            "theme": {
+                "id": "edu",
+                "name": "Education"
+            }
+        },
+        "title": "Online Fundraising Academy (not tax deductible)",
+        "type": "project"
+    },
+    {
+        "active": "true",
+        "activities": "This fund will support life-saving assistance and relief efforts for Rohingya people displaced by violence and conflict, specifically in and around the refugee camps in the Cox's Bazar area of Bangladesh and neighboring settlements. Your support will help survivors and victims get necessary immediate relief supplies like food and hygiene kits, as well as provide longer-term support through activities like the construction of much needed medical clinics and field hospitals.",
+        "additionalDocumentation": "https://www.globalgiving.org/pfil/29840/projdoc.pdf",
+        "approvedDate": "2017-09-19T15:05:42-04:00",
+        "contactAddress": "1110 Vermont Ave NW Ste 550",
+        "contactCity": "Washington",
+        "contactCountry": "United States",
+        "contactName": "Chase Williams",
+        "contactPostal": "20005",
+        "contactState": "DC",
+        "contactUrl": "https://www.globalgiving.org",
+        "countries": {
+            "country": {
+                "iso3166CountryCode": "BD",
+                "name": "Bangladesh"
+            }
+        },
+        "country": "Bangladesh",
+        "dateOfMostRecentReport": "2022-08-25T11:58:12-04:00",
+        "donationOptions": {
+            "donationOption": [
+                {
+                    "amount": "15",
+                    "description": "emergency refugee relief and long-term recovery support"
+                },
+                {
+                    "amount": "30",
+                    "description": "emergency refugee relief and long-term recovery support"
+                },
+                {
+                    "amount": "55",
+                    "description": "emergency refugee relief and long-term recovery support"
+                },
+                {
+                    "amount": "100",
+                    "description": "emergency refugee relief and long-term recovery support"
+                },
+                {
+                    "amount": "250",
+                    "description": "emergency refugee relief and long-term recovery support"
+                },
+                {
+                    "amount": "1000",
+                    "description": "emergency refugee relief and long-term recovery support"
+                }
+            ]
+        },
+        "funding": "625324.73",
+        "goal": "1000000.00",
+        "id": "29840",
+        "image": {
+            "$": {
+                "id": "0"
+            },
+            "imagelink": [
+                {
+                    "$": {
+                        "size": "small"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/29840/pict_grid1.jpg"
+                },
+                {
+                    "$": {
+                        "size": "thumbnail"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/29840/pict_thumbnail.jpg"
+                },
+                {
+                    "$": {
+                        "size": "medium"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/29840/pict_med.jpg"
+                },
+                {
+                    "$": {
+                        "size": "large"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/29840/pict_grid7.jpg"
+                },
+                {
+                    "$": {
+                        "size": "extraLarge"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/29840/pict_large.jpg"
+                },
+                {
+                    "$": {
+                        "size": "original"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/29840/pict_original.jpg"
+                }
+            ],
+            "title": "Rohingya Refugee Relief Fund"
+        },
+        "imageGallerySize": "1",
+        "imageLink": "https://www.globalgiving.org/pfil/29840/pict.jpg",
+        "iso3166CountryCode": "BD",
+        "latitude": "21.436717987060547",
+        "longTermImpact": "Our partners are working to ensure that Rohingya refugees can lead safe, hopeful, and productive lives. GlobalGiving will post reports about how funds are used; subscribers will receive these reports via email.",
+        "longitude": "92.017822265625",
+        "modifiedDate": "2022-11-01T14:31:39-04:00",
+        "need": "Since Aug. 25, 2017, the Rohingya population in Myanmar has been subjected to extreme violence and has been forced to flee their homes. There have been reports of helicopters firing on civilians, extrajudicial executions of women and children, and the burning of entire villages. The United Nations High Commissioner for Human Rights called the situation a \"textbook example of ethnic cleansing,\" and the crisis has caused a mass exodus of the Rohingya people across the border into Bangladesh.",
+        "numberOfDonations": "3953",
+        "numberOfReports": "19",
+        "organization": {
+            "activeProjects": "38",
+            "addressLine1": "1 Thomas Circle NW",
+            "addressLine2": "Suite 800",
+            "city": "Washington",
+            "countries": {
+                "country": [
+                    {
+                        "iso3166CountryCode": "AF",
+                        "name": "Afghanistan"
+                    },
+                    {
+                        "iso3166CountryCode": "BD",
+                        "name": "Bangladesh"
+                    },
+                    {
+                        "iso3166CountryCode": "BR",
+                        "name": "Brazil"
+                    },
+                    {
+                        "iso3166CountryCode": "BF",
+                        "name": "Burkina Faso"
+                    },
+                    {
+                        "iso3166CountryCode": "KH",
+                        "name": "Cambodia"
+                    },
+                    {
+                        "iso3166CountryCode": "TD",
+                        "name": "Chad"
+                    },
+                    {
+                        "iso3166CountryCode": "CL",
+                        "name": "Chile"
+                    },
+                    {
+                        "iso3166CountryCode": "CN",
+                        "name": "China"
+                    },
+                    {
+                        "iso3166CountryCode": "CR",
+                        "name": "Costa Rica"
+                    },
+                    {
+                        "iso3166CountryCode": "CD",
+                        "name": "Congo, Democratic Republic of the"
+                    },
+                    {
+                        "iso3166CountryCode": "DJ",
+                        "name": "Djibouti"
+                    },
+                    {
+                        "iso3166CountryCode": "ET",
+                        "name": "Ethiopia"
+                    },
+                    {
+                        "iso3166CountryCode": "FI",
+                        "name": "Finland"
+                    },
+                    {
+                        "iso3166CountryCode": "GT",
+                        "name": "Guatemala"
+                    },
+                    {
+                        "iso3166CountryCode": "GY",
+                        "name": "Guyana"
+                    },
+                    {
+                        "iso3166CountryCode": "HT",
+                        "name": "Haiti"
+                    },
+                    {
+                        "iso3166CountryCode": "HK",
+                        "name": "Hong Kong SAR"
+                    },
+                    {
+                        "iso3166CountryCode": "IN",
+                        "name": "India"
+                    },
+                    {
+                        "iso3166CountryCode": "ID",
+                        "name": "Indonesia"
+                    },
+                    {
+                        "iso3166CountryCode": "IT",
+                        "name": "Italy"
+                    },
+                    {
+                        "iso3166CountryCode": "JP",
+                        "name": "Japan"
+                    },
+                    {
+                        "iso3166CountryCode": "KE",
+                        "name": "Kenya"
+                    },
+                    {
+                        "iso3166CountryCode": "MW",
+                        "name": "Malawi"
+                    },
+                    {
+                        "iso3166CountryCode": "MY",
+                        "name": "Malaysia"
+                    },
+                    {
+                        "iso3166CountryCode": "ML",
+                        "name": "Mali"
+                    },
+                    {
+                        "iso3166CountryCode": "MR",
+                        "name": "Mauritania"
+                    },
+                    {
+                        "iso3166CountryCode": "MA",
+                        "name": "Morocco"
+                    },
+                    {
+                        "iso3166CountryCode": "MM",
+                        "name": "Myanmar"
+                    },
+                    {
+                        "iso3166CountryCode": "NA",
+                        "name": "Namibia"
+                    },
+                    {
+                        "iso3166CountryCode": "NP",
+                        "name": "Nepal"
+                    },
+                    {
+                        "iso3166CountryCode": "NZ",
+                        "name": "New Zealand"
+                    },
+                    {
+                        "iso3166CountryCode": "NE",
+                        "name": "Niger"
+                    },
+                    {
+                        "iso3166CountryCode": "PK",
+                        "name": "Pakistan"
+                    },
+                    {
+                        "iso3166CountryCode": "PY",
+                        "name": "Paraguay"
+                    },
+                    {
+                        "iso3166CountryCode": "PH",
+                        "name": "Philippines"
+                    },
+                    {
+                        "iso3166CountryCode": "RW",
+                        "name": "Rwanda"
+                    },
+                    {
+                        "iso3166CountryCode": "SN",
+                        "name": "Senegal"
+                    },
+                    {
+                        "iso3166CountryCode": "SL",
+                        "name": "Sierra Leone"
+                    },
+                    {
+                        "iso3166CountryCode": "SO",
+                        "name": "Somalia"
+                    },
+                    {
+                        "iso3166CountryCode": "ZA",
+                        "name": "South Africa"
+                    },
+                    {
+                        "iso3166CountryCode": "KR",
+                        "name": "South Korea"
+                    },
+                    {
+                        "iso3166CountryCode": "ES",
+                        "name": "Spain"
+                    },
+                    {
+                        "iso3166CountryCode": "LK",
+                        "name": "Sri Lanka"
+                    },
+                    {
+                        "iso3166CountryCode": "SD",
+                        "name": "Sudan"
+                    },
+                    {
+                        "iso3166CountryCode": "TZ",
+                        "name": "Tanzania, United Republic of"
+                    },
+                    {
+                        "iso3166CountryCode": "TH",
+                        "name": "Thailand"
+                    },
+                    {
+                        "iso3166CountryCode": "TR",
+                        "name": "Turkey"
+                    },
+                    {
+                        "iso3166CountryCode": "UG",
+                        "name": "Uganda"
+                    },
+                    {
+                        "iso3166CountryCode": "GB",
+                        "name": "United Kingdom"
+                    },
+                    {
+                        "iso3166CountryCode": "US",
+                        "name": "United States"
+                    },
+                    {
+                        "iso3166CountryCode": "VN",
+                        "name": "Vietnam"
+                    },
+                    {
+                        "iso3166CountryCode": "WS",
+                        "name": "Samoa"
+                    },
+                    {
+                        "iso3166CountryCode": "ZM",
+                        "name": "Zambia"
+                    }
+                ]
+            },
+            "country": "United States",
+            "ein": "30-0108263",
+            "id": "189",
+            "iso3166CountryCode": "US",
+            "logoUrl": "https://www.globalgiving.org/pfil/organ/189/orglogo.png",
+            "mission": "Our mission is to build an efficient, open, thriving marketplace that connects people who have community and world-changing ideas with people who can support them.",
+            "name": "GlobalGiving",
+            "postal": "20005",
+            "state": "D.C.",
+            "themes": {
+                "theme": [
+                    {
+                        "id": "animals",
+                        "name": "Animal Welfare"
+                    },
+                    {
+                        "id": "children",
+                        "name": "Child Protection"
+                    },
+                    {
+                        "id": "democ",
+                        "name": "Peace and Reconciliation"
+                    },
+                    {
+                        "id": "disaster",
+                        "name": "Disaster Response"
+                    },
+                    {
+                        "id": "ecdev",
+                        "name": "Economic Growth"
+                    },
+                    {
+                        "id": "edu",
+                        "name": "Education"
+                    },
+                    {
+                        "id": "env",
+                        "name": "Ecosystem Restoration"
+                    },
+                    {
+                        "id": "gender",
+                        "name": "Gender Equality"
+                    },
+                    {
+                        "id": "health",
+                        "name": "Physical Health"
+                    },
+                    {
+                        "id": "rights",
+                        "name": "Justice and Human Rights"
+                    },
+                    {
+                        "id": "tech",
+                        "name": "Digital Literacy"
+                    },
+                    {
+                        "id": "hunger",
+                        "name": "Food Security"
+                    }
+                ]
+            },
+            "totalProjects": "219",
+            "url": "https://www.globalgiving.org"
+        },
+        "progressReportLink": "https://www.globalgiving.org/projects/rohingya-refugee-relief-fund/updates/",
+        "projectLink": "https://www.globalgiving.org/projects/rohingya-refugee-relief-fund/",
+        "region": "Asia and Oceania",
+        "remaining": "374675.27",
+        "status": "active",
+        "summary": "Extreme violence and persecution in Myanmar's Rakhine State have caused more than 900,000 Rohingya people, an ethnic and religious minority, to flee their homes in search of safety. Leaving nearly all their possessions behind, the majority of the Rohingya people have fled across the border into Bangladesh. This fund will exclusively support relief efforts by vetted organizations working in the area that are providing emergency assistance and ongoing support to those in need.",
+        "themeName": "Disaster Response",
+        "themes": {
+            "theme": [
+                {
+                    "id": "disaster",
+                    "name": "Disaster Response"
+                },
+                {
+                    "id": "refugee",
+                    "name": "Refugee Rights"
+                }
+            ]
+        },
+        "title": "Rohingya Refugee Relief Fund",
+        "type": "project"
+    },
+    {
+        "active": "true",
+        "activities": "This fund will support short and long term relief efforts in affected communities.",
+        "additionalDocumentation": "https://www.globalgiving.org/pfil/29905/projdoc.pdf",
+        "approvedDate": "2017-09-27T15:15:53-04:00",
+        "contactAddress": "1110 Vermont Avenue NW",
+        "contactAddress2": "Suite 550",
+        "contactCity": "Washington",
+        "contactCountry": "United States",
+        "contactPostal": "20005",
+        "contactState": "D.C.",
+        "contactUrl": "https://www.globalgiving.org",
+        "countries": {
+            "country": [
+                {
+                    "iso3166CountryCode": "US",
+                    "name": "United States"
+                },
+                {
+                    "iso3166CountryCode": "US",
+                    "name": "United States"
+                }
+            ]
+        },
+        "country": "United States",
+        "donationOptions": {
+            "donationOption": {
+                "amount": "10",
+                "description": "Emergency disaster relief and long-term recovery"
+            }
+        },
+        "funding": "717548.84",
+        "goal": "800000.00",
+        "id": "29905",
+        "image": {
+            "$": {
+                "id": "0"
+            },
+            "imagelink": [
+                {
+                    "$": {
+                        "size": "small"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/29905/pict_grid1.jpg"
+                },
+                {
+                    "$": {
+                        "size": "thumbnail"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/29905/pict_thumbnail.jpg"
+                },
+                {
+                    "$": {
+                        "size": "medium"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/29905/pict_med.jpg"
+                },
+                {
+                    "$": {
+                        "size": "large"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/29905/pict_grid7.jpg"
+                },
+                {
+                    "$": {
+                        "size": "extraLarge"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/29905/pict_large.jpg"
+                },
+                {
+                    "$": {
+                        "size": "original"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/29905/pict_original.jpg"
+                }
+            ],
+            "title": "Concert for 2017 Disaster Relief"
+        },
+        "imageGallerySize": "1",
+        "imageLink": "https://www.globalgiving.org/pfil/29905/pict.jpg",
+        "iso3166CountryCode": "US",
+        "longTermImpact": "This fund will support short and long term relief efforts in the affected communities.",
+        "modifiedDate": "2022-11-01T14:33:30-04:00",
+        "need": "Hurricanes Irma, Harvey, Maria and the earthquake in Mexico have caused widespread destruction in Texas, Florida, Mexico and the Caribbean.",
+        "numberOfDonations": "237",
+        "numberOfReports": "0",
+        "organization": {
+            "activeProjects": "38",
+            "addressLine1": "1 Thomas Circle NW",
+            "addressLine2": "Suite 800",
+            "city": "Washington",
+            "countries": {
+                "country": [
+                    {
+                        "iso3166CountryCode": "AF",
+                        "name": "Afghanistan"
+                    },
+                    {
+                        "iso3166CountryCode": "BD",
+                        "name": "Bangladesh"
+                    },
+                    {
+                        "iso3166CountryCode": "BR",
+                        "name": "Brazil"
+                    },
+                    {
+                        "iso3166CountryCode": "BF",
+                        "name": "Burkina Faso"
+                    },
+                    {
+                        "iso3166CountryCode": "KH",
+                        "name": "Cambodia"
+                    },
+                    {
+                        "iso3166CountryCode": "TD",
+                        "name": "Chad"
+                    },
+                    {
+                        "iso3166CountryCode": "CL",
+                        "name": "Chile"
+                    },
+                    {
+                        "iso3166CountryCode": "CN",
+                        "name": "China"
+                    },
+                    {
+                        "iso3166CountryCode": "CR",
+                        "name": "Costa Rica"
+                    },
+                    {
+                        "iso3166CountryCode": "CD",
+                        "name": "Congo, Democratic Republic of the"
+                    },
+                    {
+                        "iso3166CountryCode": "DJ",
+                        "name": "Djibouti"
+                    },
+                    {
+                        "iso3166CountryCode": "ET",
+                        "name": "Ethiopia"
+                    },
+                    {
+                        "iso3166CountryCode": "FI",
+                        "name": "Finland"
+                    },
+                    {
+                        "iso3166CountryCode": "GT",
+                        "name": "Guatemala"
+                    },
+                    {
+                        "iso3166CountryCode": "GY",
+                        "name": "Guyana"
+                    },
+                    {
+                        "iso3166CountryCode": "HT",
+                        "name": "Haiti"
+                    },
+                    {
+                        "iso3166CountryCode": "HK",
+                        "name": "Hong Kong SAR"
+                    },
+                    {
+                        "iso3166CountryCode": "IN",
+                        "name": "India"
+                    },
+                    {
+                        "iso3166CountryCode": "ID",
+                        "name": "Indonesia"
+                    },
+                    {
+                        "iso3166CountryCode": "IT",
+                        "name": "Italy"
+                    },
+                    {
+                        "iso3166CountryCode": "JP",
+                        "name": "Japan"
+                    },
+                    {
+                        "iso3166CountryCode": "KE",
+                        "name": "Kenya"
+                    },
+                    {
+                        "iso3166CountryCode": "MW",
+                        "name": "Malawi"
+                    },
+                    {
+                        "iso3166CountryCode": "MY",
+                        "name": "Malaysia"
+                    },
+                    {
+                        "iso3166CountryCode": "ML",
+                        "name": "Mali"
+                    },
+                    {
+                        "iso3166CountryCode": "MR",
+                        "name": "Mauritania"
+                    },
+                    {
+                        "iso3166CountryCode": "MA",
+                        "name": "Morocco"
+                    },
+                    {
+                        "iso3166CountryCode": "MM",
+                        "name": "Myanmar"
+                    },
+                    {
+                        "iso3166CountryCode": "NA",
+                        "name": "Namibia"
+                    },
+                    {
+                        "iso3166CountryCode": "NP",
+                        "name": "Nepal"
+                    },
+                    {
+                        "iso3166CountryCode": "NZ",
+                        "name": "New Zealand"
+                    },
+                    {
+                        "iso3166CountryCode": "NE",
+                        "name": "Niger"
+                    },
+                    {
+                        "iso3166CountryCode": "PK",
+                        "name": "Pakistan"
+                    },
+                    {
+                        "iso3166CountryCode": "PY",
+                        "name": "Paraguay"
+                    },
+                    {
+                        "iso3166CountryCode": "PH",
+                        "name": "Philippines"
+                    },
+                    {
+                        "iso3166CountryCode": "RW",
+                        "name": "Rwanda"
+                    },
+                    {
+                        "iso3166CountryCode": "SN",
+                        "name": "Senegal"
+                    },
+                    {
+                        "iso3166CountryCode": "SL",
+                        "name": "Sierra Leone"
+                    },
+                    {
+                        "iso3166CountryCode": "SO",
+                        "name": "Somalia"
+                    },
+                    {
+                        "iso3166CountryCode": "ZA",
+                        "name": "South Africa"
+                    },
+                    {
+                        "iso3166CountryCode": "KR",
+                        "name": "South Korea"
+                    },
+                    {
+                        "iso3166CountryCode": "ES",
+                        "name": "Spain"
+                    },
+                    {
+                        "iso3166CountryCode": "LK",
+                        "name": "Sri Lanka"
+                    },
+                    {
+                        "iso3166CountryCode": "SD",
+                        "name": "Sudan"
+                    },
+                    {
+                        "iso3166CountryCode": "TZ",
+                        "name": "Tanzania, United Republic of"
+                    },
+                    {
+                        "iso3166CountryCode": "TH",
+                        "name": "Thailand"
+                    },
+                    {
+                        "iso3166CountryCode": "TR",
+                        "name": "Turkey"
+                    },
+                    {
+                        "iso3166CountryCode": "UG",
+                        "name": "Uganda"
+                    },
+                    {
+                        "iso3166CountryCode": "GB",
+                        "name": "United Kingdom"
+                    },
+                    {
+                        "iso3166CountryCode": "US",
+                        "name": "United States"
+                    },
+                    {
+                        "iso3166CountryCode": "VN",
+                        "name": "Vietnam"
+                    },
+                    {
+                        "iso3166CountryCode": "WS",
+                        "name": "Samoa"
+                    },
+                    {
+                        "iso3166CountryCode": "ZM",
+                        "name": "Zambia"
+                    }
+                ]
+            },
+            "country": "United States",
+            "ein": "30-0108263",
+            "id": "189",
+            "iso3166CountryCode": "US",
+            "logoUrl": "https://www.globalgiving.org/pfil/organ/189/orglogo.png",
+            "mission": "Our mission is to build an efficient, open, thriving marketplace that connects people who have community and world-changing ideas with people who can support them.",
+            "name": "GlobalGiving",
+            "postal": "20005",
+            "state": "D.C.",
+            "themes": {
+                "theme": [
+                    {
+                        "id": "animals",
+                        "name": "Animal Welfare"
+                    },
+                    {
+                        "id": "children",
+                        "name": "Child Protection"
+                    },
+                    {
+                        "id": "democ",
+                        "name": "Peace and Reconciliation"
+                    },
+                    {
+                        "id": "disaster",
+                        "name": "Disaster Response"
+                    },
+                    {
+                        "id": "ecdev",
+                        "name": "Economic Growth"
+                    },
+                    {
+                        "id": "edu",
+                        "name": "Education"
+                    },
+                    {
+                        "id": "env",
+                        "name": "Ecosystem Restoration"
+                    },
+                    {
+                        "id": "gender",
+                        "name": "Gender Equality"
+                    },
+                    {
+                        "id": "health",
+                        "name": "Physical Health"
+                    },
+                    {
+                        "id": "rights",
+                        "name": "Justice and Human Rights"
+                    },
+                    {
+                        "id": "tech",
+                        "name": "Digital Literacy"
+                    },
+                    {
+                        "id": "hunger",
+                        "name": "Food Security"
+                    }
+                ]
+            },
+            "totalProjects": "219",
+            "url": "https://www.globalgiving.org"
+        },
+        "progressReportLink": "https://www.globalgiving.org/funds/concert-disaster-relief-october-2017/updates/",
+        "projectLink": "https://www.globalgiving.org/funds/concert-disaster-relief-october-2017/",
+        "region": "North America",
+        "remaining": "82451.16",
+        "status": "unsearchable",
+        "summary": "This fund will support natural disaster relief and recovery efforts in Florida, Texas, Mexico and the Caribbean by supporting the following organizations:  Habitat for Humanity-Puerto Rico, Direct Relief, One America Appeal, All Hands Volunteers, American Civil Liberties Union, Kids In Need, Greater Houston Community Foundation, and the Miami Community Foundation.",
+        "themeName": "Disaster Response",
+        "themes": {
+            "theme": {
+                "id": "disaster",
+                "name": "Disaster Response"
+            }
+        },
+        "title": "Concert for 2017 Disaster Relief",
+        "type": "fund"
+    },
+    {
+        "active": "true",
+        "activities": "I need your support! Your support will contribute to the traveling of over 4,000 miles to provide a highly personal, consultative experience to 60 GlobalGiving non-profit partners across Malawi, Namibia, Zambia, and Zimbabwe. The GlobalGiving platform continuously helps small, effective non-profit organizations working towards empowering vulnerable communities, by helping them to crowd source funding from an international audience.",
+        "approvedDate": "2018-03-30T11:12:16-04:00",
+        "contactAddress": "1110 Vermont Avenue NW",
+        "contactAddress2": "Suite 550",
+        "contactCity": "Washington",
+        "contactCountry": "United States",
+        "contactName": "Alison Carlman",
+        "contactPostal": "20005",
+        "contactState": "D.C.",
+        "contactUrl": "https://www.globalgiving.org",
+        "countries": {
+            "country": [
+                {
+                    "iso3166CountryCode": "ZM",
+                    "name": "Zambia"
+                },
+                {
+                    "iso3166CountryCode": "ZM",
+                    "name": "Zambia"
+                },
+                {
+                    "iso3166CountryCode": "ZM",
+                    "name": "Zambia"
+                },
+                {
+                    "iso3166CountryCode": "ZM",
+                    "name": "Zambia"
+                }
+            ]
+        },
+        "country": "Zambia",
+        "donationOptions": {
+            "donationOption": [
+                {
+                    "amount": "10",
+                    "description": "Help provide meals"
+                },
+                {
+                    "amount": "25",
+                    "description": "Traveling between cities"
+                },
+                {
+                    "amount": "50",
+                    "description": "Safe accommodation"
+                },
+                {
+                    "amount": "60",
+                    "description": "Transportation to hard to reach Organisations in rural Africa"
+                },
+                {
+                    "amount": "100",
+                    "description": "Workshops and site visit"
+                },
+                {
+                    "amount": "150",
+                    "description": "Workshops and site visit"
+                },
+                {
+                    "amount": "200",
+                    "description": "1 week safe accommodation and basic meals"
+                }
+            ]
+        },
+        "funding": "590.02",
+        "goal": "5000.00",
+        "id": "31907",
+        "image": {
+            "$": {
+                "id": "0"
+            },
+            "imagelink": [
+                {
+                    "$": {
+                        "size": "small"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/31907/pict_grid1.jpg"
+                },
+                {
+                    "$": {
+                        "size": "thumbnail"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/31907/pict_thumbnail.jpg"
+                },
+                {
+                    "$": {
+                        "size": "medium"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/31907/pict_med.jpg"
+                },
+                {
+                    "$": {
+                        "size": "large"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/31907/pict_grid7.jpg"
+                },
+                {
+                    "$": {
+                        "size": "extraLarge"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/31907/pict_large.jpg"
+                },
+                {
+                    "$": {
+                        "size": "original"
+                    },
+                    "url": "https://www.globalgiving.org/pfil/31907/pict_original.jpg"
+                }
+            ],
+            "title": "Help Support GlobalGiving's Nonprofits in Africa"
+        },
+        "imageGallerySize": "7",
+        "imageLink": "https://www.globalgiving.org/pfil/31907/pict.jpg",
+        "iso3166CountryCode": "ZM",
+        "longTermImpact": "My field work will provide valuable tools and resources as well as teach new skills to local non-profits in the region, helping them grow their organisations and increase their impact. I'll help strengthen current relationships GlobalGiving has with these non-profits, as well as work to establish new and beneficial partnerships in the region that will have a lasting impact for both GlobalGiving and Southern Africa.",
+        "modifiedDate": "2022-11-01T14:33:37-04:00",
+        "need": "Southern Africa has an extensive and lively non-profit sector, but have not explored the full potential of international online fundraising or crowdfunding. In order to better serve regional non-profit partners, GlobalGiving puts teams on the ground to provide training and support that will help these local non-profits make a difference in the lives of children, families, and the community as a whole, by raising more funds and learning how to be more effective and impactful.",
+        "numberOfDonations": "14",
+        "numberOfReports": "0",
+        "organization": {
+            "activeProjects": "38",
+            "addressLine1": "1 Thomas Circle NW",
+            "addressLine2": "Suite 800",
+            "city": "Washington",
+            "countries": {
+                "country": [
+                    {
+                        "iso3166CountryCode": "AF",
+                        "name": "Afghanistan"
+                    },
+                    {
+                        "iso3166CountryCode": "BD",
+                        "name": "Bangladesh"
+                    },
+                    {
+                        "iso3166CountryCode": "BR",
+                        "name": "Brazil"
+                    },
+                    {
+                        "iso3166CountryCode": "BF",
+                        "name": "Burkina Faso"
+                    },
+                    {
+                        "iso3166CountryCode": "KH",
+                        "name": "Cambodia"
+                    },
+                    {
+                        "iso3166CountryCode": "TD",
+                        "name": "Chad"
+                    },
+                    {
+                        "iso3166CountryCode": "CL",
+                        "name": "Chile"
+                    },
+                    {
+                        "iso3166CountryCode": "CN",
+                        "name": "China"
+                    },
+                    {
+                        "iso3166CountryCode": "CR",
+                        "name": "Costa Rica"
+                    },
+                    {
+                        "iso3166CountryCode": "CD",
+                        "name": "Congo, Democratic Republic of the"
+                    },
+                    {
+                        "iso3166CountryCode": "DJ",
+                        "name": "Djibouti"
+                    },
+                    {
+                        "iso3166CountryCode": "ET",
+                        "name": "Ethiopia"
+                    },
+                    {
+                        "iso3166CountryCode": "FI",
+                        "name": "Finland"
+                    },
+                    {
+                        "iso3166CountryCode": "GT",
+                        "name": "Guatemala"
+                    },
+                    {
+                        "iso3166CountryCode": "GY",
+                        "name": "Guyana"
+                    },
+                    {
+                        "iso3166CountryCode": "HT",
+                        "name": "Haiti"
+                    },
+                    {
+                        "iso3166CountryCode": "HK",
+                        "name": "Hong Kong SAR"
+                    },
+                    {
+                        "iso3166CountryCode": "IN",
+                        "name": "India"
+                    },
+                    {
+                        "iso3166CountryCode": "ID",
+                        "name": "Indonesia"
+                    },
+                    {
+                        "iso3166CountryCode": "IT",
+                        "name": "Italy"
+                    },
+                    {
+                        "iso3166CountryCode": "JP",
+                        "name": "Japan"
+                    },
+                    {
+                        "iso3166CountryCode": "KE",
+                        "name": "Kenya"
+                    },
+                    {
+                        "iso3166CountryCode": "MW",
+                        "name": "Malawi"
+                    },
+                    {
+                        "iso3166CountryCode": "MY",
+                        "name": "Malaysia"
+                    },
+                    {
+                        "iso3166CountryCode": "ML",
+                        "name": "Mali"
+                    },
+                    {
+                        "iso3166CountryCode": "MR",
+                        "name": "Mauritania"
+                    },
+                    {
+                        "iso3166CountryCode": "MA",
+                        "name": "Morocco"
+                    },
+                    {
+                        "iso3166CountryCode": "MM",
+                        "name": "Myanmar"
+                    },
+                    {
+                        "iso3166CountryCode": "NA",
+                        "name": "Namibia"
+                    },
+                    {
+                        "iso3166CountryCode": "NP",
+                        "name": "Nepal"
+                    },
+                    {
+                        "iso3166CountryCode": "NZ",
+                        "name": "New Zealand"
+                    },
+                    {
+                        "iso3166CountryCode": "NE",
+                        "name": "Niger"
+                    },
+                    {
+                        "iso3166CountryCode": "PK",
+                        "name": "Pakistan"
+                    },
+                    {
+                        "iso3166CountryCode": "PY",
+                        "name": "Paraguay"
+                    },
+                    {
+                        "iso3166CountryCode": "PH",
+                        "name": "Philippines"
+                    },
+                    {
+                        "iso3166CountryCode": "RW",
+                        "name": "Rwanda"
+                    },
+                    {
+                        "iso3166CountryCode": "SN",
+                        "name": "Senegal"
+                    },
+                    {
+                        "iso3166CountryCode": "SL",
+                        "name": "Sierra Leone"
+                    },
+                    {
+                        "iso3166CountryCode": "SO",
+                        "name": "Somalia"
+                    },
+                    {
+                        "iso3166CountryCode": "ZA",
+                        "name": "South Africa"
+                    },
+                    {
+                        "iso3166CountryCode": "KR",
+                        "name": "South Korea"
+                    },
+                    {
+                        "iso3166CountryCode": "ES",
+                        "name": "Spain"
+                    },
+                    {
+                        "iso3166CountryCode": "LK",
+                        "name": "Sri Lanka"
+                    },
+                    {
+                        "iso3166CountryCode": "SD",
+                        "name": "Sudan"
+                    },
+                    {
+                        "iso3166CountryCode": "TZ",
+                        "name": "Tanzania, United Republic of"
+                    },
+                    {
+                        "iso3166CountryCode": "TH",
+                        "name": "Thailand"
+                    },
+                    {
+                        "iso3166CountryCode": "TR",
+                        "name": "Turkey"
+                    },
+                    {
+                        "iso3166CountryCode": "UG",
+                        "name": "Uganda"
+                    },
+                    {
+                        "iso3166CountryCode": "GB",
+                        "name": "United Kingdom"
+                    },
+                    {
+                        "iso3166CountryCode": "US",
+                        "name": "United States"
+                    },
+                    {
+                        "iso3166CountryCode": "VN",
+                        "name": "Vietnam"
+                    },
+                    {
+                        "iso3166CountryCode": "WS",
+                        "name": "Samoa"
+                    },
+                    {
+                        "iso3166CountryCode": "ZM",
+                        "name": "Zambia"
+                    }
+                ]
+            },
+            "country": "United States",
+            "ein": "30-0108263",
+            "id": "189",
+            "iso3166CountryCode": "US",
+            "logoUrl": "https://www.globalgiving.org/pfil/organ/189/orglogo.png",
+            "mission": "Our mission is to build an efficient, open, thriving marketplace that connects people who have community and world-changing ideas with people who can support them.",
+            "name": "GlobalGiving",
+            "postal": "20005",
+            "state": "D.C.",
+            "themes": {
+                "theme": [
+                    {
+                        "id": "animals",
+                        "name": "Animal Welfare"
+                    },
+                    {
+                        "id": "children",
+                        "name": "Child Protection"
+                    },
+                    {
+                        "id": "democ",
+                        "name": "Peace and Reconciliation"
+                    },
+                    {
+                        "id": "disaster",
+                        "name": "Disaster Response"
+                    },
+                    {
+                        "id": "ecdev",
+                        "name": "Economic Growth"
+                    },
+                    {
+                        "id": "edu",
+                        "name": "Education"
+                    },
+                    {
+                        "id": "env",
+                        "name": "Ecosystem Restoration"
+                    },
+                    {
+                        "id": "gender",
+                        "name": "Gender Equality"
+                    },
+                    {
+                        "id": "health",
+                        "name": "Physical Health"
+                    },
+                    {
+                        "id": "rights",
+                        "name": "Justice and Human Rights"
+                    },
+                    {
+                        "id": "tech",
+                        "name": "Digital Literacy"
+                    },
+                    {
+                        "id": "hunger",
+                        "name": "Food Security"
+                    }
+                ]
+            },
+            "totalProjects": "219",
+            "url": "https://www.globalgiving.org"
+        },
+        "progressReportLink": "https://www.globalgiving.org/funds/help-support-globalgivings-nonprofits-in-southernafrica/updates/",
+        "projectLink": "https://www.globalgiving.org/funds/help-support-globalgivings-nonprofits-in-southernafrica/",
+        "region": "Africa",
+        "remaining": "4409.98",
+        "status": "active",
+        "summary": "I'm Norman, the GlobalGiving Southern Africa Field Traveler for 2018! While in the field, I'll be supporting and getting feedback from GlobalGiving's nonprofit partners. I'll be providing them with necessary tools to improve their fundraising efforts by conducting site visits, one-on-one support and workshops. This will also ensure that organisations are using GlobalGiving funds efficiently. During my time in the field I will connecting with the beneficiaries of projects in various communities.",
+        "themeName": "Arts and Culture",
+        "themes": {
+            "theme": [
+                {
+                    "id": "art",
+                    "name": "Arts and Culture"
+                },
+                {
+                    "id": "ecdev",
+                    "name": "Economic Growth"
+                },
+                {
+                    "id": "gender",
+                    "name": "Gender Equality"
+                }
+            ]
+        },
+        "title": "Help Support GlobalGiving's Nonprofits in Africa",
+        "type": "fund"
+    }
+]

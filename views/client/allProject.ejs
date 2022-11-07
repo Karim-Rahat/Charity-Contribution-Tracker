@@ -1,0 +1,41 @@
+
+
+
+<%- include('../template/header'); %>
+
+<body onload="getDatas()">
+  <script src="/node/pagination/release/pagination.full.min.js"></script> 
+  <main class="main" id="top">
+
+      <!-- <div id="loading">
+<img id="loading-image" src="loader/loader-128x/preloader_1.gif" alt="Loading..." />
+</div>   -->
+
+    <%- include('../template/navbar'); %>
+    <div>
+      <h1 class="text-center mt-5 mb-5 ">All Projects</h1>
+    </div>
+
+<div class="allProject">
+
+
+
+  <div class="pagination justify-content-center mb-5">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <div id="paging"></div>
+        <!-- <li class="page-item"><a onclick="loadContent()" >Load 25 more contents</a></li> -->
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+  <%-include("../template/customize"); %>
+<%-include("../template/footer"); %>
+
+<script src="scripts/allProject.js"></script>
+
+</body>
+      
+</html>
