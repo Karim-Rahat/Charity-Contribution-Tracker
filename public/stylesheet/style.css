@@ -186,7 +186,15 @@ a:link {
     grid-template-columns: auto auto;
   }
 
-
+  .image-title {
+   font-size: 15px;
+  }
+  .image-desc {
+    font-size: 16px;
+  }
+  .image-desc-small {
+    font-size: 10px;
+  }
 
   .grid-four-btn {
     padding: 2px 0px 2px 0px;
