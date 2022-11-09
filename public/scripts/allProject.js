@@ -79,7 +79,7 @@ function allProject(data) {
      }">...read more</a>
           </p>
 
-  <div class="textBlack"> <p><b>Funding collected </b> : <span class="fundingStatus">$${Math.ceil(el.funding)}</span>  of $${Math.ceil(el.goal)} </p> </div>
+  <div class="textBlack"> <p><b>Funding collected </b> : <span class="fundingStatus">$${Math.ceil(el.funding)}</span>  of <span class="fundingStatus">$${Math.ceil(el.goal)} </span> </p> </div>
           <div class="flex">
 
             <div class="flex-content">
