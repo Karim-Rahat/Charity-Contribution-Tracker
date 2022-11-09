@@ -4,7 +4,7 @@
 <%- include('../template/header'); %>
 
 <body onload="getDatas()">
-  <script src="/node/pagination/release/pagination.full.min.js"></script> 
+ 
   <main class="main" id="top">
 
       <!-- <div id="loading">
@@ -13,24 +13,18 @@
 
     <%- include('../template/navbar'); %>
     <div>
-      <h1 class="text-center mt-5 mb-5 ">All Projects</h1>
+      <h1 class="text-center mt-5 mb-5 ">ALL PROJECTS</h1>
+      <h5 class="text-center mt-5 mb-5 " id="projectNum"></h5>
     </div>
+   
+<div class="allProject"></div>
 
-<div class="allProject">
-
-
-
-  <div class="pagination justify-content-center mb-5">
-    <nav aria-label="Page navigation example">
-      <ul class="pagination justify-content-center">
-        <div id="paging"></div>
-        <!-- <li class="page-item"><a onclick="loadContent()" >Load 25 more contents</a></li> -->
-      </ul>
-    </nav>
-  </div>
+<div class="paginations">
+  <div id="pagination-container" class="mb-5 mt-5 " ></div>
 </div>
 
 
+</main>
   <%-include("../template/customize"); %>
 <%-include("../template/footer"); %>
 
