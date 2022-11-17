@@ -41,8 +41,46 @@ const dataInsertModels = {
       return err;
     }
  
-  }
-
+  },
+  saveToCart: async (values)=>{
+    const sqlquery="INSERT INTO `CART` (`project_id`,`amount`,`title`) VALUES (?,?,?)"
+    try {
+      const rows = await connection.promise().execute(sqlquery, values);
+ 
+     
+      return rows[0];
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+ 
+  },
+  updateCartAmount: async (values)=>{
+    console.log(values);
+    const sqlquery="UPDATE `cart` SET `amount`=? WHERE `c_id`=?"
+    try {
+      const rows = await connection.promise().execute(sqlquery, values);
+ 
+     
+      return rows[0];
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  },
+  delCartItem:async (value)=>{
+    console.log(value);
+    const sqlquery="DELETE FROM CART WHERE `c_id`=?"
+    try {
+      const rows = await connection.promise().execute(sqlquery, value);
+ 
+     
+      return rows[0];
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  },
 };
 
 module.exports = dataInsertModels;

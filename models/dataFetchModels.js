@@ -45,8 +45,42 @@ const dataFetchModels = {
     }
   },
   getThemes: async ()=>{
-    const sqlquery="SELECT t_name from themes" 
+    const sqlquery="SELECT * from themes" 
     
+    try {
+      const rows = await connection.promise().execute(sqlquery);
+
+      return rows[0];
+    } catch (err) {
+      return err;
+    }
+  },
+  getDistinctCountry: async()=>{
+    const sqlquery="SELECT DISTINCT country FROM `projects` ORDER BY `projects`.`country` ASC"
+    try {
+      const rows = await connection.promise().execute(sqlquery);
+
+      return rows[0];
+    } catch (err) {
+      return err;
+    }
+ 
+ 
+  },
+  getOneProject: async (id)=>{
+    const sqlquery="SELECT * from projects WHERE p_id=?" 
+
+    try {
+      const rows = await connection.promise().execute(sqlquery,[id.id]);
+
+      return rows[0];
+    } catch (err) {
+      return err;
+    }
+  },
+  getCartData: async(req,res)=>{
+    const sqlquery="SELECT * from cart" 
+
     try {
       const rows = await connection.promise().execute(sqlquery);
 

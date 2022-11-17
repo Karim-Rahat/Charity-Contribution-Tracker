@@ -7,13 +7,11 @@ const xml2js = require("xml2js");
 const dataInsertModels = require("../models/dataInsertModels");
 var parser = new xml2js.Parser({ explicitArray: false });
 const api = {
-  
   recommend: async (req, res) => {
     let nextData;
     let nextProjectId;
     let finalData;
-    let 
-      active,
+    let active,
       activities,
       additionalDocumentation,
       approvedDate,
@@ -78,9 +76,9 @@ const api = {
 
             console.log(nextProjectId, count);
             Data.projects.project.map(async (item, i) => {
-              value=[item.id,JSON.stringify(item),item.organization.id]
-            
-              await dataInsertModels.insertProjects(value)
+              value = [item.id, JSON.stringify(item), item.organization.id];
+
+              await dataInsertModels.insertProjects(value);
               DataArr.push(item);
             });
           })
@@ -93,7 +91,7 @@ const api = {
     }
     async function saveToJson(finalData) {
       const jsonContent = JSON.stringify(finalData);
-     
+
       fs.writeFile("./alphabet.json", jsonContent, "utf8", function (err) {
         if (err) {
           return console.log(err);
@@ -103,7 +101,6 @@ const api = {
       });
     }
 
-   
     // const response = await axios
     //   .post(
     //     "https://api.globalgiving.org/api/userservice/tokens",
@@ -142,64 +139,63 @@ const api = {
     const data = await dataFetchModels.getOrgId();
 
     data.map(async (orgId, i) => {
-      // if (i> 0 && i < 1000) {
-        await axios
-          .get(
-            `https://api.globalgiving.org/api/public/projectservice/organizations/${orgId.id}/projects/active?api_key=a12a1031-68bb-4543-a9da-68765945c0ee`,
-            {
-              headers: {
-                Accept: "application/xml",
-                "Content-Type": "application/json",
-              },
-            }
-          )
-          .then(async (response) => {
-            nextData = xmltojson(response);
+      await axios
+        .get(
+          `https://api.globalgiving.org/api/public/projectservice/organizations/${orgId.id}/projects/active?api_key=a12a1031-68bb-4543-a9da-68765945c0ee`,
+          {
+            headers: {
+              Accept: "application/xml",
+              "Content-Type": "application/json",
+            },
+          }
+        )
+        .then(async (response) => {
+          nextData = xmltojson(response);
 
-            let nextDataArr = [];
-            let datas = [];
-            let value=[]
-            let count = Math.ceil(nextData.projects.$.numberFound / 10);
-            let activeProject = nextData.projects.$.numberFound;
-            console.log(activeProject, orgId);
-            if (activeProject == 1) {
-              nextDataArr.push(nextData.projects.project);
+          let nextDataArr = [];
+          let datas = [];
+          let value = [];
+          let count = Math.ceil(nextData.projects.$.numberFound / 10);
+          let activeProject = nextData.projects.$.numberFound;
+          console.log(activeProject, orgId);
+          if (activeProject == 1) {
+            nextDataArr.push(nextData.projects.project);
 
-              nextDataArr.map(async (item, i) => {
-               
-                value=[item.id,JSON.stringify(item),item.organization.id]
-                await dataInsertModels.insertProjects(value)
-         
-                datas.push(item);
-              });
-            }
-            if (activeProject > 1) {
-              nextData.projects.project.map(async (item, i) => {
-                value=[item.id,JSON.stringify(item),item.organization.id]
-               await dataInsertModels.insertProjects(value)
-                datas.push(item);
-              });
-            }
-            nextProjectId = nextData.projects.nextProjectId;
+            nextDataArr.map(async (item, i) => {
+              value = [item.id, JSON.stringify(item), item.organization.id];
+              await dataInsertModels.insertProjects(value);
 
-            //nexr data
+              datas.push(item);
+            });
+          }
+          if (activeProject > 1) {
+            nextData.projects.project.map(async (item, i) => {
+              value = [item.id, JSON.stringify(item), item.organization.id];
+              await dataInsertModels.insertProjects(value);
+              datas.push(item);
+            });
+          }
+          nextProjectId = nextData.projects.nextProjectId;
 
-            if (count > 1) {
-              const nextData2 = await nextProjectGen(nextProjectId, count,orgId.id);
-              // console.log(nextData2);
-              finalData = datas.concat(nextData2);
+          //nexr data
 
-            
-            } else {
-              finalData = datas;
-              
-            }
-          })
+          if (count > 1) {
+            const nextData2 = await nextProjectGen(
+              nextProjectId,
+              count,
+              orgId.id
+            );
+            // console.log(nextData2);
+            finalData = datas.concat(nextData2);
+          } else {
+            finalData = datas;
+          }
+        })
 
-          .catch(function (error) {
-            // handle error
-            console.log(error, "i");
-          });
+        .catch(function (error) {
+          // handle error
+          console.log(error, "i");
+        });
       // }
     });
     res.render("client/recommendation", { data: renderData });
@@ -220,6 +216,56 @@ const api = {
         res.render("client/recommendation", { data: arr });
       }
     );
+  },
+
+  getInvoice: async (req, res) => {
+    let globalgivingAccToken;
+    await axios
+      .post(
+        "https://api.globalgiving.org/api/userservice/tokens",
+        // '{"auth_request":{"user":{"email":"John_Doe@hotmail.com","password":"somepassword"}, "api_key":"YOUR_API_KEY"}}',
+        {
+          auth_request: {
+            user: {
+              email: "rafar.heart2@gmail.com",
+              password: "3xshow123",
+            },
+            api_key: "a12a1031-68bb-4543-a9da-68765945c0ee",
+          },
+        },
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((response) => {
+        globalgivingAccToken = response.data.auth_response.access_token;
+        console.log(globalgivingAccToken);
+      })
+      .then(async (data) => {
+        console.log(globalgivingAccToken);
+
+        const url = `https://api.globalgiving.org/api/secure/givingservice/invoices?api_key=a12a1031-68bb-4543-a9da-68765945c0ee&api_token=${globalgivingAccToken}`;
+        console.log(url);
+        await axios
+          .get(url, {
+            headers: {
+              Accept: "application/xml",
+              "Content-Type": "application/xml",
+            },
+          })
+          .then(async (response) => {
+            console.log(response);
+          })
+
+          .catch(function (error) {
+            console.log(error);
+          });
+      });
+
+    res.render("client/recommendation", { data: ["hello"] });
   },
 };
 module.exports = api;

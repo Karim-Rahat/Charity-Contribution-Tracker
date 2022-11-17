@@ -1,0 +1,256 @@
+<%- include('../template/header'); %>
+
+<body>
+
+  <main class="main" id="top">
+    <%- include('../template/navbar'); %>
+    <div class="mx-5" data-layout="container">
+      <% project.map((item,i)=>{ %>
+
+      <% const img = JSON.parse(item.imageLink); %>
+      <%  const orgName = org.filter((org) => org.id == item.org_id); %>
+
+      <div class="content mt-2">
+        <div class="row g-0 row-first">
+          <div class="col-lg-8 pe-lg-2">
+            <div class="card mb-1"><img class="card-img-top img-top-project" src="<%= img[5].url%> " alt="" />
+              <div class="card-body">
+                <div class="row justify-content-between align-items-center">
+                  <div class="col">
+                    <div class="d-flex">
+
+                      <div class="flex-1 fs--1">
+                        <h5 class="fs-0"><%=item.title %></h5>
+                        <p class="mb-0">by <a href="#!">
+                            <%= orgName[0].name %>
+                          </a></p>
+
+                      </div>
+
+                    </div>
+
+
+
+                  </div>
+
+
+                </div>
+              </div>
+
+            </div>
+
+
+            <div class="card mb-lg-0">
+              <div class="card-body ">
+                <div class="row justify-content-between align-items-center">
+                  <div class="col">
+
+                    <div class="d-flex mt-2 ">
+
+
+
+                      <div class="flex-1 fs--1 text-center ">
+
+                        <h3 class="fs-1 text-warning  fw-semi-bold">$<%=item.funding.toLocaleString('en-US',{minimumFractionDigits: 2}) %></h3>
+                        <p>Total Funding</p>
+                      </div>
+                      <div class="flex-1 fs--1 text-center ">
+
+                        <h3 class="fs-1 text-warning fw-semi-bold">$<%=item.remaining.toLocaleString('en-US',{minimumFractionDigits: 2}) %></h3>
+                        <p>Total Remaining</p>
+                      </div>
+                      <div class="flex-1 fs--1 text-center">
+                        <% const d = new Date(item.approvedDate)
+                  const crntDate=new Date() %>
+                        <h3 class="fs-1 text-warning  fw-semi-bold "><%=crntDate.getFullYear()-d.getFullYear() %></h3>
+                        <p class="">Years</p>
+                      </div>
+                      <div class="flex-1 fs--1 text-center">
+
+                        <h3 class="fs-1 text-warning  fw-semi-bold">$<%=item.goal.toLocaleString('en-US',{minimumFractionDigits: 2}) %></h3>
+                        <p>Goal</p>
+                      </div>
+
+                      <div class="flex-1 fs--1 text-center">
+
+                        <h3 class="fs-1 text-warning  fw-semi-bold"><%=parseInt(item.numberOfDonations) %></h3>
+                        <p>Total Donations</p>
+                      </div>
+
+
+                    </div>
+
+
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="card mb-3 mt-2 mb-lg-0">
+              <div class="card-body">
+                <h3 class="fs-2 mb-3">Summary</h3>
+                <p><%= item.summary %> </p>
+
+                <h3 class="fs-2 mb-3">Challenge</h3>
+                <p><%= item.need %> </p>
+
+                <h3 class="fs-2 mb-3">Solution</h3>
+                <p><%= item.need %> </p>
+
+                <h3 class="fs-2 mb-3">Long-Term Impact</h3>
+                <p><%= item.longTermImpact %> </p>
+
+                <h5 class="fs-0 mt-5 mb-2">Tags</h5>
+                <% let thm = JSON.parse(item.theme); %>
+
+                <% if (thm.theme.length <= 2) {   %>
+                <% thm.theme.map(el=>{ %>
+                <a class="badge border link-secondary me-1 text-decoration-none" href="#!"><%= el.name%></a>
+                <% }) %>
+
+                <% }  else { %>
+                <a class="badge border link-secondary me-1 text-decoration-none" href="#!"><%= thm.theme.name%></a>
+                <% } %>
+                <h5 class="fs-0 mt-5 mb-2">Share with friends</h5>
+                <div class="icon-group"><a class="icon-item text-facebook" href="#!"><span class="fab fa-facebook-f"></span></a><a class="icon-item text-twitter" href="#!"><span class="fab fa-twitter"></span></a><a class="icon-item text-google-plus" href="#!"><span class="fab fa-google-plus-g"></span></a><a class="icon-item text-linkedin" href="#!"><span class="fab fa-linkedin-in"></span></a><a class="icon-item text-700" href="#!"><span class="fab fa-medium-m"></span></a></div>
+                <div class="googlemap min-vh-50 rounded-3 mt-5" id="view-map" data-latlng="23.8383608,90.3680554" data-scrollwheel="false" data-icon="../../assets/img/icons/map-marker.png" data-zoom="17" data-theme="Default">
+                  <div class="marker-content pb-3 light">
+                    <h5>Eiffel Tower</h5>
+                    <p>Gustave Eiffel's iconic, wrought-iron 1889 tower,<br /> with steps and elevators to observation decks.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <%  }) %>
+          <div class="col-lg-4 ps-lg-2">
+            <div class="sidebar">
+              <div class="card mb-3 fs--1">
+                <div class="card-body">
+                  <div class="d-grid gap-2">
+                    <div class="fs-1">
+                      <p class="fs-1 text-warning font-weight-bold">$<%=project[0].funding.toLocaleString('en-US',{minimumFractionDigits:2})  %>
+                      raised of <span class="fs-0 text-secondary">$<%=project[0].goal.toLocaleString('en-US',{minimumFractionDigits:2})   %></span></p> 
+                      </div>
+                    <% const fundPercentage =`style=width:${~~((project[0].funding / project[0].goal) * 100)}%`  %>
+                    <% fundPer=~~((project[0].funding / project[0].goal) * 100) %>
+                    <div class="progress " style="height:15px">
+                      <div class="progress-bar bg-warning" role="progressbar"  aria-valuenow="<%=fundPer%>" aria-valuemin="0" aria-valuemax="100"  <%=fundPercentage%> ></div>
+                    </div>
+
+                    <div class="mb-2 d-flex justify-content-between">
+                      <div>
+                        <b class="fs-0"> <%=project[0].numberOfDonations %>  </b>
+                        Donations
+                        </div>
+                      <div class="fs-0">
+                      <b>  $<%=project[0].remaining.toLocaleString('en-US',{minimumFractionDigits:2})   %> </b>  to go</div>
+                    </div>
+                  </div>
+
+                  <div class="d-grid gap-2">
+                    <button class="btn  me-1 mb-1 text-white"  style="background-color: #283e53;" type="button">
+                      <span class="fas fa-align-left me-1" data-fa-transform="shrink-3"></span>Donate</button>
+                  </div>
+                </div>
+
+              </div>
+
+
+              <div class="card mb-3 fs--1">
+                <div class="card-body ">
+                    <% console.log(JSON.parse(project[0].donationOption).donationOption) %>
+                    <% const donationOption=JSON.parse(project[0].donationOption).donationOption %>
+                    <% console.log(donationOption) %>
+
+                    <% donationOption.map(item=>{ %>
+<a href="/saveToCart/<%=project[0].title%>/<%=project[0].p_id%>/<%=item.amount%>">
+
+    <div class="row bd-highlight p-2 m-2 text-black mb-2 donationOption">
+
+        <div class="col-3 py-2 bd-highlight" style="font-size: 14px ;" >
+            $
+            <%= item.amount %>
+        </div>
+        <div class="col-7 py-2  bd-highlight" style="display: flex;">
+            <%= item.description %>
+        </div>
+        <div class="col-2 py-3 px-1  bd-highlight donOptBtn" >
+
+            <span class="fs-1">
+
+                <i class="fa-solid fa-arrow-right text-white"></i>
+            </span>
+        </div>
+    </div>
+
+
+</a>
+
+                      
+                 <%   }) %>
+
+
+
+                
+
+<div class="row bd-highlight p-2 text-black mb-2">
+
+  <div class="input-group"><span class="input-group-text" id="basic-addon1">$</span><input class="form-control"
+    placeholder="Enter amount" type="number"
+      aria-label="Dollar amount (with dot and two decimal places)" />
+      <span class="input-group-text py-3 px-4  donOptBtn">
+        <i class="fa-solid fa-arrow-right text-white"></i>
+        </span>
+      
+    </div>
+</div>
+
+
+
+
+
+
+                
+
+
+              
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+
+        <footer class="footer">
+          <div class="row g-0 justify-content-between fs--1 mt-4 mb-3">
+            <div class="col-12 col-sm-auto text-center">
+              <p class="mb-0 text-600">Thank you for creating with Falcon <span class="d-none d-sm-inline-block">| </span><br class="d-sm-none" /> 2021 &copy; <a href="https://themewagon.com">Themewagon</a></p>
+            </div>
+            <div class="col-12 col-sm-auto text-center">
+              <p class="mb-0 text-600">v3.4.0</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+      
+
+    </div>
+  </main>
+  <%-include("../template/customize"); %>
+  <%-include("../template/scripts"); %>
+
+
+
+</body>
+
+</html>
+

@@ -48,7 +48,6 @@ a:link {
 } */
 .allProjImg {
   margin: auto;
-
 }
 
 .correct {
@@ -132,15 +131,12 @@ a:link {
 .image-desc-small {
   font-size: 14px;
 }
-.flex{
+.flex {
   display: grid;
-  grid-template-columns: 50% 50% ;
-
-
+  grid-template-columns: 50% 50%;
 }
-.flex-content{
+.flex-content {
   margin-right: 10px;
-
 }
 
 .btnDiv {
@@ -174,26 +170,80 @@ a:link {
   bottom: 0;
   color: white;
 }
-.progress-bar{
+.progress-bar {
   background-color: rgb(110, 143, 21);
 }
-.fundingStatus{
-font-size: 20px;
-color:rgb(110, 143, 21);
-font-weight: bolder;
+.fundingStatus {
+  font-size: 20px;
+  color: rgb(110, 143, 21);
+  font-weight: bolder;
 }
-.textBlack{
+.textBlack {
   color: black;
-  
 }
-.paginations{
+.paginations {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-#pagination-container{
-
+#pagination-container {
 }
+.sortNavBar {
+  width: 100%;
+  height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.sortNavBar > select {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+}
+.sortNavBar > select > option {
+  width: fit-content;
+  text-align: left;
+  font-size: 16px;
+}
+/* checkbox */
+/* single project */
+.img-top-project {
+  height: 350px;
+}
+.row-first {
+  height: auto;
+  margin-bottom: 20px;
+}
+.donationOption {
+  display: flex;
+  background-color: #b3d9ff;
+
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+}
+.donationOption:hover {
+  background-color: #3a6591;
+}
+.donationOption:hover > div {
+  color: white;
+}
+.donOptBtn {
+  background-color: #283e53;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cartInp {
+  width: 100px !important;
+  height: 40px;
+  font-weight: bold;
+  font-size: large;
+}
+
 @media only screen and (max-width: 900px) {
   .parent {
     display: grid;
@@ -204,8 +254,7 @@ font-weight: bolder;
     grid-template-areas:
       "a a"
       "b b "
-      "b b "
-
+      "b b ";
   }
 
   .div1 {
@@ -219,7 +268,7 @@ font-weight: bolder;
   }
 
   .image-title {
-   font-size: 15px;
+    font-size: 15px;
   }
   .image-desc {
     font-size: 16px;
@@ -227,14 +276,14 @@ font-weight: bolder;
   .image-desc-small {
     font-size: 10px;
   }
-  .allProjImg{
- width: 100%;
+  .allProjImg {
+    width: 100%;
     height: 200px;
     display: block;
     position: relative;
     overflow: hidden;
   }
-  .img-fluids{
+  .img-fluids {
     position: absolute;
     top: 0;
     left: 0;
@@ -249,15 +298,11 @@ font-weight: bolder;
     font-size: smaller;
   }
 
-  .flex{
+  .flex {
     display: grid;
-    grid-template-columns: 100% ;
-  
-  
+    grid-template-columns: 100%;
   }
-  .flex-content{
+  .flex-content {
     margin-bottom: 10px;
-  
   }
-  
 }

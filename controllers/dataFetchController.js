@@ -1,4 +1,5 @@
 
+const { getCartData } = require("../models/dataFetchModels");
 const dataFetchModels = require("../models/dataFetchModels");
 
 const dataFetchController={
@@ -20,6 +21,10 @@ getOrg: async (req,res)=>{
 },
 getThemes: async (req,res)=>{
     const data= await dataFetchModels.getThemes()
+    res.send(data)
+},
+getCartData: async(req,res)=>{
+    const data=await dataFetchModels.getCartData()
     res.send(data)
 }
 }

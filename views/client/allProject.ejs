@@ -4,19 +4,51 @@
 <%- include('../template/header'); %>
 
 <body onload="getDatas()">
- 
+
   <main class="main" id="top">
-
-      <!-- <div id="loading">
-<img id="loading-image" src="loader/loader-128x/preloader_1.gif" alt="Loading..." />
-</div>   -->
-
     <%- include('../template/navbar'); %>
+
+<div class="sortNavBar">
+<div class="theme">
+  <select class="form-select" id="theme" style="width: 170px" aria-label="Default select example">
+    <option value="">THEME</option>
+ <% console.log(themes); %> 
+     <% themes.map(item=>{ %>
+ 
+ 
+     <option value="<%=item.t_id%>"> <%= item.t_id.toUpperCase() %>   </option>
+ 
+     <%  }) %> 
+   </select>
+</div>
+
+
+<div class="country">
+  <select class="form-select" id="country" style="width: 170px" aria-label="Default select example">
+    <option value="">Country</option>
+ 
+     <% country.map(item=>{ %>
+ 
+ 
+     <option value="<%=item.country%>"> <%= item.country%>   </option>
+ 
+     <%  }) %> 
+   </select>
+</div>
+</div>
+
     <div>
       <h1 class="text-center mt-5 mb-5 ">ALL PROJECTS</h1>
       <h5 class="text-center mt-5 mb-5 " id="projectNum"></h5>
+      <h2 class="text-center mt-5 mb-5 " id="projectThemeSort">
+        
+        
+
+
+
+      </h2>
     </div>
-   
+
 <div class="allProject"></div>
 
 <div class="paginations">
@@ -27,9 +59,8 @@
 </main>
   <%-include("../template/customize"); %>
 <%-include("../template/footer"); %>
-
+<%-include("../template/scripts"); %>
 <script src="scripts/allProject.js"></script>
-
+<script src="scripts/pagination.min.js"></script>
 </body>
-      
 </html>
