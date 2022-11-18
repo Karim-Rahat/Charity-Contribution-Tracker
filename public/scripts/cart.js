@@ -19,7 +19,7 @@ async function getDatas() {
         .then((response) => response.json())
         .then(async (data) => {
             cartData = data;
-
+console.log(data);
             cartListGen(cartData);
         })
         .catch((error) => {
@@ -30,14 +30,17 @@ async function getDatas() {
 function cartListGen(cartData) {
     cartContent.innerHTML=""
     amount=0;
+    totalItem=0;
+    itemNo.innerText=0;
     cartData.map((item, i) => {
         const projectData = project.filter((el) => el.p_id == item.project_id);
 
         const img = JSON.parse(projectData[0].imageLink);
-
-        itemNo.innerText = i + 1;
         amount = amount + item.amount;
-        totalItem = i + 1;
+       
+        totalItem =cartData.length;
+        itemNo.innerText = totalItem;
+        
 
         let element = `<div class="row gx-card mx-0 align-items-center border-bottom border-200">
       <div class="col-4 py-3">

@@ -43,7 +43,8 @@ const dataInsertModels = {
  
   },
   saveToCart: async (values)=>{
-    const sqlquery="INSERT INTO `CART` (`project_id`,`amount`,`title`) VALUES (?,?,?)"
+    console.log(values);
+    const sqlquery="INSERT INTO `CART` (`project_id`,`amount`,`user_id`,`title`) VALUES (?,?,?,?)"
     try {
       const rows = await connection.promise().execute(sqlquery, values);
  

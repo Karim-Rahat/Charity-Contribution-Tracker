@@ -87,7 +87,7 @@ const dataInsertController = {
   saveToCart: async (req, res) => {
     console.log(req.params);
     const { title, pid, amount } = req.params;
-    const values = [pid, amount, title];
+    const values = [pid, amount,req.user.id, title];
     const data = await dataInsertModels.saveToCart(values);
 
     if (data.affectedRows == 1) {
