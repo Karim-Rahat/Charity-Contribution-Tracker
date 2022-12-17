@@ -1,14 +1,15 @@
 const express = require('express');
-const session = require('express-session');
-const redis = require("redis");
-const redisStore = require("connect-redis")(session);
-const redisClient = redis.createClient();
+// const session = require('express-session');
+var session = require("cookie-session");
+// const redis = require("redis");
+// const redisStore = require("connect-redis")(session);
+// const redisClient = redis.createClient();
 const multer = require('multer');
 require('dotenv').config();
 const { clearCache } = require('ejs');
 const app = express();
 const axios = require('axios').default;
-
+var cors = require('cors')
 const passport = require("passport");
 const FacebookStrategy = require('passport-facebook').Strategy;
 const GoogleStrategy = require('passport-google-oauth2').Strategy;
@@ -29,9 +30,10 @@ const upload = multer({ storage })
 app.use(cookieParser());
 
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Origin',  'http://127.0.0.1:5000');
   res.header(
     'Access-Control-Allow-Headers',
+    'Access-Control-Allow-Credentials',
     'Origin, X-Requested-With, Content-Type, Accept',
   );
   next();
@@ -44,11 +46,11 @@ app.use(upload.array('photos'));
 app.use('/node', express.static(__dirname + '/node_modules'));
 app.use(express.static('public'));
 
-const options = {
-  host: process.env.DB_HOST,
-  port: process.env.PORT,
-  client: redisClient,
-};
+// const options = {
+//   host: process.env.DB_HOST,
+//   port: process.env.PORT,
+//   client: redisClient,
+// };
 
 // session_store
 //session_store
@@ -58,17 +60,28 @@ app.use(
     path: "/",
     key: "user_cookies",
     secret: "keyboard_cat",
-    resave: false,
-    store: new redisStore(options),
+    resave: true,
+    // store: new redisStore(options),
     saveUninitialized: true,
-    cookie: { expires: 5000000000 * 50 },
+    cookie: {
+      secure: true,
+      sameSite: 'None',
+      expires: 5000000000 * 50 },
   })
 );
+var cors_set = {
+  origin: '*',
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true // allow session cookie from browser to pass through
+};
 
 
-// Facebook auth
+
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(cors(cors_set));
+
+
 passport.serializeUser((user, cb) => {
   cb(null, user);
 });
@@ -87,7 +100,7 @@ passport.use(
     ((req, accessToken, refreshToken, profile, done) => {
       const accessTkn = refreshToken.access_token;
 
-      // console.log(profile);
+      // console.log(profile,accessToken);
       const newUser = {
         id: profile.id,
 
@@ -100,7 +113,7 @@ passport.use(
       };
 
       const picture = `https://graph.facebook.com/${profile.id}/picture?width=300&height=300&access_token=${accessTkn}`;
-      // console.log(picture);
+     
       return done(null, newUser);
     }),
   ),
@@ -127,7 +140,7 @@ passport.use(
         photos: profile.photos,
         token: accessToken,
       };
-
+      console.log(user);
       return done(null, user);
     }),
   ),

@@ -41,55 +41,50 @@ async function getDatas() {
 /* <i class="fa-solid fa-xmark" onclick="close()"></i> */
 
 const themeSelection = document.getElementById("theme");
-let sortedThemeProject=[];
+let sortedThemeProject = [];
 let sortedCountryProject = [];
-let tflag=0;
+let tflag = 0;
 let cflag = 0;
-let selectedValueTheme
-let selectedValueCountry
+let selectedValueTheme;
+let selectedValueCountry;
 themeSelection.addEventListener("change", (e) => {
-  
   let selectedValueTheme = themeSelection.value;
 
-  if (selectedValueTheme=="") {
+  if (selectedValueTheme == "") {
     sortedThemeProject = [];
-    tflag=0
+    tflag = 0;
     paginationProject(project);
-  } else{
-    tflag=1
-
-    
+  } else {
+    tflag = 1;
   }
 
-if(tflag==1 && cflag==1){
-  sortedThemeProject = [];
-  sortedCountryProject=[]
-// console.log('b',sortedCountryProject.length);
- themeSort(project,selectedValueTheme)
- countrySort(sortedThemeProject,selectedValueCountry)
-}
-if(tflag==1 && cflag==0){
-// console.log('bb');
-  sortedThemeProject = [];
- themeSort(project,selectedValueTheme)
-}
-if(tflag==0 && cflag==1){
-//  console.log('bbb',sortedCountryProject.length);
- sortedCountryProject=[]
- countrySort(project,selectedValueCountry)
-}
-console.log(cflag,tflag);
-
+  if (tflag == 1 && cflag == 1) {
+    sortedThemeProject = [];
+    sortedCountryProject = [];
+    // console.log('b',sortedCountryProject.length);
+    themeSort(project, selectedValueTheme);
+    countrySort(sortedThemeProject, selectedValueCountry);
+  }
+  if (tflag == 1 && cflag == 0) {
+    // console.log('bb');
+    sortedThemeProject = [];
+    themeSort(project, selectedValueTheme);
+  }
+  if (tflag == 0 && cflag == 1) {
+    //  console.log('bbb',sortedCountryProject.length);
+    sortedCountryProject = [];
+    countrySort(project, selectedValueCountry);
+  }
+  console.log(cflag, tflag);
 });
 
 //country sort
 const countryThemeSelection = document.getElementById("country");
 
 countryThemeSelection.addEventListener("change", (e) => {
-
- selectedValueCountry = countryThemeSelection.value;
+  selectedValueCountry = countryThemeSelection.value;
   if (selectedValueCountry == "") {
-    sortedCountryProject  = [];
+    sortedCountryProject = [];
     paginationProject(project);
     cflag = 0;
   } else {
@@ -97,30 +92,27 @@ countryThemeSelection.addEventListener("change", (e) => {
     cflag = 1;
   }
 
-    if(tflag==1 && cflag==1){
+  if (tflag == 1 && cflag == 1) {
     //  console.log('c',sortedThemeProject.length);
-      sortedCountryProject  = [];
-      
-     countrySort(sortedThemeProject,selectedValueCountry)
-    //  themeSort(sortedCountryProject,selectedValueTheme)
-    }
-    if(tflag==0 && cflag==1){
-      // console.log('cc');
-      sortedCountryProject  = [];
-     countrySort(project,selectedValueCountry)
-    }
-    if(tflag==1 && cflag==0){
-      // console.log('ccc');
-     
-     themeSort(sortedThemeProject,selectedValueTheme)
-    }
-    // console.log(tflag,cflag);
+    sortedCountryProject = [];
 
+    countrySort(sortedThemeProject, selectedValueCountry);
+    //  themeSort(sortedCountryProject,selectedValueTheme)
+  }
+  if (tflag == 0 && cflag == 1) {
+    // console.log('cc');
+    sortedCountryProject = [];
+    countrySort(project, selectedValueCountry);
+  }
+  if (tflag == 1 && cflag == 0) {
+    // console.log('ccc');
+
+    themeSort(sortedThemeProject, selectedValueTheme);
+  }
+  // console.log(tflag,cflag);
 });
 
-
-function themeSort(project,selectedValue){
- 
+function themeSort(project, selectedValue) {
   project.map((item, i) => {
     let thm = JSON.parse(item.theme);
 
@@ -131,24 +123,19 @@ function themeSort(project,selectedValue){
     } else {
       if (thm.theme.id == selectedValue) sortedThemeProject.push(item);
     }
-
   });
 
-  paginationProject(sortedThemeProject)
-
-
+  paginationProject(sortedThemeProject);
 }
-function countrySort(project,selectedValue){
-
+function countrySort(project, selectedValue) {
   project.map((item, i) => {
     if (item.country == selectedValue) {
       sortedCountryProject.push(item);
-    console.log('a');
-
+      console.log("a");
     }
   });
-// console.log(sortedCountryProject);
-  paginationProject(sortedCountryProject)
+  // console.log(sortedCountryProject);
+  paginationProject(sortedCountryProject);
 }
 
 function allProject(data) {
@@ -189,9 +176,11 @@ function allProject(data) {
 
   <div class="textBlack"> <p><b>Funding collected </b> : <span class="fundingStatus">$${Math.ceil(
     el.funding
-  ).toLocaleString('en-US')}</span>  of <span class="fundingStatus">$${Math.ceil(
+  ).toLocaleString(
+    "en-US"
+  )}</span>  of <span class="fundingStatus">$${Math.ceil(
       el.goal
-    ).toLocaleString('en-US')} </span> </p> </div>
+    ).toLocaleString("en-US")} </span> </p> </div>
           <div class="flex">
             <div class="flex-content">
               <div class="progress mt-2" style="height:20px">
@@ -200,8 +189,10 @@ function allProject(data) {
             </div>
             <div class="flex-content">
               <div class="input-group" >
-                <input style="width: 50px;height:30px" class="form-control" type="number" placeholder="$" aria-label="Input group example" aria-describedby="btnGroupAddon2" />
-                <div class="input-group-text btn btn-sm btn-danger"  id="btnGroupAddon2">Donate</div>
+                <input style="width: 50px;height:30px" class="form-control" id="donInp"   type="number" placeholder="$" aria-label="Input group example" aria-describedby="btnGroupAddon2" />
+                <button class="input-group-text btn btn-sm btn-danger" onclick="donBtn(this)" p-title="${
+                  el.title
+                }"  p-id="${el.p_id}" >Donate</button>
               </div>
           </div>
         </div>
@@ -212,6 +203,20 @@ function allProject(data) {
 
     projects.insertAdjacentHTML("beforeend", element);
   });
+}
+
+//donation button
+function donBtn(e) {
+  console.log(e);
+  const donInp = document.getElementById("donInp");
+  if (donInp.value < 5) {
+    donInp.value = 5;
+  }
+
+  const pTitle = e.getAttribute("p-title");
+  const pId = e.getAttribute("p-id");
+
+  window.location.href = `/saveToCart/${pTitle}/${pId}/${donInp.value}`;
 }
 
 function paginationProject(project) {

@@ -8,7 +8,9 @@ const api = require("../controllers/api");
 // eslint-disable-next-line linebreak-style
 const loginControllers = require('../controllers/loginControllers');
 const middleware = require("../middleware/loginMiddleware");
-const dataFetchModels = require("../models/dataFetchModels");
+
+const paymentControllers = require("../controllers/paymentController");
+
 // const DataInsertModels = require("../models/DataInsertModel");
 // router.post("/authenticate", loginControllers.authenticate);
 router.get(
@@ -78,13 +80,73 @@ router.get('/getProjects',dataFetchController.getProjects)
 router.get('/getOrg',dataFetchController.getOrg)
 router.get('/getThemes',dataFetchController.getThemes)
 router.get('/getCartData',dataFetchController.getCartData)
-
-
+router.get('/getInvoiceList',dataFetchController.getInvoiceList)
+router.get('/getUserInfo',dataFetchController.getUserInfo)
 router.get('/project/:id',appController.getOneProjects)
 router.get('/saveToCart/:title/:pid/:amount',dataInsertController.saveToCart)
-router.get('/cart',appController.cart)
+router.get('/cart',middleware.isLoggedIn,appController.cart)
 router.post('/updateCartAmount',dataInsertController.updateCartAmount)
 router.post('/delCartItem',dataInsertController.delCartItem)
+
+
+//payment
+router.get('/init/:amount',paymentControllers.ssl)
+
+
+
+router.get('/checkOut/:amount')
 router.get('/allProject',appController.allProject)
+router.get('/invoiceList',appController.invoiceList)
+router.get('/invoices/:id',appController.invoices)
 router.get("/logout", loginControllers.logout);
+
+
+
+
+
+router.post("/ssl-payment-notification", async (req, res) => {
+
+  /** 
+  * If payment notification
+  */
+
+  return res.status(200).json(
+    {
+      data: req.body,
+      message: 'Payment notification'
+    }
+  );
+})
+
+router.post("/ssl-payment-success",paymentControllers.paymentSuccess)
+// router.get('/clearCartAfterPayment',dataInsertController.clearCartAfterPayment)
+
+
+router.post("/ssl-payment-fail", async (req, res) => {
+
+  /** 
+  * If payment failed 
+  */
+
+  return res.status(200).json(
+    {
+      data: req.body,
+      message: 'Payment failed'
+    }
+  );
+})
+
+router.post("/ssl-payment-cancel", async (req, res) => {
+
+  /** 
+  * If payment cancelled 
+  */
+
+  return res.status(200).json(
+    {
+      data: req.body,
+      message: 'Payment cancelled'
+    }
+  );
+})
 module.exports = router;

@@ -11,6 +11,11 @@ emails.push(item.email)
 })
     res.send(emails)
 },
+getUserInfo: async(req,res)=>{
+const data=[]
+data.push(req.session.userName,req.session.email)
+res.send(data)
+},
 getProjects: async(req,res)=>{
     const data= await dataFetchModels.getProjects()
     res.send(data)
@@ -24,7 +29,14 @@ getThemes: async (req,res)=>{
     res.send(data)
 },
 getCartData: async(req,res)=>{
-    const data=await dataFetchModels.getCartData()
+    const value=[req.session.user_Id]
+    const data=await dataFetchModels.getCartData(value)
+    res.send(data)
+},
+getInvoiceList: async(req,res)=>{
+    const value=[req.session.user_Id]
+
+    const data=await dataFetchModels.getinvoiceList(value)
     res.send(data)
 }
 }

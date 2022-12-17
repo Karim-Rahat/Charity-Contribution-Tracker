@@ -1,3 +1,4 @@
+const dataFetchModels = require("../models/dataFetchModels");
 const dataInsertModels = require("../models/dataInsertModels");
 const loginModel = require("../models/loginModel");
 const dataInsertController = {
@@ -60,34 +61,39 @@ const dataInsertController = {
   googleUserReg: async (req, res) => {
     const data = await loginModel.authenticator();
     console.log(req.user);
-    data[0].some(async (item) => {
-      let i = 0;
+    let i = 0;
+//check if user already exist
+    data[0].map((item) => {
       if (req.user.email == item.email && item.idRef == "google") {
+        console.log('google user already ache');
         i++;
       }
-
-      if (i == 0) {
-        const values = [
-          req.user.givenName,
-          req.user.familyName,
-          req.user.email,
-          req.user.id,
-          "google",
-        ];
-        const data = await dataInsertModels.SocialUserReg(values);
-        console.log("fbuserData", data);
-        res.redirect("/googleAuthenticate");
-      }
-      // else{
-      //   console.log('user already ase');
-      //   res.redirect("/googleAuthenticate");
-      // }
     });
+
+    if (i == 0) {
+      const values = [
+        req.user.givenName,
+        req.user.familyName,
+        req.user.email,
+        req.user.id,
+        "google",
+      ];
+      const data = await dataInsertModels.SocialUserReg(values);
+      console.log("lllllllll", data);
+      res.redirect("/googleAuthenticate");
+    }
+    if(i==1){
+      res.redirect("/googleAuthenticate");
+    }
+    // else{
+    //   console.log('user already ase');
+    //   res.redirect("/googleAuthenticate");
+    // }
   },
   saveToCart: async (req, res) => {
     console.log(req.params);
     const { title, pid, amount } = req.params;
-    const values = [pid, amount,req.user.id, title];
+    const values = [pid, amount, req.session.user_Id, title];
     const data = await dataInsertModels.saveToCart(values);
 
     if (data.affectedRows == 1) {
@@ -95,6 +101,7 @@ const dataInsertController = {
     }
   },
   updateCartAmount: async (req, res) => {
+    console.log('update cart',req.session);
     const { c_id, amount } = req.body;
     console.log(c_id, amount);
     const values = [amount, c_id];
@@ -102,11 +109,22 @@ const dataInsertController = {
     console.log(data);
     res.send(data);
   },
-  delCartItem: async(req,res)=>{
-    const {c_id}=req.body
-    const value=[c_id]
-    const data=await dataInsertModels.delCartItem(value)
-    res.send(data)
-  }
+  delCartItem: async (req, res) => {
+    const { c_id } = req.body;
+    const value = [c_id];
+    const data = await dataInsertModels.delCartItem(value);
+    res.send(data);
+  },
+  // clearCartAfterPayment: async(req,res)=>{
+  //   const id=req.session.user_Id
+  //   console.log(id,'l');
+  //   const data = await dataFetchModels.sendPaymentData()
+  //   console.log(data);
+  //   res.send(data)
+
+
+  // },
+
+
 };
 module.exports = dataInsertController;

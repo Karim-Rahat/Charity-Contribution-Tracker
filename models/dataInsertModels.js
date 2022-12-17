@@ -14,8 +14,9 @@ const dataInsertModels = {
     }
   },
   SocialUserReg: async (values) => {
+console.log(values);
     const sqlquery =
-      "INSERT INTO `user`( `first_name`, `last_name`, `email`, `idRef`,`social_id`) VALUES (?,?,?,?,?)";
+      "INSERT INTO `user`( `first_name`, `last_name`, `email`, `social_id`,`idRef`) VALUES (?,?,?,?,?)";
 
     try {
       const rows = await connection.promise().execute(sqlquery, values);
@@ -82,6 +83,41 @@ const dataInsertModels = {
       return err;
     }
   },
+  changeStatusOfCart: async (value)=>{
+    console.log(value,'value');
+    const sqlquery="UPDATE `cart` SET `status`=1 WHERE `user_id`=?"
+    try {
+      const rows = await connection.promise().execute(sqlquery, [value]);
+      return rows[0];
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  },
+ 
+  insertPaymentData: async (values)=>{
+    console.log(values);
+    const sqlquery=" INSERT INTO `invoices`(`user_id`, `invoice_number`, `card_type`, `amount`, `store_amount`, `tran_id`,`transaction_time`) VALUES (?,?,?,?,?,?,?)"
+    try {
+      const rows = await connection.promise().execute(sqlquery, values);
+      return rows[0];
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  },
+
+  saveDonationMoney: async(values)=>{
+    const sqlquery=`update projects u inner join projects s on u.p_id = ${values[1]} set u.funding = s.funding+${values[0]},u.remaining = s.remaining-${values[0]}`
+    try {
+      const rows = await connection.promise().execute(sqlquery);
+      return rows[0];
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  }
+
 };
 
 module.exports = dataInsertModels;

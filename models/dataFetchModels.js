@@ -12,6 +12,7 @@ const dataFetchModels = {
       return err;
     }
   },
+
   getProjectsList: async()=>{
     const sqlquery = "SELECT * FROM `projectlist`";
 
@@ -78,17 +79,69 @@ const dataFetchModels = {
       return err;
     }
   },
-  getCartData: async(req,res)=>{
-    const sqlquery="SELECT * from cart" 
-
+  getCartData: async(value)=>{
+    console.log(value);
+    const sqlquery="SELECT * from cart WHERE status=0 AND user_id=?" 
+console.log(sqlquery);
     try {
-      const rows = await connection.promise().execute(sqlquery);
+      const rows = await connection.promise().execute(sqlquery,value);
 
       return rows[0];
     } catch (err) {
       return err;
     }
-  }
+  },
+ getCrntProjectGoal: async(values)=>{
+
+  const sqlquery="  SELECT `funding` FROM `projects` WHERE p_id=?"
+  console.log(sqlquery);
+      try {
+        const rows = await connection.promise().execute(sqlquery,[values]);
+  
+        return rows[0];
+      } catch (err) {
+        return err;
+      }
+ },
+ getinvoiceList: async(values)=>{
+  const sqlquery=" SELECT * FROM `invoices` WHERE user_id=?"
+      try {
+        const rows = await connection.promise().execute(sqlquery,values);
+  
+        return rows[0];
+      } catch (err) {
+        return err;
+      }
+ },
+ getInvoice: async(values)=>{
+  const sqlquery=" SELECT * FROM `invoices` WHERE invoice_id=?"
+      try {
+        const rows = await connection.promise().execute(sqlquery,[values]);
+  
+        return rows[0];
+      } catch (err) {
+        return err;
+      }
+ },
+ getCartDataForInvoice: async(value)=>{
+
+    console.log(value);
+    const sqlquery="SELECT * from cart WHERE status=1 AND invoice_number=?" 
+console.log(sqlquery);
+    try {
+      const rows = await connection.promise().execute(sqlquery,[value]);
+
+      return rows[0];
+    } catch (err) {
+      return err;
+    }
+  },
+ 
+  sendPaymentData: async (data)=>{
+    console.log('data',data);
+
+    return data
+}
 
 };
 
