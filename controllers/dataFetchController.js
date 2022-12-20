@@ -13,6 +13,7 @@ emails.push(item.email)
 },
 getUserInfo: async(req,res)=>{
 const data=[]
+
 data.push(req.session.userName,req.session.email)
 res.send(data)
 },

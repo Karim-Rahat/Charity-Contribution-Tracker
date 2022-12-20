@@ -110,7 +110,7 @@ const paymentControllers = {
         console.log(saveDonationMoney);
       });
 
-      await dataInsertModels.changeStatusOfCart(userId);
+      await dataInsertModels.changeStatusOfCart(userId, data.val_id);
       await res.redirect("/invoiceList");
     }
   },

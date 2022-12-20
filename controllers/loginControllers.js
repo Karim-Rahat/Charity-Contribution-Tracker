@@ -25,7 +25,9 @@ const loginControllers = {
       if (mail == item.email && pass == item.password) {
         req.session.userName = item.first_name + " " + item.last_name;
         req.session.userLogin = true;
-
+        req.session.phoneCode=item.phone_code;
+        req.session.phone=item.phone
+        req.session.adress=item.adress
         req.session.user_Id = item.user_id;
         req.session.email = item.email;
         //save to session storage
@@ -77,6 +79,7 @@ const loginControllers = {
       req.session.userName = req.user.name;
       req.session.userLogin = true;
       req.session.user_Id = req.user.id;
+
       req.session.email = req.user.email;
       req.session.profilePic = req.user.photos[0].value;
 //save to session storage

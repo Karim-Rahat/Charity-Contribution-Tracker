@@ -2,12 +2,12 @@
 
      
     <%- include('../template/header'); %>
-
-    <body onload="getDatas()">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <body >
     <main class="main " id="top">
         <%- include('../template/navbar'); %> 
       
-      <div class="content mx-auto mt-2" style="width:90%">
+      <div class="content mx-auto mt-2" style="width:70%">
 
 <div class="card mb-3">
     <div class="card-body">
@@ -16,7 +16,7 @@
           <h5 class="mb-2 mb-md-0">Order #AD20294</h5>
         </div>
         <div class="col-auto">
-          <button class="btn btn-falcon-default btn-sm me-1 mb-2 mb-sm-0" type="button"><svg class="svg-inline--fa fa-arrow-down fa-w-14 me-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z"></path></svg><!-- <span class="fas fa-arrow-down me-1"> </span> Font Awesome fontawesome.com -->Download (.pdf)</button>
+          <button class="btn btn-falcon-default btn-sm me-1 mb-2 mb-sm-0" onclick="downloadPdf()" type="button"><svg class="svg-inline--fa fa-arrow-down fa-w-14 me-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z"></path></svg><!-- <span class="fas fa-arrow-down me-1"> </span> Font Awesome fontawesome.com -->Download (.pdf)</button>
           <button class="btn btn-falcon-default btn-sm me-1 mb-2 mb-sm-0" type="button"><svg class="svg-inline--fa fa-print fa-w-16 me-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="print" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M448 192V77.25c0-8.49-3.37-16.62-9.37-22.63L393.37 9.37c-6-6-14.14-9.37-22.63-9.37H96C78.33 0 64 14.33 64 32v160c-35.35 0-64 28.65-64 64v112c0 8.84 7.16 16 16 16h48v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h48c8.84 0 16-7.16 16-16V256c0-35.35-28.65-64-64-64zm-64 256H128v-96h256v96zm0-224H128V64h192v48c0 8.84 7.16 16 16 16h48v96zm48 72c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"></path></svg><!-- <span class="fas fa-print me-1"> </span> Font Awesome fontawesome.com -->Print</button>
           <button class="btn btn-falcon-success btn-sm mb-2 mb-sm-0" type="button"><svg class="svg-inline--fa fa-dollar-sign fa-w-9 me-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="dollar-sign" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 512" data-fa-i2svg=""><path fill="currentColor" d="M209.2 233.4l-108-31.6C88.7 198.2 80 186.5 80 173.5c0-16.3 13.2-29.5 29.5-29.5h66.3c12.2 0 24.2 3.7 34.2 10.5 6.1 4.1 14.3 3.1 19.5-2l34.8-34c7.1-6.9 6.1-18.4-1.8-24.5C238 74.8 207.4 64.1 176 64V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48h-2.5C45.8 64-5.4 118.7.5 183.6c4.2 46.1 39.4 83.6 83.8 96.6l102.5 30c12.5 3.7 21.2 15.3 21.2 28.3 0 16.3-13.2 29.5-29.5 29.5h-66.3C100 368 88 364.3 78 357.5c-6.1-4.1-14.3-3.1-19.5 2l-34.8 34c-7.1 6.9-6.1 18.4 1.8 24.5 24.5 19.2 55.1 29.9 86.5 30v48c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-48.2c46.6-.9 90.3-28.6 105.7-72.7 21.5-61.6-14.6-124.8-72.5-141.7z"></path></svg><!-- <span class="fas fa-dollar-sign me-1"></span> Font Awesome fontawesome.com -->Receive Payment</button>
         </div>
@@ -24,14 +24,15 @@
     </div>
   </div>
 
-  <div class="card mb-3">
+  <div class="card mb-3 " id="pdfBody">
     <div class="card-body">
       <div class="row align-items-center text-center mb-3">
-        <div class="col-sm-6 text-sm-start"><img src="../../assets/img/logos/logo-invoice.png" alt="invoice" width="150"></div>
+        <div class="col-sm-6 text-sm-start ">
+            <img src="<%= usersInfo.profilePic  %> " class="rounded-circle" alt="invoice" width="150"></div>
         <div class="col text-sm-end mt-3 mt-sm-0">
           <h2 class="mb-3">Invoice</h2>
           <h5>Contribution tracker</h5>
-          <p class="fs--1 mb-0">156 University Ave, Toronto<br>On, Canada, M5H 2H7</p>
+          <p class="fs--1 mb-0"></p>
         </div>
         <div class="col-12">
           <hr>
@@ -40,9 +41,10 @@
       <div class="row align-items-center">
         <div class="col">
           <h6 class="text-500">Invoice to</h6>
-          <h5>Antonio Banderas</h5>
-          <p class="fs--1">1954 Bloor Street West<br>Torronto ON, M6P 3K9<br>Canada</p>
-          <p class="fs--1"><a href="mailto:example@gmail.com">example@gmail.com</a><br><a href="tel:444466667777">+4444-6666-7777</a></p>
+          <h5><%= usersInfo.userName %> </h5>
+       
+          <p class="fs--1"><a ><%= usersInfo.email  %> </a><br>
+           
         </div>
         <div class="col-sm-auto ms-auto">
           <div class="table-responsive">
@@ -137,12 +139,41 @@
 
 
 
-
-
-
-
 <%-include("../template/scripts"); %>
-<script src="scripts/invoices.js"></script>
-</body>
 
+
+</body>
+<script>
+
+ function downloadPdf(){
+        
+
+    var pdf = new jsPDF('p', 'pt', 'a4');
+    
+	pdf.addHTML($('#pdfBody'), 25, 25, function() {
+	  pdf.save('div.pdf');
+	})
+
+   }
+
+//    const elem=document.getElementById('pdfBody')
+//     var pdf = new jsPDF('p', 'pt', 'a4');
+//     var options = {
+//       margin:       1,
+//       filename:     'isolates.pdf',
+//       image:        { type: 'jpeg', quality: 0.98 },
+//       html2canvas:  { scale: 2 },
+//       jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+//     };
+// 	pdf.addHTML($('#pdfBody'), 25, 25,options, function() {
+// 	  pdf.save('div.pdf');
+// 	})
+
+
+
+
+    
+    
+    </script>
+    
 </html>

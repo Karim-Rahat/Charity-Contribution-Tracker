@@ -64,9 +64,10 @@
                                   <p>Total Remaining</p>
                                 </div>
                                 <div class="flex-1 fs--1 text-center">
-                                  <% const d=new Date(item.approvedDate) const crntDate=new Date() %>
+                                  <% const d=new Date(item.approvedDate); const crntDate=new Date() %>
                                     <h3 class="fs-1 text-warning  fw-semi-bold ">
-                                      <%=crntDate.getFullYear()-d.getFullYear() %></h3>
+                                      <%=crntDate.getFullYear()-d.getFullYear() %>
+                                    </h3>
                                     <p class="">Years</p>
                                 </div>
                                 <div class="flex-1 fs--1 text-center">
@@ -170,8 +171,7 @@
                                         class="fs-0 text-secondary">$<%=project[0].goal.toLocaleString('en-US',{minimumFractionDigits:2})
                                           %></span></p>
                                 </div>
-                                <% const fundPercentage=`style=width:${~~((project[0].funding / project[0].goal) *
-                                  100)}%` %>
+                                <% const fundPercentage=`style=width:${~~((project[0].funding / project[0].goal) * 100)}%` %>
                                   <% fundPer=~~((project[0].funding / project[0].goal) * 100) %>
                                     <div class="progress " style="height:15px">
                                       <div class="progress-bar bg-warning" role="progressbar"
@@ -205,54 +205,54 @@
 
                           <div class="card mb-3 fs--1">
                             <div class="card-body ">
-                              <% console.log(JSON.parse(project[0].donationOption).donationOption) %>
-                                <% const donationOption=JSON.parse(project[0].donationOption).donationOption %>
-                                  <% console.log(donationOption) %>
 
-                                    <% donationOption.map(item=>{ %>
-                                      <a href="/saveToCart/<%=project[0].title%>/<%=project[0].p_id%>/<%=item.amount%>">
-
-                                        <div class="row bd-highlight p-2 m-2 text-black mb-2 donationOption">
-
-                                          <div class="col-3 py-2 bd-highlight" style="font-size: 14px ;">
-                                            $
-                                            <%= item.amount %>
-                                          </div>
-                                          <div class="col-7 py-2  bd-highlight" style="display: flex;">
-                                            <%= item.description %>
-                                          </div>
-                                          <div class="col-2 py-3 px-1  bd-highlight donOptBtn">
-
-                                            <span class="fs-1">
-
-                                              <i class="fa-solid fa-arrow-right text-white"></i>
-                                            </span>
-                                          </div>
-                                        </div>
+                              <% const donationOption=JSON.parse(project[0].donationOption).donationOption %>
 
 
-                                      </a>
+                                <% donationOption.map(item=>{ %>
+                                  <a href="/saveToCart/<%=project[0].title%>/<%=project[0].p_id%>/<%=item.amount%>">
+
+                                    <div class="row bd-highlight p-2 m-2 text-black mb-2 donationOption">
+
+                                      <div class="col-3 py-2 bd-highlight" style="font-size: 14px ;">
+                                        $
+                                        <%= item.amount %>
+                                      </div>
+                                      <div class="col-7 py-2  bd-highlight" style="display: flex;">
+                                        <%= item.description %>
+                                      </div>
+                                      <div class="col-2 py-3 px-1  bd-highlight donOptBtn">
+
+                                        <span class="fs-1">
+
+                                          <i class="fa-solid fa-arrow-right text-white"></i>
+                                        </span>
+                                      </div>
+                                    </div>
 
 
-                                      <% }) %>
+                                  </a>
 
 
+                                  <% }) %>
 
 
 
-                                        <div class="row bd-highlight p-2 text-black mb-2">
 
-                                          <div class="input-group"><span class="input-group-text"
-                                              id="basic-addon1">$</span><input class="form-control"
-                                              placeholder="Enter amount" type="number" id="donInp"
-                                              aria-label="Dollar amount (with dot and two decimal places)" />
-                                            <span class="input-group-text py-3 px-4  donOptBtn" id="donBtn"
-                                              p-title="<%=project[0].title%>" p-id="<%=project[0].p_id%>">
-                                              <i class="fa-solid fa-arrow-right text-white"></i>
-                                            </span>
 
-                                          </div>
-                                        </div>
+                                    <div class="row bd-highlight p-2 text-black mb-2">
+
+                                      <div class="input-group"><span class="input-group-text"
+                                          id="basic-addon1">$</span><input class="form-control"
+                                          placeholder="Enter amount" type="number" id="donInp"
+                                          aria-label="Dollar amount (with dot and two decimal places)" />
+                                        <span class="input-group-text py-3 px-4  donOptBtn" id="donBtn"
+                                          p-title="<%=project[0].title%>" p-id="<%=project[0].p_id%>">
+                                          <i class="fa-solid fa-arrow-right text-white"></i>
+                                        </span>
+
+                                      </div>
+                                    </div>
 
 
 
@@ -290,16 +290,16 @@
 
         </div>
     </main>
-    <%-include(".. /template/customize"); %>
-      <%-include(".. /template/scripts"); %>
+    <%-include("../template/customize"); %>
+      <%-include("../template/scripts"); %>
         <script>
           const donBtn = document.getElementById('donBtn')
           donBtn.addEventListener('click', (e) => {
-            if(donInp.value<5){donInp.value=5}
-          const pTitle = donBtn.getAttribute('p-title')
-          const pId = donBtn.getAttribute('p-id')
-        
-          window.location.href = `/saveToCart/${pTitle}/${pId}/${donInp.value}`;
+            if (donInp.value < 5) { donInp.value = 5 }
+            const pTitle = donBtn.getAttribute('p-title')
+            const pId = donBtn.getAttribute('p-id')
+
+            window.location.href = `/saveToCart/${pTitle}/${pId}/${donInp.value}`;
           })
         </script>
 
