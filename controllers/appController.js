@@ -60,9 +60,9 @@ const appController = {
     console.log(id);
     const data = await dataFetchModels.getCartData([req.session.user_Id]);
     const invoice=await dataFetchModels.getInvoice(id)
-
+console.log(invoice);
 const inVoiceItems= await dataFetchModels.getCartDataForInvoice(invoice[0].invoice_number)
-console.log(req.session);
+console.log(inVoiceItems);
 
     res.render("client/invoice", {
       usersInfo: req.session,

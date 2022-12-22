@@ -85,7 +85,7 @@ console.log(values);
   },
   changeStatusOfCart: async (value,invoiceNumber)=>{
     console.log(value,'value');
-    const sqlquery="UPDATE `cart` SET `status`=1 , `invoice_number`=?  WHERE `user_id`=?"
+    const sqlquery="UPDATE `cart` SET `status`=1 , `invoice_number`=?  WHERE `c_id`=?"
     try {
       const rows = await connection.promise().execute(sqlquery, [invoiceNumber,value]);
       return rows[0];

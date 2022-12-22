@@ -25,9 +25,12 @@ const paymentControllers = {
     let sumAmount = 0;
     const amount = req.params.amount;
     const transId = uuidv4();
+    const convert = await Convert().from("USD").fetch();
 
+    console.log(convert.rates);
     const value = await Convert(amount).from("USD").to("BDT");
-
+    
+    console.log('Converted Amount=',value);
     sumAmount = sumAmount + value;
 
     console.log(req.session.user_Id);
@@ -76,7 +79,7 @@ const paymentControllers = {
 
   paymentSuccess: async (req, res) => {
     console.log(localStorage.getItem("userId"));
-
+    let cart_id;
     const data = req.body;
     //current date
     let date = new Date();
@@ -104,13 +107,15 @@ const paymentControllers = {
       await getCrntCartData.map(async (item) => {
       
 
-       console.log(item.amount);
+       console.log(item,'cartData');
         val = [item.amount, item.project_id];
+        cart_id=item.c_id
+   
         const saveDonationMoney = await dataInsertModels.saveDonationMoney(val);
-        console.log(saveDonationMoney);
+        await dataInsertModels.changeStatusOfCart(item.c_id, data.val_id);
       });
 
-      await dataInsertModels.changeStatusOfCart(userId, data.val_id);
+
       await res.redirect("/invoiceList");
     }
   },

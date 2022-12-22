@@ -41,7 +41,7 @@ function cartListGen(cartData) {
 
     const img = JSON.parse(projectData[0].imageLink);
     amount = amount + item.amount;
-
+console.log(amount);
     totalItem = cartData.length;
     itemNo.innerText = totalItem;
 
@@ -162,7 +162,7 @@ cartContent.addEventListener("focusout", async (e) => {
     method: "POST",
     body: data,
   });
-  console.log(rawResponse);
+  getDatas()
 });
 
 //delete item from cart and database
