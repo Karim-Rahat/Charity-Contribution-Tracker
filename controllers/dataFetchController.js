@@ -17,6 +17,12 @@ const data=[]
 data.push(req.session.userName,req.session.email)
 res.send(data)
 },
+getSingleUserData:async(req,res)=>{
+    const value=[req.session.user_Id]
+    const data= await dataFetchModels.usersList(value);
+ 
+     res.send(data)
+ },
 getProjects: async(req,res)=>{
     const data= await dataFetchModels.getProjects()
     res.send(data)

@@ -10,6 +10,7 @@ const loginControllers = require('../controllers/loginControllers');
 const middleware = require("../middleware/loginMiddleware");
 
 const paymentControllers = require("../controllers/paymentController");
+const { data } = require("autoprefixer");
 
 // const DataInsertModels = require("../models/DataInsertModel");
 // router.post("/authenticate", loginControllers.authenticate);
@@ -87,7 +88,7 @@ router.get('/saveToCart/:title/:pid/:amount',dataInsertController.saveToCart)
 router.get('/cart',middleware.isLoggedIn,appController.cart)
 router.post('/updateCartAmount',dataInsertController.updateCartAmount)
 router.post('/delCartItem',dataInsertController.delCartItem)
-
+router.post('/saveGenderBdate',dataInsertController.saveGenderBdate)
 
 //payment
 router.get('/init/:amount',paymentControllers.ssl)
@@ -98,6 +99,7 @@ router.get('/checkOut/:amount')
 router.get('/allProject',appController.allProject)
 router.get('/invoiceList',appController.invoiceList)
 router.get('/invoices/:id',appController.invoices)
+router.get('/settings',appController.settings)
 router.get("/logout", loginControllers.logout);
 
 

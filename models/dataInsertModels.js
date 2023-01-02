@@ -3,7 +3,7 @@ const connection = require("../database/db");
 const dataInsertModels = {
   registration: async (values) => {
     const sqlquery =
-      "INSERT INTO `user` (`first_name`, `last_name`, `email`, `password`, `birthdate`, `gender`, `phone_code`, `phone`) VALUES (?,?,?,?,?,?,?,?)";
+      "INSERT INTO `users` (`first_name`, `last_name`, `email`, `password`, `birthdate`, `gender`, `phone_code`, `phone`) VALUES (?,?,?,?,?,?,?,?)";
 
     try {
       const rows = await connection.promise().execute(sqlquery, values);
@@ -16,7 +16,7 @@ const dataInsertModels = {
   SocialUserReg: async (values) => {
 console.log(values);
     const sqlquery =
-      "INSERT INTO `user`( `first_name`, `last_name`, `email`, `social_id`,`idRef`) VALUES (?,?,?,?,?)";
+      "INSERT INTO `users`( `first_name`, `last_name`, `email`, `social_id`,`idRef`) VALUES (?,?,?,?,?)";
 
     try {
       const rows = await connection.promise().execute(sqlquery, values);
@@ -116,7 +116,19 @@ console.log(values);
       console.log(err);
       return err;
     }
-  }
+  },
+
+  saveGenderBdate: async(values,id)=>{
+    console.log(values);
+    const sqlquery=`UPDATE users SET birthdate=?,gender=? WHERE user_id=${id} or social_id=${id}`
+    try {
+      const rows = await connection.promise().execute(sqlquery,values);
+      return rows[0];
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  },
 
 };
 

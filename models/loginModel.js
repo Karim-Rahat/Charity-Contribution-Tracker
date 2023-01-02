@@ -1,7 +1,7 @@
 const connection = require("../database/DB");
 const loginModel = {
   authenticator: async () => {
-    const sqlquery = "SELECT * FROM `user`";
+    const sqlquery = "SELECT * FROM `users`";
 
     try {
       const rows = await connection.promise().execute(sqlquery);

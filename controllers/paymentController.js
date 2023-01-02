@@ -78,8 +78,6 @@ const paymentControllers = {
   },
 
   paymentSuccess: async (req, res) => {
-    console.log(localStorage.getItem("userId"));
-    let cart_id;
     const data = req.body;
     //current date
     let date = new Date();
@@ -105,11 +103,8 @@ const paymentControllers = {
       const getCrntCartData = await dataFetchModels.getCartData([userId]);
 
       await getCrntCartData.map(async (item) => {
-      
-
-       console.log(item,'cartData');
+ 
         val = [item.amount, item.project_id];
-        cart_id=item.c_id
    
         const saveDonationMoney = await dataInsertModels.saveDonationMoney(val);
         await dataInsertModels.changeStatusOfCart(item.c_id, data.val_id);

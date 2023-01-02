@@ -2,7 +2,7 @@ const { data } = require("autoprefixer");
 const { invoke } = require("underscore");
 const dataFetchModels = require("../models/dataFetchModels");
 const dataInsertModels = require("../models/dataInsertModels");
-
+const loginModel = require("../models/loginModel");
 const appController = {
   confirmMail: async (req, res) => {
     res.render("authenticate/confirmRegister");
@@ -55,6 +55,7 @@ const appController = {
       cartLength: data.length,
     });
   },
+
   invoices: async (req, res) => {
     const id=req.params.id
     console.log(id);
@@ -71,5 +72,12 @@ console.log(inVoiceItems);
       inVoiceItems: inVoiceItems
     });
   },
+  settings: async(req,res)=>{
+    const value=[req.session.user_Id]
+    const data= await dataFetchModels.singleUserInfo(value);
+    console.log(data);
+    const data2 = await loginModel.phoneCountryCode();
+    res.render('client/settings',{data:data[0],countryCode: data2 })
+  }
 };
 module.exports = appController;

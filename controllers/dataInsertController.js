@@ -115,6 +115,14 @@ const dataInsertController = {
     const data = await dataInsertModels.delCartItem(value);
     res.send(data);
   },
+  saveGenderBdate: async(req,res)=>{
+    console.log(req.body);
+    const {gender,birthdate}=req.body
+    var bdate = new Date(birthdate);
+  const values=[bdate,gender]
+  const data=await dataInsertModels.saveGenderBdate(values,req.session.user_Id)
+  res.send(data)
+  }
   // clearCartAfterPayment: async(req,res)=>{
   //   const id=req.session.user_Id
   //   console.log(id,'l');

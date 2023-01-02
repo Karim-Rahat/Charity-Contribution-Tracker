@@ -2,7 +2,7 @@ const connection = require("../database/db");
 
 const dataFetchModels = {
   usersList: async (values) => {
-    const sqlquery = "SELECT * FROM `user`";
+    const sqlquery = "SELECT * FROM `users`";
 
     try {
       const rows = await connection.promise().execute(sqlquery);
@@ -13,7 +13,18 @@ const dataFetchModels = {
     }
   },
   usersInfo: async (values) => {
-    const sqlquery = "SELECT * FROM `user`";
+    const sqlquery = "SELECT * FROM `users`";
+
+    try {
+      const rows = await connection.promise().execute(sqlquery);
+
+      return rows[0];
+    } catch (err) {
+      return err;
+    }
+  },
+  singleUserInfo: async (value) => {
+    const sqlquery = `SELECT * FROM users where user_id=${value} OR social_id=${value}`;
 
     try {
       const rows = await connection.promise().execute(sqlquery);
