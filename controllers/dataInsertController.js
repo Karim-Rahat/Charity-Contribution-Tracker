@@ -32,7 +32,7 @@ const dataInsertController = {
   },
   fbUserReg: async (req, res) => {
     const data = await loginModel.authenticator();
-    console.log(data);
+
     let i = 0;
 
     data[0].some((item) => {
@@ -49,8 +49,10 @@ const dataInsertController = {
         req.user.email,
         req.user.id,
         "facebook",
+        req.user.photos
       ];
       const data = await dataInsertModels.SocialUserReg(values);
+
       console.log("fbuserData", data);
       res.redirect("/fbAuthenticate");
     } else {
@@ -60,7 +62,7 @@ const dataInsertController = {
   },
   googleUserReg: async (req, res) => {
     const data = await loginModel.authenticator();
-    console.log(req.user);
+   
     let i = 0;
 //check if user already exist
     data[0].map((item) => {
@@ -77,21 +79,19 @@ const dataInsertController = {
         req.user.email,
         req.user.id,
         "google",
+        req.user.photos[0].value.replace('s96','s400')
       ];
       const data = await dataInsertModels.SocialUserReg(values);
       console.log("lllllllll", data);
       res.redirect("/googleAuthenticate");
     }
-    if(i==1){
+    else{
       res.redirect("/googleAuthenticate");
     }
-    // else{
-    //   console.log('user already ase');
-    //   res.redirect("/googleAuthenticate");
-    // }
+
   },
   saveToCart: async (req, res) => {
-    console.log(req.params);
+ 
     const { title, pid, amount } = req.params;
     const values = [pid, amount, req.session.user_Id, title];
     const data = await dataInsertModels.saveToCart(values);
@@ -116,13 +116,32 @@ const dataInsertController = {
     res.send(data);
   },
   saveGenderBdate: async(req,res)=>{
-    console.log(req.body);
+  
     const {gender,birthdate}=req.body
     var bdate = new Date(birthdate);
   const values=[bdate,gender]
   const data=await dataInsertModels.saveGenderBdate(values,req.session.user_Id)
   res.send(data)
+  },
+  saveProfileData: async(req,res)=>{
+ 
+const {firstName,lastName,email,phoneCode,phone}=req.body
+const values=[firstName,lastName,email,phoneCode,phone]
+  
+  const data=await dataInsertModels.saveProfileData(values,req.session.user_Id)
+  res.send(data)
+  },
+  changePicture: async(req,res)=>{
+
+      const profilePic=req.file.filename;
+      const data=await dataInsertModels.changePicture(profilePic,req.session.user_Id);
+      
+    if(data.affectedRows==1){
+      res.redirect('/settings')
+    }
+   
   }
+  
   // clearCartAfterPayment: async(req,res)=>{
   //   const id=req.session.user_Id
   //   console.log(id,'l');

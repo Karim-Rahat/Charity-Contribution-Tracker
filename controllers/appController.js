@@ -57,27 +57,35 @@ const appController = {
   },
 
   invoices: async (req, res) => {
-    const id=req.params.id
+    const id = req.params.id;
     console.log(id);
     const data = await dataFetchModels.getCartData([req.session.user_Id]);
-    const invoice=await dataFetchModels.getInvoice(id)
-console.log(invoice);
-const inVoiceItems= await dataFetchModels.getCartDataForInvoice(invoice[0].invoice_number)
-console.log(inVoiceItems);
+    const invoice = await dataFetchModels.getInvoice(id);
+    console.log(invoice);
+    const inVoiceItems = await dataFetchModels.getCartDataForInvoice(
+      invoice[0].invoice_number
+    );
+    console.log(inVoiceItems);
 
     res.render("client/invoice", {
       usersInfo: req.session,
       cartLength: data.length,
       invoice: invoice,
-      inVoiceItems: inVoiceItems
+      inVoiceItems: inVoiceItems,
     });
   },
-  settings: async(req,res)=>{
-    const value=[req.session.user_Id]
-    const data= await dataFetchModels.singleUserInfo(value);
-    console.log(data);
+  settings: async (req, res) => {
+    console.log(req.session);
+    const value = [req.session.user_Id];
+    const data = await dataFetchModels.singleUserInfo(value);
     const data2 = await loginModel.phoneCountryCode();
-    res.render('client/settings',{data:data[0],countryCode: data2 })
-  }
+    const data3 = await dataFetchModels.getCartData([req.session.user_Id]);
+    res.render("client/settings", {
+      data: data[0],
+      countryCode: data2,
+      usersInfo: req.session,
+      cartLength: data3.length,
+    });
+  },
 };
 module.exports = appController;

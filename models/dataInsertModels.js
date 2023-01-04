@@ -16,7 +16,7 @@ const dataInsertModels = {
   SocialUserReg: async (values) => {
 console.log(values);
     const sqlquery =
-      "INSERT INTO `users`( `first_name`, `last_name`, `email`, `social_id`,`idRef`) VALUES (?,?,?,?,?)";
+      "INSERT INTO `users`( `first_name`, `last_name`, `email`, `social_id`,`idRef`,profile_pic) VALUES (?,?,?,?,?,?)";
 
     try {
       const rows = await connection.promise().execute(sqlquery, values);
@@ -129,7 +129,27 @@ console.log(values);
       return err;
     }
   },
-
+  saveProfileData: async(values,id)=>{
+    console.log(values);
+    const sqlquery=`UPDATE users SET first_name=?,last_name=?,email=?,phone_code=?,phone=? WHERE user_id=${id} or social_id=${id}`
+    try {
+      const rows = await connection.promise().execute(sqlquery,values);
+      return rows[0];
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  },
+  changePicture: async(value,id)=>{
+    const sqlquery=`UPDATE users SET profile_pic=? WHERE user_id=${id} or social_id=${id}`
+    try {
+      const rows = await connection.promise().execute(sqlquery,[value]);
+      return rows[0];
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  }
 };
 
 module.exports = dataInsertModels;

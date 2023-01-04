@@ -22,11 +22,13 @@ const storage = multer.diskStorage({
     cb(null, 'public/uploads/')
   },
   filename(req, file, cb) {
+    console.log(file);
     const uniqueSuffix = `${Date.now()}-${Math.round(Math.random() * 1E9)}`
     cb(null, `${file.fieldname}-${uniqueSuffix}.png`)
   },
 })
 const upload = multer({ storage })
+
 app.use(cookieParser());
 
 app.use((req, res, next) => {
@@ -42,7 +44,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.set('views', `${__dirname}/views`);
-app.use(upload.array('photos'));
+// app.use(upload.array('photos'));
+app.use(upload.single('photo'));
 app.use('/node', express.static(__dirname + '/node_modules'));
 app.use(express.static('public'));
 
@@ -99,8 +102,8 @@ passport.use(
     },
     ((req, accessToken, refreshToken, profile, done) => {
       const accessTkn = refreshToken.access_token;
-
-      // console.log(profile,accessToken);
+      const picture = `https://graph.facebook.com/${profile.id}/picture?width=300&height=300&redirect=false&access_token=${accessTkn}`;
+      console.log(picture,'pic');
       const newUser = {
         id: profile.id,
 
@@ -112,7 +115,7 @@ passport.use(
         token: accessTkn,
       };
 
-      const picture = `https://graph.facebook.com/${profile.id}/picture?width=300&height=300&access_token=${accessTkn}`;
+  
      
       return done(null, newUser);
     }),

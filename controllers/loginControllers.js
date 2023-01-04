@@ -62,9 +62,10 @@ const loginControllers = {
       req.session.userName = req.user.name;
       req.session.userLogin = true;
       req.session.user_Id = req.user.id;
+      req.session.email = req.user.email;
       req.session.profilePic = req.user.photos[0].value;
 
-      res.redirect("/productPage");
+      res.redirect("/home");
     } else {
       res.redirect("/");
     }
@@ -75,13 +76,13 @@ const loginControllers = {
     console.log(data);
     if (req.user) {
       console.log("authenticate success hoise");
-    
+      const proPic=req.user.photos[0].value.replace('s96','s400')
       req.session.userName = req.user.name;
       req.session.userLogin = true;
       req.session.user_Id = req.user.id;
 
       req.session.email = req.user.email;
-      req.session.profilePic = req.user.photos[0].value;
+      req.session.profilePic = proPic;
 //save to session storage
       res.redirect("/home");
     }

@@ -89,7 +89,8 @@ router.get('/cart',middleware.isLoggedIn,appController.cart)
 router.post('/updateCartAmount',dataInsertController.updateCartAmount)
 router.post('/delCartItem',dataInsertController.delCartItem)
 router.post('/saveGenderBdate',dataInsertController.saveGenderBdate)
-
+router.post('/saveProfileData',dataInsertController.saveProfileData)
+router.post('/changePicture', dataInsertController.changePicture)
 //payment
 router.get('/init/:amount',paymentControllers.ssl)
 

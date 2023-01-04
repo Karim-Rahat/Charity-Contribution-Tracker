@@ -18,7 +18,7 @@ let middleware = {
         
     },
     isLoggedIn: function(req, res, next) {
-
+console.log(req.isAuthenticated(),req.session.userLogin,req.session.userName);
        
         if(req.isAuthenticated() || (req.session.userLogin && req.session.userName)){
             return next();
