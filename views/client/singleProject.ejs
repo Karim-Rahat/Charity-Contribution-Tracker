@@ -3,7 +3,11 @@
   <body>
 
     <main class="main" id="top">
+
+
+      
       <%- include('../template/navbar'); %>
+      
         <div class="mx-5" data-layout="container">
           <% project.map((item,i)=>{ %>
 
@@ -149,9 +153,11 @@
                                         data-icon="../../assets/img/icons/map-marker.png" data-zoom="17"
                                         data-theme="Default">
                                         <div class="marker-content pb-3 light">
-                                          <h5>Eiffel Tower</h5>
-                                          <p>Gustave Eiffel's iconic, wrought-iron 1889 tower,<br /> with steps and
-                                            elevators to observation decks.</p>
+                                          <h5><%=item.contactAddress %></h5>
+                                          <p><%=item.contactCity %>,<%= item.contactState %>,<%= item.contactCountry %> <br />
+
+                                          </p>
+                                          <a href="<%=item.contactUrl%>"><%=item.contactUrl%></a>
                                         </div>
                                       </div>
                         </div>
@@ -273,18 +279,7 @@
                   </div>
 
 
-                  <footer class="footer">
-                    <div class="row g-0 justify-content-between fs--1 mt-4 mb-3">
-                      <div class="col-12 col-sm-auto text-center">
-                        <p class="mb-0 text-600">Thank you for creating with Falcon <span
-                            class="d-none d-sm-inline-block">| </span><br class="d-sm-none" /> 2021 &copy; <a
-                            href="https://themewagon.com">Themewagon</a></p>
-                      </div>
-                      <div class="col-12 col-sm-auto text-center">
-                        <p class="mb-0 text-600">v3.4.0</p>
-                      </div>
-                    </div>
-                  </footer>
+          
                 </div>
 
 

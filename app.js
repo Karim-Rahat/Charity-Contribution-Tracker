@@ -11,6 +11,7 @@ const app = express();
 const axios = require('axios').default;
 var cors = require('cors')
 const passport = require("passport");
+
 const FacebookStrategy = require('passport-facebook').Strategy;
 const GoogleStrategy = require('passport-google-oauth2').Strategy;
 const cookieParser = require('cookie-parser');
@@ -77,7 +78,6 @@ var cors_set = {
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true // allow session cookie from browser to pass through
 };
-
 
 
 app.use(passport.initialize());

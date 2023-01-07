@@ -91,6 +91,8 @@ router.post('/delCartItem',dataInsertController.delCartItem)
 router.post('/saveGenderBdate',dataInsertController.saveGenderBdate)
 router.post('/saveProfileData',dataInsertController.saveProfileData)
 router.post('/changePicture', dataInsertController.changePicture)
+router.post('/changePassword',dataInsertController.changePassword)
+router.post('/changeAdress',dataInsertController.changeAdress)
 //payment
 router.get('/init/:amount',paymentControllers.ssl)
 

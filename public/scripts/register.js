@@ -110,6 +110,7 @@ email.addEventListener('focusout',(e)=>{
     })
   })
 })
+
 registerForm.addEventListener('focusout', (e) => {
   if (firstName.value.length == 0) { firstName.classList.remove('border-success') }
   if (lastName.value.length == 0) { lastName.classList.remove('border-success') }
@@ -185,6 +186,7 @@ passwordForm.addEventListener('focusout', (e) => {
       passSign2.style.display = 'block';
       crossSign1.style.display = 'none';
       crossSign2.style.display = 'none';
+      flag=true;
     } else {
       console.log(password.value, confirmPassword.value);
       passAlert1.style.display = 'block';
@@ -198,6 +200,7 @@ passwordForm.addEventListener('focusout', (e) => {
       passSign2.style.display = 'none';
       crossSign1.style.display = 'block';
       crossSign2.style.display = 'block';
+      flag=false
     }
   } else {
     clearPassField();
@@ -227,6 +230,7 @@ function passValidation() {
     password.classList.add('border-danger');
     crossSign1.style.display = 'block';
     passSign1.style.display = 'none';
+  
     return false;
   }
   console.log('passwords valid');
@@ -238,6 +242,7 @@ function passValidation() {
   crossSign1.style.display = 'none';
 
   password.classList.remove('border-danger');
+
   return true;
 }
 // confirmPassword validation
@@ -253,6 +258,7 @@ function confirmPasswordValidation() {
     confirmPassword.classList.add('border-danger');
     crossSign2.style.display = 'block';
     passSign2.style.display = 'none';
+  
     return false;
   }
   console.log('passwords valid');
@@ -261,6 +267,7 @@ function confirmPasswordValidation() {
   crossSign2.style.display = 'none';
   confirmPassword.classList.add('border-success')
   confirmPassword.classList.remove('border-danger');
+  
   return true;
 }
 

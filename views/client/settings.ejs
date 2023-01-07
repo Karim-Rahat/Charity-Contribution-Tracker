@@ -58,19 +58,19 @@
                   <form class="row g-3">
                     <div class="col-lg-6">
                       <label class="form-label" for="first-name">First Name</label>
-                      <input class="form-control" id="firstName" type="text" value="<%= data.first_name %> " />
+                      <input class="form-control" id="firstName" type="text" value="<%= data.first_name %>" />
                     </div>
                     <div class="col-lg-6">
                       <label class="form-label" for="last-name">Last Name</label>
-                      <input class="form-control" id="lastName" type="text" value="<%= data.last_name %> " />
+                      <input class="form-control" id="lastName" type="text" value="<%= data.last_name %>" />
                     </div>
                     <div class="col-lg-6">
                       <label class="form-label" for="email1">Email</label>
                       <% if(data.idRef=="facebook" || data.idRef=="google" ) { %>
-                      <input class="form-control" disabled id="email" type="text" value="<%= data.email %> " />
-                      <p class="text-danger" style="font-size: 12px;margin-left: 2px;">Facebook or Google Connected email cannot be changerd.</p>
+                      <input class="form-control" disabled id="email" type="text" value="<%=data.email%>" />
+                      <p class="text-danger" style="font-size: 12px;margin-left: 2px;">Facebook or Google Connected email cannot be changed.</p>
                       <% } else {%> 
-                   <input class="form-control" disabled id="email" type="text" value="<%= data.email %> " />
+                   <input class="form-control" id="email" type="text" value="<%= data.email %>" />
                     
                    <% } %> 
                     </div>
@@ -144,23 +144,76 @@
                             <i class="fa-brands fa-square-facebook"></i>
                             Connected with Facebook
                           </button>
+                        </div>
                           <% }%>
                           <% if(data.idRef=="google") { %>
                       
-                            <div class="d-grid gap-2" style="width:90%;height:50px;background-color: rgb(47, 47, 110);">
+                            <div class="d-grid gap-2" style="width:90%;height:50px;background-color: #dd4b39;">
                               <button class="btn  text-left text-white" type="button">
                                 <i class="fa-brands fa-google"></i>
                                 Connected with Google
                               </button>
+                            </div>
                               <% }%>
-                        </div>
-                  </div>
-                </div>
+                              <% if(data.idRef=="registration") { %>
+                      
+                                <div class="d-grid gap-2" style="width:90%;height:50px;background-color: rgb(27, 116, 167);">
+                                  <button class="btn  text-left text-white" type="button">
+                                    <i class="fa-solid fa-user"></i>
+                                    Not Connected
+                                  </button>
+                                </div>
+                                  <% }%>                               
               </div>
-
-              
-
             </div>
+          </div>
+                       
+               
+
+          <div class="card mb-3">
+            <div class="card-header">
+              <h5 class="mb-0">Adress</h5>
+            </div>
+            <div class="card-body bg-light">
+              <div class="col-lg-12 ">
+                <form class="row g-3">
+              
+                  <div class="col-lg-12">
+                    <label class="form-label" for="street-adress">Street Adress</label>
+                    <input class="form-control" id="street-adress" name="street-adress" type="text" value="<%=data.street_adress%>" />
+                  </div>
+                  <div class="col-lg-4">
+                    <label class="form-label" for="city">City</label>
+                    <input class="form-control" id="city" name="city" type="text" value="<%=data.city%>" />
+                  </div>
+
+                  <div class="col-lg-4">
+                    <label class="form-label" for="state">State</label>
+                    <input class="form-control" id="state" name="state" type="text" value="<%=data.state%>" />
+                  </div>
+                  <div class="col-lg-4">
+                    <label class="form-label" for="zipcode">Zip Code</label>
+                    <input class="form-control" id="zipcode" name="zipcode" type="number"  value="<%=data.zipcode%>"/>
+                  </div>
+
+
+
+                  <div class="col-12 d-flex justify-content-end">
+                    <button class="btn btn-primary" onclick="changeAdress()" type="button">Update </button>
+                  </div>
+                  <div  id="saveAdressAlert" hidden  class="alert alert-success mt-2" role="alert">Successfully updated!</div>
+                </form>                   
+          </div>
+        </div>
+      </div>
+
+
+
+
+          </div>
+
+
+            
             <div class="col-lg-4 ps-lg-2">
               <div class="sticky-sidebar">
                 <div class="card mb-3 overflow-hidden">
@@ -200,12 +253,22 @@
                           data-bs-toggle="tooltip" data-bs-placement="top"><span
                             class="fas fa-question-circle"></span></span></h6>
                         <div class=" mb-2 lh-1 col-12">
-                          <div class="col-6">
-
-                            <input class="form-control datetimepicker" id="datepicker" type="text" placeholder="d/m/y" data-options='{"disableMobile":true}' value="<%=data.birthdate %>" />
                           
+                          <div class="col-6">
+                           
+                            <input class="form-control datetimepicker" id="datepicker" max="" type="date" placeholder="d/m/y" 
+                            value="<%=new Date(data.birthdate).toLocaleDateString("en")%>"/>
+                        
                           </div>
-                        </div>
+                             
+                          <div class="col-6 mt-2">
+                            <p class="fs--3 text-black">
+                              <h6 class="fw-bold">Birthdate: </h6>
+                              
+                               <span class="fw-bold mt-2" id="displayBdate"><%=new Date(data.birthdate).toLocaleDateString('en',{ year: 'numeric', month: 'long', day: 'numeric'})%></span>
+                            </p>
+                       </div>
+                            </div>
 
                         <!-- end birthdate  -->
                         <button class="btn btn-primary d-block w-100" onclick="genderBdate()" type="button">Update </button>
@@ -223,27 +286,51 @@
                     <h5 class="mb-0">Change Password</h5>
                   </div>
                   <div class="card-body bg-light">
-                    <form>
+                    <form id="passwordForm">
                       <div class="mb-3">
                         <label class="form-label" for="old-password">Old Password</label>
                         <input class="form-control" id="old-password" type="password" />
+                        <h6 class="text-danger mt-1" id="oldPassAlert" style="display: none;">Old password doesn't matched!!</h6>
                       </div>
                       <div class="mb-3">
                         <label class="form-label" for="new-password">New Password</label>
-                        <input class="form-control" id="new-password" type="password" />
+                        <input class="form-control" name="password" id="new-password" type="password" />
+                        <span class="correct" id="passSign1" style="display:none"> 
+                          <i class="fa-solid fa-check"></i>
+                        </span>
+                        <span class="incorrect" id="crossSign1" style="display:none">
+                          <i class="fa-solid fa-xmark"></i>
+                        </span>
+
                       </div>
                       <div class="mb-3">
                         <label class="form-label" for="confirm-password">Confirm Password</label>
-                        <input class="form-control" id="confirm-password" type="password" />
+                        <input class="form-control" name="confirmPassword" id="confirm-password" type="password" />
+                        <span class="correct" id="passSign2" style="display:none"> 
+                          <i class="fa-solid fa-check"></i>
+                        </span>
+                        <span class="incorrect" id="crossSign2" style="display:none">
+                          <i class="fa-solid fa-xmark"></i>
+                        </span>
+
                       </div>
-                      <button class="btn btn-primary d-block w-100" type="submit">Update Password </button>
+                      <h6 class="text-danger mt-1" id="newPassAlert" style="display: none;">New & Confirm Password doesn't matched!!</h6>
+                    
+                    
+                        <!-- alert -->
+
+                        <div class="alert  alert-warning py-1" id="passAlert1" style="display: none;" role="alert">Password Not Matched !</div>
+                        <div class="alert  alert-warning py-1" id="passAlert2" style="display: none;" role="alert">    Passwords must be at least one numeric digit, one uppercase and one lowercase letter !</div>
+
+                        <div  id="passSaveAlert" hidden  class="alert alert-success mt-2" role="alert">Password successfully changed!</div>
+                      <button class="btn btn-primary d-block w-100" onclick="changePass()" type="button">Update Password </button>
                     </form>
                   </div>
                 </div>
     
               </div>
             </div>
-          </div>
+        
 
         </div>
 
@@ -255,86 +342,10 @@
 
 
     <script src="assets/js/flatpickr.js"></script>
-
+    <script src="scripts/settings.js"></script>
     <%-include("../template/customize"); %>
       <%-include("../template/scripts"); %>
-
-
-      <script>
-
-        //save birthdate and gender
-async function genderBdate() {
-    let genderCheck = document.getElementsByClassName('gender');
-    let birthdate = document.getElementById("datepicker")
-    let gender;
-    Array.from(genderCheck).map((item) => {
-        if (item.checked) 
-            gender = item.value;
-        
-    });
-    console.log(gender);
-    console.log(birthdate.value);
-    var data = new FormData();
-
-    data.append("gender", gender);
-    data.append("birthdate", birthdate.value);
-    const rawResponse = await fetch("/saveGenderBdate", {
-        method: "POST",
-        body: data
-    });
-    const content = await rawResponse.json();
-    console.log(content);
-    if (content.affectedRows == 1) {
-        genBdateAlert.removeAttribute('hidden')
-        setTimeout(() => {
-            genBdateAlert.setAttribute('hidden', '')
-        }, 5000);
-    }
-
-}
-
-async function generalSettings() {
-let firstName=document.getElementById('firstName')
-let lastName=document.getElementById('lastName')
-let email=document.getElementById('email')
-let phoneCode=document.getElementById('phoneCode')
-let phone=document.getElementById('phone')
-
-if(phone.value.length<1){
-  const liveToastBtn=document.getElementById('liveToastBtn')
-  liveToastBtn.click()
-}
-    var data = new FormData();
-
-    data.append("firstName", firstName.value);
-    data.append("lastName", lastName.value);
-    data.append("email", email.value);
-    data.append("phoneCode", phoneCode[phoneCode.selectedIndex].value);
-    data.append("phone", phone.value);
-
-    const rawResponse = await fetch("/saveProfileData", {
-        method: "POST",
-        body: data
-    });
-    const content = await rawResponse.json();
-    console.log(content);
-    if (content.affectedRows == 1) {
-      genSettingsAlert.removeAttribute('hidden')
-        setTimeout(() => {
-          genSettingsAlert.setAttribute('hidden', '')
-        }, 5000);
-    }
-
-}
-
-
-function changePicture(){
-  const changePicture=document.getElementById('changePicture')
-  console.log(changePicture);
-  changePicture.submit()
-}
-
-      </script>
+ 
 
   </body>
 

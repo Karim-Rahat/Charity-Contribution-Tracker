@@ -1,6 +1,14 @@
 const loginModel = require("../models/loginModel");
 const sessionStorage = require('node-sessionstorage')
 
+
+const bcrypt = require('bcrypt');
+
+async function comparePasswords(plainTextPassword, hashedPassword) {
+  const isMatch = await bcrypt.compareSync(plainTextPassword, hashedPassword);
+  return isMatch;
+}
+
 const loginControllers = {
   index: async (req, res) => {
     console.log((req.session.userLogin, req.session.userName));
@@ -15,32 +23,34 @@ const loginControllers = {
   },
   loginAuth: async (req, res) => {
     const { mail, pass } = req.body;
-    console.log(mail, pass);
+    
     let flag = 0;
-    const data = await loginModel.authenticator();
-
-    data[0].map((item) => {
-      // console.log(item.first_name + " " + item.last_name);
-      // console.log(mail, item.email, pass, item.password);
-      if (mail == item.email && pass == item.password) {
-        req.session.userName = item.first_name + " " + item.last_name;
-        req.session.userLogin = true;
-        req.session.phoneCode=item.phone_code;
-        req.session.phone=item.phone
-        req.session.adress=item.adress
-        req.session.user_Id = item.user_id;
-        req.session.email = item.email;
-        //save to session storage
-
-        flag = 1;
-      }
-    });
-
-    if (flag == 0) {
-      res.send({ data: false });
-    } else {
-      res.send({ data: true });
+    let hash;
+    const item = await loginModel.authenticator(mail, pass);
+console.log(item);
+   if(item){
+    if(await comparePasswords(pass, item.password)){
+    
+      req.session.userName = item.first_name + " " + item.last_name;
+      req.session.userLogin = true;
+      req.session.phoneCode=item.phone_code;
+      req.session.phone=item.phone
+      req.session.adress=item.adress
+      req.session.user_Id = item.user_id;
+      req.session.email = item.email;
+    
+      flag=1
     }
+   }
+
+if(flag==0){
+  res.send({ data: false});
+}
+else{
+  res.send({ data: true});
+}
+
+
   },
   register: async (req, res) => {
     if (
@@ -55,7 +65,7 @@ const loginControllers = {
   },
   fbAuthenticate: async (req, res) => {
     console.log("fb authenticate", req.accesstoken);
-    const data = await loginModel.authenticator();
+    const data = await loginModel.socialAuthenticator();
 
     if (req.user) {
       console.log("authenticate success hoise");
@@ -72,7 +82,7 @@ const loginControllers = {
   },
   googleAuthenticate: async (req, res) => {
  
-    const data = await loginModel.authenticator();
+    const data = await loginModel.socialAuthenticator();
     console.log(data);
     if (req.user) {
       console.log("authenticate success hoise");

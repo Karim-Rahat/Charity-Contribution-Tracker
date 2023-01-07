@@ -28,6 +28,7 @@ const appController = {
     });
   },
   getOneProjects: async (req, res) => {
+    
     const id = req.params;
     const data = await dataFetchModels.getOneProject(id);
     const org = await dataFetchModels.getOrg();
@@ -75,9 +76,13 @@ const appController = {
     });
   },
   settings: async (req, res) => {
-    console.log(req.session);
+
+
+
+
     const value = [req.session.user_Id];
     const data = await dataFetchModels.singleUserInfo(value);
+    
     const data2 = await loginModel.phoneCountryCode();
     const data3 = await dataFetchModels.getCartData([req.session.user_Id]);
     res.render("client/settings", {

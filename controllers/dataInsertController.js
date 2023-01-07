@@ -1,9 +1,23 @@
 const dataFetchModels = require("../models/dataFetchModels");
 const dataInsertModels = require("../models/dataInsertModels");
 const loginModel = require("../models/loginModel");
+const bcrypt = require('bcrypt');
+
+async function hashPassword(password) {
+  const saltRounds = 10;
+  const hash = await bcrypt.hash(password, saltRounds);
+  return hash;
+}
+async function comparePasswords(plainTextPassword, hashedPassword) {
+  const isMatch = await bcrypt.compareSync(plainTextPassword, hashedPassword);
+  return isMatch;
+}
+
 const dataInsertController = {
   registration: async (req, res) => {
     console.log(req.body);
+
+
     const {
       firstname,
       lastname,
@@ -14,11 +28,12 @@ const dataInsertController = {
       countryCode,
       phone,
     } = req.body;
+    
     const values = [
       firstname,
       lastname,
       email,
-      password,
+      await hashPassword(password),
       birthdate,
       gender,
       countryCode,
@@ -28,10 +43,11 @@ const dataInsertController = {
     const data = await dataInsertModels.registration(values);
     console.log(data);
     // res.render('authenticate/confirmRegister')
+
     res.send(data);
   },
   fbUserReg: async (req, res) => {
-    const data = await loginModel.authenticator();
+    const data = await loginModel.socialAuthenticator();
 
     let i = 0;
 
@@ -61,7 +77,7 @@ const dataInsertController = {
     }
   },
   googleUserReg: async (req, res) => {
-    const data = await loginModel.authenticator();
+    const data = await loginModel.socialAuthenticator();
    
     let i = 0;
 //check if user already exist
@@ -118,9 +134,10 @@ const dataInsertController = {
   saveGenderBdate: async(req,res)=>{
   
     const {gender,birthdate}=req.body
-    var bdate = new Date(birthdate);
-  const values=[bdate,gender]
+
+  const values=[birthdate,gender]
   const data=await dataInsertModels.saveGenderBdate(values,req.session.user_Id)
+  console.log(data);
   res.send(data)
   },
   saveProfileData: async(req,res)=>{
@@ -140,8 +157,54 @@ const values=[firstName,lastName,email,phoneCode,phone]
       res.redirect('/settings')
     }
    
+  },
+  changePassword: async(req,res)=>{
+console.log(req.body);
+const {oldPassword,newPassword,confirmPassword}=req.body
+
+const data=await loginModel.checkOldPassword([req.session.user_Id])
+console.log(data,'old');
+if(data!=null){
+  const checkOldPassword=await comparePasswords(oldPassword, data)
+  console.log(checkOldPassword);
+  if(checkOldPassword==false){
+    res.send({data:0})
   }
+  if(checkOldPassword==true){
+    if(newPassword==confirmPassword){
+      const hash=await hashPassword(newPassword)
+      console.log(hash);
+      const savePassword=await dataInsertModels.changePassword(hash,req.session.user_Id)
+     res.send(savePassword)
+    }
+    else{
+      res.send({data:1})
+    }
+  }
+}
+else{
+  if(newPassword==confirmPassword){
+    const hash=await hashPassword(newPassword)
+    console.log(hash);
+    const savePassword=await dataInsertModels.changePassword(hash,req.session.user_Id)
+   res.send(savePassword)
+  }
+  else{
+    res.send({data:1})
+  }
+}
+
+},
+changeAdress: async(req,res)=>{
+
+const {streetAdress,city,state,zipcode}=req.body
+const values=[streetAdress,city,state,zipcode]
+
+const data=await dataInsertModels.changeAdress(values,req.session.user_Id);
   
+res.send(data)
+
+},
   // clearCartAfterPayment: async(req,res)=>{
   //   const id=req.session.user_Id
   //   console.log(id,'l');

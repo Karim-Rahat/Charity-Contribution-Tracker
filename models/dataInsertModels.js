@@ -108,7 +108,7 @@ console.log(values);
   },
 
   saveDonationMoney: async(values)=>{
-    const sqlquery=`update projects u inner join projects s on u.p_id = ${values[1]} set u.funding = s.funding+${values[0]},u.remaining = s.remaining-${values[0]}`
+    const sqlquery=`update projects u inner join projects s on u.p_id = ${values[1]} set u.funding = s.funding+${values[0]},u.remaining = s.remaining-${values[0]},u.numberOfDonations=s.numberOfDonations+1`
     try {
       const rows = await connection.promise().execute(sqlquery);
       return rows[0];
@@ -144,6 +144,26 @@ console.log(values);
     const sqlquery=`UPDATE users SET profile_pic=? WHERE user_id=${id} or social_id=${id}`
     try {
       const rows = await connection.promise().execute(sqlquery,[value]);
+      return rows[0];
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  },
+  changePassword: async(value,id)=>{
+    const sqlquery=`UPDATE users SET password=? WHERE user_id=${id} or social_id=${id}`
+    try {
+      const rows = await connection.promise().execute(sqlquery,[value]);
+      return rows[0];
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  },
+  changeAdress: async(value,id)=>{
+    const sqlquery=`UPDATE users SET street_adress=?,city=?,state=?,zipcode=? WHERE user_id=${id} or social_id=${id}`
+    try {
+      const rows = await connection.promise().execute(sqlquery,value);
       return rows[0];
     } catch (err) {
       console.log(err);

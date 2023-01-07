@@ -13,6 +13,7 @@
     "alpinejs": "^3.4.0",
     "autoprefixer": "^10.4.7",
     "axios": "^0.27.2",
+    "bcrypt": "^5.1.0",
     "body-parser": "^1.19.0",
     "connect-mysql": "^4.0.0",
     "connect-redis": "^6.0.0",
