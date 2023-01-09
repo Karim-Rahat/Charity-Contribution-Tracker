@@ -11,6 +11,7 @@ const middleware = require("../middleware/loginMiddleware");
 
 const paymentControllers = require("../controllers/paymentController");
 const { data } = require("autoprefixer");
+const app = require("../app");
 
 // const DataInsertModels = require("../models/DataInsertModel");
 // router.post("/authenticate", loginControllers.authenticate);
@@ -154,4 +155,18 @@ router.post("/ssl-payment-cancel", async (req, res) => {
     }
   );
 })
+
+
+
+
+
+//admin 
+router.get('/admin-login',loginControllers.adminLoginPage)
+router.get('/dashboard',appController.dashboard)
+router.get('/paymentChartByhours',dataFetchController.paymentChartByhours)
+router.get('/countData',dataFetchController.countData)
+router.get('/countryWiseOrg',dataFetchController.countryWiseOrg)
+router.get('/getAllInvoiceList',dataFetchController.getAllInvoiceList)
+router.get('/viewAllProjects',appController.viewAllProjects)
+router.get('/viewAllOrganization',appController.viewAllOrganization)
 module.exports = router;

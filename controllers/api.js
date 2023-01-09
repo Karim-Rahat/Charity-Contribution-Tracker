@@ -252,8 +252,8 @@ const api = {
         await axios
           .get(url, {
             headers: {
-              Accept: "application/xml",
-              "Content-Type": "application/xml",
+              Accept: "application/json",
+              "Content-Type": "application/json",
             },
           })
           .then(async (response) => {

@@ -27,7 +27,8 @@ const loginControllers = {
     let flag = 0;
     let hash;
     const item = await loginModel.authenticator(mail, pass);
-console.log(item);
+    const adminData= await loginModel.adminAuth([mail,pass]);
+    console.log(adminData);
    if(item){
     if(await comparePasswords(pass, item.password)){
     
@@ -42,9 +43,28 @@ console.log(item);
       flag=1
     }
    }
+   if(adminData.length>0){
+    console.log('hhhh');
+   adminData.map(data=>{
+    if(data.email==mail && data.password==pass){
+      req.session.adminName = data.first_name + " " + data.last_name;
+      req.session.adminLogin = true;
+      req.session.phoneCode=data.phone_code;
+      req.session.phone=data.phone
+      req.session.admin_id= data.admin_id;
+      req.session.email = data.email;
+      flag=2
+    }
+   })
+   }
 
 if(flag==0){
   res.send({ data: false});
+  return false
+}
+if(flag==2){
+  res.send({data: 'admin'})
+  return false
 }
 else{
   res.send({ data: true});
@@ -119,6 +139,15 @@ else{
     });
     res.end("done");
   },
+
+
+//admin
+adminLoginPage: async(req,res)=>{
+  res.render('authenticate/adminLogin')
+},
+
+
+
   logout: async (req, res) => {
     console.log(req.session)
     req.session = null

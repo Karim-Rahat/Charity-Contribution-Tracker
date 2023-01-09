@@ -92,5 +92,37 @@ const appController = {
       cartLength: data3.length,
     });
   },
+
+
+  //admin panel
+
+  dashboard: async (req, res) => {
+    const data=await dataFetchModels.countData()
+    const data2= await dataFetchModels.getAllInvoiceList()
+    const data3= await dataFetchModels.getProjects()
+    const org = await dataFetchModels.getOrg();
+    res.render("admin/dashboard", {
+      adminInfo: req.session,countData: data,
+      invoiceList: data2,
+      projects: data3,
+      org: org
+    });
+  },
+  viewAllProjects: async(req,res)=>{
+    const data3= await dataFetchModels.getProjects()
+    const org = await dataFetchModels.getOrg();
+    res.render("admin/viewAllProject", {
+      adminInfo: req.session,
+      projects: data3,
+      org: org
+    });
+  },
+  viewAllOrganization: async(req,res)=>{
+    const org = await dataFetchModels.getOrg();
+
+    res.render("admin/viewAllOrg",{org:org})
+  }
+
+
 };
 module.exports = appController;

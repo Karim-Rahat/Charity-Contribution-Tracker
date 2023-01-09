@@ -12,8 +12,9 @@ async function login() {
     body: data,
   });
   const content = await rawResponse.json();
-console.log(content);
+
   if (content.data == true)      window.location.href = '/home';
+  if(content.data=='admin') window.location.href='/dashboard';
   if(content.data==false) alerts.style.display = "block";
 }
 

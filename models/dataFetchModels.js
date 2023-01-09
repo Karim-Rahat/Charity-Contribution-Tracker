@@ -58,7 +58,7 @@ const dataFetchModels = {
     }
   },
   getOrg: async ()=>{
-    const sqlquery="SELECT * FROM organizations"
+    const sqlquery="SELECT * FROM `organizations` WHERE activeProjects>0"
     try {
       const rows = await connection.promise().execute(sqlquery);
 
@@ -163,8 +163,58 @@ console.log(sqlquery);
     console.log('data',data);
 
     return data
-}
+},
 
+
+//dashboard
+paymentChartByhours: async()=>{
+const sqlquery="SELECT * FROM `invoices` WHERE DATE(`transaction_time`) = CURDATE()"
+const sqlquery2="SELECT SUM(amount) as yesterdayTotal FROM `invoices` WHERE DATE(`transaction_time`) =DATE_SUB(CURDATE(), INTERVAL 1 DAY)"
+try {
+  const rows = await connection.promise().execute(sqlquery);
+  const rows2 = await connection.promise().execute(sqlquery2);
+  return [rows[0],rows2[0][0]];
+} catch (err) {
+  return err;
+}
+},
+countData: async()=>{
+  const sqlquery="SELECT COUNT(*) as usersCount FROM `users`"
+  const sqlquery2="SELECT COUNT(*) as projectCount FROM `projects` where status='active';"
+  const sqlquery3="SELECT COUNT(*) as orgCount FROM `organizations` WHERE activeProjects>0;"
+  try {
+    const rows = await connection.promise().execute(sqlquery);
+    const rows2 = await connection.promise().execute(sqlquery2);
+    const rows3 = await connection.promise().execute(sqlquery3);
+    return [rows[0][0],rows2[0][0],rows3[0][0]];
+  } catch (err) {
+    return err;
+  }
+  },
+
+  countryWiseOrg: async ()=>{
+    const sqlquery="SELECT country as name,COUNT(country) as value FROM `organizations` GROUP BY country;"
+    try {
+      const rows = await connection.promise().execute(sqlquery);
+
+      return rows[0];
+    } catch (err) {
+      return err;
+    }
+  },
+  
+  getAllInvoiceList: async()=>{
+    
+    const sqlquery="SELECT invoice_id,invoice_number,amount,transaction_time,u.first_name,u.last_name,u.email FROM `invoices` as i JOIN users as u WHERE i.user_id=u.user_id OR i.user_id=u.social_id;"
+    
+    try {
+      const rows = await connection.promise().execute(sqlquery);
+
+      return rows[0];
+    } catch (err) {
+      return err;
+    }
+  }
 };
 
 module.exports = dataFetchModels;

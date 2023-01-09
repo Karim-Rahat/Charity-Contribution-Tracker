@@ -47,6 +47,15 @@ const loginModel = {
       return err;
     }
   },
+  adminAuth: async(values)=>{
+    const sqlquery = "SELECT * from admin where email=? AND password=?";
+    try {
+      const rows = await connection.promise().execute(sqlquery,values);
+      return rows[0];
+    } catch (err) {
+      return err;
+    }
+  },
   phoneCountryCode: async () => {
     const sqlquery = "SELECT name,phonecode FROM `country`";
     try {

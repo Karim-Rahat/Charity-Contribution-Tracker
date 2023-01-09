@@ -104,9 +104,10 @@ const paymentControllers = {
 
       await getCrntCartData.map(async (item) => {
  
-        val = [item.amount, item.project_id];
-   
+       let val = [item.amount, item.project_id];
+   console.log(val,'value');
         const saveDonationMoney = await dataInsertModels.saveDonationMoney(val);
+       console.log(saveDonationMoney,'savedonation');
         await dataInsertModels.changeStatusOfCart(item.c_id, data.val_id);
       });
 

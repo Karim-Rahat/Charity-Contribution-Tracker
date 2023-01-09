@@ -1,0 +1,69 @@
+
+
+    <%-include("../template_two/header"); %>
+    <body onload="getProjectDatas()">
+      <main class="main" id="top">
+        <div class="container" data-layout="container">
+          <%-include("../template_two/navbar"); %>
+
+        <div class="content">
+          <%-include("../template_two/bodynav"); %>
+
+   
+
+
+          <div class="row">
+
+
+           
+            <div class="col">
+             
+              <div class="card h-lg-100 overflow-hidden">
+                <div class="card-body p-0">
+                  <div class="table-responsive scrollbar">
+                    <table class="table table-dashboard mb-0 table-borderless fs--1 border-200">
+                      <thead class="bg-light">
+                        <tr class="text-900">
+                          <th class="text-start">Organization Details</th>
+                          <th class="text-center">ID</th>
+                          <th class="text-center">Total Projects</th>
+                          <th class="pe-card text-center" style="width: 8rem">Mission</th>
+                          <th class="text-end">Website Link</th>
+                   
+                        </tr>
+                      </thead>
+                      <tbody class="allProject">
+
+                      </tbody>
+                    
+                
+                    </table>
+                  </div>
+             
+          
+
+                </div>
+                </div>
+              </div>
+           
+              <div class="paginations">
+                <div id="pagination-container" class="mb-5 mt-5 " ></div>
+              </div>
+
+        </div>
+        </div>
+
+    </main>
+
+
+    <%-include("../template_two/customize"); %>
+
+
+    <%-include("../template_two/scripts"); %>
+    <script src="/scripts/jquery-3.6.1.min.js"></script>
+    <script src="scripts/pagination.min.js"></script>
+    <script src="scripts/adminViewAllOrg.js"></script>
+  </body>
+
+</html>
+

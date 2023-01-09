@@ -1,0 +1,305 @@
+
+    <%-include("../template_two/header"); %>
+  <body>
+    <main class="main" id="top">
+      <div class="container" data-layout="container">
+        <%-include("../template_two/navbar"); %>
+        <div class="content">
+          <%-include("../template_two/bodynav"); %>
+
+          
+          <div class="row g-3">
+            <div class="col-xxl-9">
+              <div class="card rounded-3 overflow-hidden h-100">
+                <div class="card-body bg-line-chart-gradient d-flex flex-column justify-content-between">
+                  <div class="row align-items-center g-0">
+                    <div class="col light">
+                      <h4 class="text-white mb-0">Today $<span id="todayTotal">0</span></h4>
+                      <p class="fs--1 fw-semi-bold text-white">Yesterday <span class="opacity-50">$<span id="yesterdayTotal">0</span></p>
+                    </div>
+                    <div class="col-auto d-none d-sm-block">
+                      <select class="form-select form-select-sm mb-3" id="dashboard-chart-select">
+                        <option value="all">All Payments</option>
+                        <option value="successful" selected="selected">Successful Payments</option>
+                        <option value="failed">Failed Payments</option>
+                      </select>
+                    </div>
+                  </div>
+                  <!-- Find the JS file for the following calendar at: src/js/charts/echarts/line-payment.js-->
+                  <!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js-->
+                  <div class="echart-line-payment" style="height: 200px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" data-echart-responsive="true" _echarts_instance_="ec_1673104806010"><div style="position: relative; width: 468px; height: 200px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="468" height="200" style="position: absolute; left: 0px; top: 0px; width: 468px; height: 200px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;">
+                </canvas></div>
+                <div class="" style="position: absolute; display: block; border-style: solid; white-space: nowrap; z-index: 9999999; box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 10px; background-color: rgb(249, 250, 253); border-width: 1px; border-radius: 4px; color: rgb(11, 23, 39); font: 500 12px / 18px &quot;Microsoft YaHei&quot;; padding: 7px 10px; top: 0px; left: 0px; transform: translate3d(286px, 99px, 0px); border-color: rgb(216, 226, 239); pointer-events: none; visibility: hidden; opacity: 0;">8:00 PM - 25.12 USD</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="row g-3">
+                <div class="col-md-4 col-xxl-12">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <div class="row flex-between-center g-0">
+                        <div class="col-6 d-lg-block flex-between-center">
+                          <h6 class="mb-2 text-900">Active Users</h6>
+                          <h4 class="fs-3 fw-normal text-700 mb-0"><%= countData[0].usersCount %> </h4>
+                        </div>
+                        <div class="col-auto h-100">
+                          <div style="height: 50px; min-width: 80px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" data-echarts="{&quot;xAxis&quot;:{&quot;show&quot;:false,&quot;boundaryGap&quot;:false},&quot;series&quot;:[{&quot;data&quot;:[3,7,6,8,5,12,11],&quot;type&quot;:&quot;line&quot;,&quot;symbol&quot;:&quot;none&quot;}],&quot;grid&quot;:{&quot;right&quot;:&quot;0px&quot;,&quot;left&quot;:&quot;0px&quot;,&quot;bottom&quot;:&quot;0px&quot;,&quot;top&quot;:&quot;0px&quot;}}" _echarts_instance_="ec_1673104806009"><div style="position: relative; width: 80px; height: 50px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="80" height="50" style="position: absolute; left: 0px; top: 0px; width: 80px; height: 50px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-xxl-12">
+                  <div class="card h-100">
+                    <div class="card-body">
+                        <div class="row flex-between-center g-0">
+                            <div class="col-6 d-lg-block flex-between-center">
+                              <h6 class="mb-2 text-900">Active Projects</h6>
+                              <h4 class="fs-3 fw-normal text-700 mb-0"><%= countData[1].projectCount %> </h4>
+                            </div>
+                            <div class="col-auto h-100">
+                              <div style="height: 50px; min-width: 80px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" data-echarts="{&quot;xAxis&quot;:{&quot;show&quot;:false,&quot;boundaryGap&quot;:false},&quot;series&quot;:[{&quot;data&quot;:[3,7,6,8,5,12,11],&quot;type&quot;:&quot;line&quot;,&quot;symbol&quot;:&quot;none&quot;}],&quot;grid&quot;:{&quot;right&quot;:&quot;0px&quot;,&quot;left&quot;:&quot;0px&quot;,&quot;bottom&quot;:&quot;0px&quot;,&quot;top&quot;:&quot;0px&quot;}}" _echarts_instance_="ec_1673104806009"><div style="position: relative; width: 80px; height: 50px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="80" height="50" style="position: absolute; left: 0px; top: 0px; width: 80px; height: 50px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-xxl-12">
+                  <div class="card h-100">
+                    <div class="card-body">
+                        <div class="row flex-between-center g-0">
+                            <div class="col-6 d-lg-block flex-between-center">
+                              <h6 class="mb-2 text-900">Active Ogranizations</h6>
+                              <h4 class="fs-3 fw-normal text-700 mb-0"><%= countData[2].orgCount %> </h4>
+                            </div>
+                            <div class="col-auto h-100">
+                              <div style="height: 50px; min-width: 80px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" data-echarts="{&quot;xAxis&quot;:{&quot;show&quot;:false,&quot;boundaryGap&quot;:false},&quot;series&quot;:[{&quot;data&quot;:[3,7,6,8,5,12,11],&quot;type&quot;:&quot;line&quot;,&quot;symbol&quot;:&quot;none&quot;}],&quot;grid&quot;:{&quot;right&quot;:&quot;0px&quot;,&quot;left&quot;:&quot;0px&quot;,&quot;bottom&quot;:&quot;0px&quot;,&quot;top&quot;:&quot;0px&quot;}}" _echarts_instance_="ec_1673104806009"><div style="position: relative; width: 80px; height: 50px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="80" height="50" style="position: absolute; left: 0px; top: 0px; width: 80px; height: 50px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="row g-3 mb-3 mt-3">
+
+            <div class="col-md-12 col-xxl-4">
+                <div class="card">
+                  <div class="card-header d-flex align-items-center bg-light py-2">
+                    <h6 class="mb-0 flex-1">Users By Country</h6>
+                    <div class="btn-reveal-trigger">
+                      <button class="btn btn-link btn-reveal btn-sm session-by-country-map-reset" type="button"><svg class="svg-inline--fa fa-sync-alt fa-w-16 fs--1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sync-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M370.72 133.28C339.458 104.008 298.888 87.962 255.848 88c-77.458.068-144.328 53.178-162.791 126.85-1.344 5.363-6.122 9.15-11.651 9.15H24.103c-7.498 0-13.194-6.807-11.807-14.176C33.933 94.924 134.813 8 256 8c66.448 0 126.791 26.136 171.315 68.685L463.03 40.97C478.149 25.851 504 36.559 504 57.941V192c0 13.255-10.745 24-24 24H345.941c-21.382 0-32.09-25.851-16.971-40.971l41.75-41.749zM32 296h134.059c21.382 0 32.09 25.851 16.971 40.971l-41.75 41.75c31.262 29.273 71.835 45.319 114.876 45.28 77.418-.07 144.315-53.144 162.787-126.849 1.344-5.363 6.122-9.15 11.651-9.15h57.304c7.498 0 13.194 6.807 11.807 14.176C478.067 417.076 377.187 504 256 504c-66.448 0-126.791-26.136-171.315-68.685L48.97 471.03C33.851 486.149 8 475.441 8 454.059V320c0-13.255 10.745-24 24-24z"></path></svg><!-- <span class="fas fa-sync-alt fs--1"></span> Font Awesome fontawesome.com --></button>
+                    </div>
+                    <div class="dropdown font-sans-serif btn-reveal-trigger">
+                      <button class="btn btn-link text-600 btn-sm dropdown-toggle dropdown-caret-none btn-reveal" type="button" id="dropdown-session-by-country" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-ellipsis-h fa-w-16 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <span class="fas fa-ellipsis-h fs--2"></span> Font Awesome fontawesome.com --></button>
+                      <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="dropdown-session-by-country" style=""><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+                        <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <!-- Find the JS file for the following chart at: src/js/charts/echarts/session-by-country-map.js-->
+                    <!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js-->
+                    <div class="echart-session-by-country-map w-100 h-100" data-echart-responsive="true" _echarts_instance_="ec_1673155431686" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;"><div style="position: relative; width: 381px; height: 200px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="381" height="200" style="position: absolute; left: 0px; top: 0px; width: 381px; height: 200px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class="" style="position: absolute; display: block; border-style: solid; white-space: nowrap; z-index: 9999999; box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 10px; background-color: rgb(249, 250, 253); border-width: 1px; border-radius: 4px; color: rgb(11, 23, 39); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 7px 10px; top: 0px; left: 0px; transform: translate3d(76px, 153px, 0px); border-color: rgb(216, 226, 239); pointer-events: none; visibility: hidden; opacity: 0;"><strong>Tanzania :</strong> 0.65%</div></div>
+                    <!-- Find the JS file for the following chart at: src/js/charts/echarts/session-by-country.js-->
+                    <!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js-->
+                    <div class="echart-session-by-country h-100 overlayscrollbars" data-echart-responsive="true" _echarts_instance_="ec_1673155431681" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;"><div style="position: relative; width: 381px; height: 210px; padding: 0px; margin: 0px; border-width: 0px; cursor: pointer;"><canvas data-zr-dom-id="zr_0" width="381" height="210" style="position: absolute; left: 0px; top: 0px; width: 381px; height: 210px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class="" style="position: absolute; display: block; border-style: solid; white-space: nowrap; z-index: 9999999; box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 10px; background-color: rgb(249, 250, 253); border-width: 1px; border-radius: 4px; color: rgb(11, 23, 39); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 7px 10px; top: 0px; left: 0px; transform: translate3d(27px, -8px, 0px); border-color: rgb(216, 226, 239); pointer-events: none; visibility: hidden; opacity: 0;"><div style="margin: 0px 0 0;line-height:1;"><div style="margin: 0px 0 0;line-height:1;"><div style="font-size:14px;color:#0b1727;font-weight:400;line-height:1;">CHINA</div><div style="margin: 10px 0 0;line-height:1;"><div style="margin: 0px 0 0;line-height:1;"><div style="margin: 0px 0 0;line-height:1;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#2c7be5;"></span><span style="float:right;margin-left:10px;font-size:14px;color:#0b1727;font-weight:900">19.53</span><div style="clear:both"></div></div><div style="clear:both"></div></div><div style="clear:both"></div></div><div style="clear:both"></div></div><div style="clear:both"></div></div></div></div>
+                  </div>
+                  <div class="card-footer bg-light py-2">
+                
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xxl-9 col-md-12">
+                <div class="card z-index-1" id="recentTransactionTable" data-list="{&quot;valueNames&quot;:[&quot;name&quot;,&quot;email&quot;,&quot;invoice_number&quot;,&quot;payment&quot;,&quot;amount&quot;],&quot;page&quot;:7,&quot;pagination&quot;:true}">
+                  <div class="card-header">
+                    <div class="row flex-between-center">
+                      <div class="col-6 col-sm-auto d-flex align-items-center pe-0">
+                        <h5 class="fs-0 mb-0 text-nowrap py-2 py-xl-0">Recent Transaction </h5>
+                      </div>
+                      <div class="col-6 col-sm-auto ms-auto text-end ps-0">
+                        <div class="d-none" id="table-purchases-actions">
+                          <div class="d-flex">
+                            <select class="form-select form-select-sm" aria-label="Bulk actions">
+                              <option selected="">Bulk actions</option>
+                              <option value="Refund">Refund</option>
+                              <option value="Delete">Delete</option>
+                              <option value="Archive">Archive</option>
+                            </select>
+                            <button class="btn btn-falcon-default btn-sm ms-2" type="button">Apply</button>
+                          </div>
+                        </div>
+                        <div id="table-purchases-replace-element">
+                          <button class="btn btn-falcon-default btn-sm" type="button"><svg class="svg-inline--fa fa-plus fa-w-14" data-fa-transform="shrink-3 down-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="" style="transform-origin: 0.4375em 0.625em;"><g transform="translate(224 256)"><g transform="translate(0, 64)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" transform="translate(-224 -256)"></path></g></g></svg><!-- <span class="fas fa-plus" data-fa-transform="shrink-3 down-2"></span> Font Awesome fontawesome.com --><span class="d-none d-sm-inline-block ms-1">New</span></button>
+                          <button class="btn btn-falcon-default btn-sm mx-2" type="button"><svg class="svg-inline--fa fa-filter fa-w-16" data-fa-transform="shrink-3 down-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="filter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style="transform-origin: 0.5em 0.625em;"><g transform="translate(256 256)"><g transform="translate(0, 64)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z" transform="translate(-256 -256)"></path></g></g></svg><!-- <span class="fas fa-filter" data-fa-transform="shrink-3 down-2"></span> Font Awesome fontawesome.com --><span class="d-none d-sm-inline-block ms-1">Filter</span></button>
+                          <button class="btn btn-falcon-default btn-sm" type="button"><svg class="svg-inline--fa fa-external-link-alt fa-w-16" data-fa-transform="shrink-3 down-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="external-link-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style="transform-origin: 0.5em 0.625em;"><g transform="translate(256 256)"><g transform="translate(0, 64)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z" transform="translate(-256 -256)"></path></g></g></svg><!-- <span class="fas fa-external-link-alt" data-fa-transform="shrink-3 down-2"></span> Font Awesome fontawesome.com --><span class="d-none d-sm-inline-block ms-1">Export</span></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body px-0 py-0">
+                    <div class="table-responsive scrollbar">
+                      <table class="table table-sm fs--1 mb-0 overflow-hidden">
+                        <thead class="bg-200 text-900">
+                          <tr>
+                            <th class="white-space-nowrap">
+                              <div class="form-check mb-0 d-flex align-items-center">
+                                <input class="form-check-input" id="checkbox-bulk-purchases-select" type="checkbox" data-bulk-select="{&quot;body&quot;:&quot;table-purchase-body&quot;,&quot;actions&quot;:&quot;table-purchases-actions&quot;,&quot;replacedElement&quot;:&quot;table-purchases-replace-element&quot;}">
+                              </div>
+                            </th>
+                            <th class="sort pe-1 align-middle white-space-nowrap" data-sort="name">Name</th>
+                            <th class="sort pe-1 align-middle white-space-nowrap" data-sort="email">Email</th>
+      
+                            <th class="sort pe-1 align-middle white-space-nowrap" data-sort="product">invoice number</th>
+                            <th class="sort pe-1 align-middle white-space-nowrap text-center" data-sort="payment">Payment status</th>
+                            <th class="sort pe-1 align-middle white-space-nowrap text-end" data-sort="amount">Amount</th>
+                            <th class="no-sort pe-1 align-middle data-table-row-action"></th>
+                          </tr>
+                        </thead>
+                        <tbody class="list" id="table-purchase-body"><tr class="btn-reveal-trigger">
+                           
+                          <%  invoiceList.map(item=>{ %>
+
+                        
+                          <td class="align-middle" style="width: 28px;">
+                              <div class="form-check mb-0">
+                                <input class="form-check-input" type="checkbox" id="recent-transaction-0" data-bulk-select-row="data-bulk-select-row">
+                              </div>
+                            </td>
+                            <th class="align-middle white-space-nowrap name"><a href="../app/e-commerce/customer-details.html"><%= item.first_name %> <%= item.last_name %>  </a></th>
+                            <td class="align-middle white-space-nowrap email"><%= item.email %> </td>
+
+                            <td class="align-middle white-space-nowrap product">#<%=item.invoice_number %> </td>
+                            <td class="align-middle text-center fs-0 white-space-nowrap payment"><span class="badge badge rounded-pill badge-soft-success">Success<svg class="svg-inline--fa fa-check fa-w-16 ms-1" data-fa-transform="shrink-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style="transform-origin: 0.5em 0.5em;"><g transform="translate(256 256)"><g transform="translate(0, 0)  scale(0.875, 0.875)  rotate(0 0 0)"><path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" transform="translate(-256 -256)"></path></g></g></svg><!-- <span class="ms-1 fas fa-check" data-fa-transform="shrink-2"></span> Font Awesome fontawesome.com --></span>
+                            </td>
+                            <td class="align-middle text-end amount">$<%=item.amount%> </td>
+                            <td class="align-middle white-space-nowrap text-end">
+                              <div class="dropstart font-sans-serif position-static d-inline-block">
+                                <button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal float-end" type="button" id="dropdown0" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><svg class="svg-inline--fa fa-ellipsis-h fa-w-16 fs--1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <span class="fas fa-ellipsis-h fs--1"></span> Font Awesome fontawesome.com --></button>
+                                <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="dropdown0"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Edit</a><a class="dropdown-item" href="#!">Refund</a>
+                                  <div class="dropdown-divider"></div><a class="dropdown-item text-warning" href="#!">Archive</a><a class="dropdown-item text-danger" href="#!">Delete</a>
+                                </div>
+                              </div>
+                            </td>
+                          </tr><tr class="btn-reveal-trigger">
+
+                            <% }) %> 
+
+ 
+ 
+                          </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <div class="row align-items-center">
+                      <div class="pagination d-none"><li class="active"><button class="page" type="button" data-i="1" data-page="7">1</button></li><li><button class="page" type="button" data-i="2" data-page="7">2</button></li></div>
+                      <div class="col">
+                        <p class="mb-0 fs--1"><span class="d-none d-sm-inline-block me-2" data-list-info="data-list-info">1 to 7 of 14</span>
+                        </p>
+                      </div>
+                      <div class="col-auto d-flex">
+                        <button class="btn btn-sm btn-primary disabled" type="button" data-list-pagination="prev" disabled=""><span>Previous</span></button>
+                        <button class="btn btn-sm btn-primary px-4 ms-2" type="button" data-list-pagination="next"><span>Next</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+           
+          </div>
+
+
+          <div class="row">
+            <div class="col">
+              <div class="card h-lg-100 overflow-hidden">
+                <div class="card-body p-0">
+                  <div class="table-responsive scrollbar">
+                    <table class="table table-dashboard mb-0 table-borderless fs--1 border-200">
+                      <thead class="bg-light">
+                        <tr class="text-900">
+                          <th>Projects Description</th>
+                          <th class="text-center">Goal</th>
+                          <th class="text-center">Funding)</th>
+                          <th class="text-end">Remaining</th>
+                          <th class="pe-card text-end" style="width: 8rem">Status</th>
+                        </tr>
+                      </thead>
+                      <tbody class="list">
+
+                        <%  projects.map((el,i)=>{  if(i<7){ %>
+                      
+                          <%  const img = JSON.parse(el.imageLink); %> 
+                          <%     const orgName = org.filter((org) => org.id == el.org_id); %> 
+                          <% const fundPercentage=`style=width:${~~((el.funding / el.goal) * 100)}%` %>
+                          <% fundPer=~~((el.funding /el.goal) * 100) %>
+                        <tr class="border-bottom border-200">
+                          <td>
+                            <div class="d-flex align-items-center position-relative">
+                              <img class="rounded-1 border border-200" src="<%= img[5].url%> " width="60" alt="">
+                              <div class="flex-1 ms-3">
+                                <h6 class="mb-1 fw-semi-bold text-nowrap"><a class="text-900 stretched-link" href="#!"><%=el.title%> </a></h6>
+                                <p class="fw-semi-bold mb-0 text-500"><%=orgName[0].name%> </p>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="align-middle text-center fw-semi-bold">
+                            <%=  Math.ceil(el.goal).toLocaleString("en-US") %>
+                          </td>
+                          <td class="align-middle text-center fw-semi-bold">
+                            <%=  Math.ceil(el.funding).toLocaleString("en-US") %> </td>
+                        
+                          <td class="align-middle text-end fw-semi-bold">$
+                            <%=  Math.ceil(el.remaining).toLocaleString("en-US") %> 
+                          </td>
+                          <td class="align-middle pe-card">
+                            <div class="d-flex align-items-center">
+                              <div class="progress me-3 rounded-3 bg-200" style="height: 5px;width:80px">
+                                <div class="progress-bar bg-primary rounded-pill"  role="progressbar"
+                                aria-valuenow="<%=fundPer%>" aria-valuemin="0" aria-valuemax="100"
+                                <%=fundPercentage%>></div>
+                              </div>
+                              <div class="fw-semi-bold ms-2"><%=fundPer%>% </div>
+                            </div>
+                          </td>
+                        </tr>
+                           <%    } }) %> 
+                       
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="card-footer bg-light py-2">
+                  <div class="row text-end>
+         
+                    <div class="col-auto"><a class="btn btn-sm btn-falcon-default" href="/viewAllProjects">View All</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+       
+
+        </div>
+   
+  
+      </div>
+    </main>
+
+
+
+
+    <%-include("../template_two/customize"); %>
+    <%-include("../template_two/scripts"); %>
+
+  </body>
+
+</html>

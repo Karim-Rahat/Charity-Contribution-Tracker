@@ -108,7 +108,8 @@ console.log(values);
   },
 
   saveDonationMoney: async(values)=>{
-    const sqlquery=`update projects u inner join projects s on u.p_id = ${values[1]} set u.funding = s.funding+${values[0]},u.remaining = s.remaining-${values[0]},u.numberOfDonations=s.numberOfDonations+1`
+  
+    const sqlquery=`update projects set funding = funding+${values[0]},remaining = remaining-${values[0]},numberOfDonations=numberOfDonations+1 WHERE p_id=${values[1]};`
     try {
       const rows = await connection.promise().execute(sqlquery);
       return rows[0];

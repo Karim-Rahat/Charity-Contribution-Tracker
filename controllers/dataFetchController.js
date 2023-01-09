@@ -45,6 +45,22 @@ getInvoiceList: async(req,res)=>{
 
     const data=await dataFetchModels.getinvoiceList(value)
     res.send(data)
+},
+paymentChartByhours: async(req,res)=>{
+    const data=await dataFetchModels.paymentChartByhours()
+    res.send(data)
+},
+countData: async(req,res)=>{
+const data=await dataFetchModels.countData()
+res.send(data)
+},
+countryWiseOrg: async(req,res)=>{
+    const data = await dataFetchModels.countryWiseOrg()
+    res.send(data)
+},
+getAllInvoiceList: async(req,res)=>{
+    const data= await dataFetchModels.getAllInvoiceList()
+    res.send(data)
 }
 }
 module.exports=dataFetchController
