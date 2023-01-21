@@ -1,0 +1,261 @@
+
+
+    <%-include("../template_three/header"); %>
+    <body>
+      <main class="main" id="top">
+        <div class="container" data-layout="container">
+          <%-include("../template_three/navbar"); %>
+          <div class="content">
+            <%-include("../template_three/bodynav"); %>
+            <% 
+            let sum = 0;
+            let active=0;
+            let totalDonationNumber=0
+
+            function kFormatter(num) {
+    return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
+}
+            allProjects[0].forEach((element,i) => {
+            sum+=element.funding
+            totalDonationNumber+=element.numberOfDonations
+          
+            if(element.active=='true')
+            active++
+          });
+
+            %> 
+<div class="row g-3 mb-3">
+            <div class="col">
+              <div class="card bg-100 shadow-none border">
+                <div class="row gx-0 flex-between-center">
+                  <div class="col-sm-auto d-flex align-items-center"><img class="ms-n2" src="../assets/img/illustrations/crm-bar-chart.png" alt="" width="90">
+                    <div>
+                      <h6 class="text-primary fs--1 mb-0">Welcome,</h6>
+                      <h4 class="text-primary fw-bold mb-0"><span class="text-info fw-medium"> <%= orgInfo.orgName %></span></h4>
+                    </div><img class="ms-n4 d-md-none d-lg-block" src="../assets/img/illustrations/crm-line-chart.png" alt="" width="150">
+                  </div>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+<div class="row g-3 mb-3">
+    <div class="col-xxl-6 col-lg-12">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row g-3 mb-3">
+            <div class="col-sm-6 col-md-6">
+              <div class="card overflow-hidden" style="min-width: 12rem">
+                <div class="bg-holder bg-card" style="background-image:url(../assets/img/icons/spot-illustrations/corner-1.png);">
+                </div>
+                <!--/.bg-holder-->
+
+                <div class="card-body position-relative">
+                  <h6>Total donation Amount<span class="badge badge-soft-warning rounded-pill ms-2"></span></h6>
+                  <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-warning" data-countup="{&quot;endValue&quot;:58.386,&quot;decimalPlaces&quot;:2,&quot;suffix&quot;:&quot;k&quot;}">
+                   $<%= sum>=1000?kFormatter(sum):sum.toLocaleString('en')  %> </div>
+
+                    
+                       
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div class="card overflow-hidden" style="min-width: 12rem">
+                <div class="bg-holder bg-card" style="background-image:url(../assets/img/icons/spot-illustrations/corner-2.png);">
+                </div>
+                <!--/.bg-holder-->
+
+                <div class="card-body position-relative">
+                  <h6>Number of donation <span class="badge badge-soft-info rounded-pill ms-2"></span></h6>
+                  <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info" data-countup="{&quot;endValue&quot;:23.434,&quot;decimalPlaces&quot;:2,&quot;suffix&quot;:&quot;k&quot;}">
+                    <%= kFormatter(totalDonationNumber) %> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+   
+
+        <!-- report for this -->
+      </div>
+    </div>
+
+
+    
+ 
+
+
+
+
+    <div class="col-xxl-12 col-lg-12">
+      <div class="card h-100">
+        <div class="card-header d-flex flex-between-center">
+          <h6 class="mb-0">Project Statistics</h6>
+          <div class="dropdown font-sans-serif btn-reveal-trigger">
+            <button class="btn btn-link text-600 btn-sm dropdown-toggle dropdown-caret-none btn-reveal" type="button" id="dropdown-project-statistics" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-ellipsis-h fa-w-16 fs--2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <span class="fas fa-ellipsis-h fs--2"></span> Font Awesome fontawesome.com --></button>
+            <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="dropdown-project-statistics"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+              <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+            </div>
+          </div>
+        </div>
+        <div class="card-body pt-0">
+          <div class="row mb-2">
+            <div class="col-6 border-end border-200">
+         
+              <h4 class="mb-0">$<%= sum.toLocaleString('en') %> </h4>
+              <p class="fs--1 text-600 mb-0">Total Donation</p>
+            </div>
+            <div class="col-3 border-end text-center border-200">
+              <h4 class="fs-0 mb-0"><%= allProjects[0].length %> </h4>
+              <p class="fs--1 text-600 mb-0">Projects</p>
+            </div>
+            <div class="col-3 text-center">
+              <h4 class="fs-0 mb-0"><%=active%> </h4>
+              <p class="fs--1 text-600 mb-0">Ongoing</p>
+            </div>
+          </div>
+        
+          
+          <div class="d-flex justify-content-between">
+            <h6>Top Funding Project </h6>
+            <h6 class="mr-2">Amount</h6>
+          </div>
+          <%  allProjects[1].forEach((el,i) => { %> 
+          <div class="d-flex flex-between-center rounded-3 bg-light p-3 mb-2"><a href="#!">
+              <h6 class="mb-0">
+                 <span class="fas fa-circle fs--2 me-3 text-primary"></span> 
+                <%= el.title %> 
+              </h6>
+            </a><a class="fs--2 text-600 mb-0" href="#!">$<%=el.funding.toLocaleString('en') %></a></div>
+        
+<% }) %> 
+
+
+
+        </div>
+      </div>
+    </div>
+ 
+ 
+    <div class="col-12 order-xxl-3">
+      <div class="card" id="runningProjectTable"
+       data-list='{"valueNames":["projects","status","goal","funding","remaining"],"page":5,"pagination":true}'>
+       <div class="card-header">
+        <div class="row flex-between-center">
+          <div class="col-auto col-sm-6 col-lg-7">
+            <h6 class="mb-0 text-nowrap py-2 py-xl-0">Running Projects</h6>
+          </div>
+          <div class="col-auto col-sm-6 col-lg-5">
+            <div class="h-100">
+              <form>
+                <div class="input-group">
+                  <input class="form-control form-control-sm shadow-none search" type="search" placeholder="Search for a page" aria-label="search">
+                  <div class="input-group-text bg-transparent"><svg class="svg-inline--fa fa-search fa-w-16 fs--1 text-600" aria-hidden="true" focusable="false" data-prefix="fa" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg><!-- <span class="fa fa-search fs--1 text-600"></span> Font Awesome fontawesome.com --></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="card-body p-0">
+          <div class="table-responsive scrollbar">
+            <table class="table mb-0 table-borderless fs--2 border-200 overflow-hidden table-running-project">
+              <thead class="bg-light">
+                <tr class="text-800">
+                  <th class="sort" data-sort="projects">Projects</th>
+                  <th class="sort text-center" data-sort="status">Status</th>
+                  <th class="sort text-center" data-sort="goal">Goal</th>
+                  <th class="sort text-center" data-sort="funding">Funding</th>
+                  <th class="sort text-center" data-sort="remaining">Remaining</th>
+                  <th class="text-center">Action</th>
+                </tr>
+              </thead>
+              <tbody class="list">
+                <% allProjects[0].map((item,i)=>{ %>
+<% 
+  
+const img = JSON.parse(item.imageLink);
+const fundPercentage = ~~((item.funding / item.goal) * 100);
+const fundPercentages=`style=width:${fundPercentage}%`
+fundPer=~~(fundPercentage) 
+
+%> 
+                <tr>
+                  <td class="projects">
+                    <div class="d-flex align-items-center position-relative">
+                      <div class="avatar avatar-xl">
+                        <div class=" text-primary bg-soft-primary fs-0"><span>
+                          <img src="<%=img?img[3].url:'' %> ">
+                        </span></div>
+                      </div>
+                      <div class="flex-1 ms-3">
+                        <h6 class="mb-0 fw-semi-bold"><a class="stretched-link text-900" href="#"><%=item.title %></a></h6>
+                        <p class="text-500 fs--2 mb-0"><%=item.country %></p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="align-middle text-center status">
+                    <div class="progress rounded-3 worked" style="height: 6px;">
+                      <div class="progress-bar bg-progress-gradient rounded-pill" role="progressbar"  
+                       aria-valuenow="<%=fundPer%>" aria-valuemin="0" aria-valuemax="100" <%= fundPercentages %> ></div>
+                    </div>
+                  </td>
+                  <td class="align-middle text-center goal">
+                    <p class="fs--1 mb-0 fw-semi-bold"><%= item.goal.toLocaleString('en') %> </p>
+                  </td>
+                  <td class="align-middle text-center funding">
+                    <p class="fs--1 mb-0 fw-semi-bold"><%= item.funding.toLocaleString('en') %></p>
+                  </td>
+                  <td>
+                    <p class="fs--1 mb-0 fw-semi-bold remaining"><%= item.remaining.toLocaleString('en') %></p>
+                  </td>
+                  <td>
+                      <div class="dropdown font-sans-serif btn-reveal-trigger">
+            <button class="btn btn-link text-600 btn-sm dropdown-toggle dropdown-caret-none btn-reveal" type="button" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-ellipsis-h fa-w-16 fs--1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <span class="fas fa-ellipsis-h fs--1"></span> Font Awesome fontawesome.com --></button>
+            <div class="dropdown-menu dropdown-menu-end border py-2">
+              <a class="dropdown-item" href="editProject/<%=item.p_id%>">Edit</a>
+             
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-danger" href="delete/<%=item.p_id%>" >Delete</a>
+            </div>
+          </div>
+                  </td>
+                </tr>
+
+                <%   }) %> 
+
+              </tbody>
+            </table>
+            
+          </div>
+          <div class="card-footer">
+            <div class="row align-items-center">
+              <div class="pagination d-none"><li class="active"><button class="page" type="button" data-i="1" data-page="8">1</button></li><li><button class="page" type="button" data-i="2" data-page="8">2</button></li></div>
+              <div class="col">
+                <p class="mb-0 fs--1"><span class="d-none d-sm-inline-block me-2" data-list-info="data-list-info">1 to 8 of 13</span></p>
+              </div>
+              <div class="col-auto d-flex">
+                <button class="btn btn-sm btn-primary disabled" type="button" data-list-pagination="prev" disabled=""><span>Previous</span></button>
+                <button class="btn btn-sm btn-primary px-4 ms-2" type="button" data-list-pagination="next"><span>Next</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+  
+  <%-include("../template_three/customize"); %>
+  <%-include("../template_three/scripts"); %>
+
+</body>
+
+</html>

@@ -1,8 +1,9 @@
 const loginModel = require("../models/loginModel");
-const sessionStorage = require('node-sessionstorage')
-
-
+const LocalStorage = require('node-localstorage').LocalStorage;
+const localStorage = new LocalStorage('./localstorage');
 const bcrypt = require('bcrypt');
+
+const dataFetchModels = require("../models/dataFetchModels");
 
 async function comparePasswords(plainTextPassword, hashedPassword) {
   const isMatch = await bcrypt.compareSync(plainTextPassword, hashedPassword);
@@ -11,19 +12,12 @@ async function comparePasswords(plainTextPassword, hashedPassword) {
 
 const loginControllers = {
   index: async (req, res) => {
-    console.log((req.session.userLogin, req.session.userName));
-    if (
-      req.isAuthenticated() ||
-      (req.session.userLogin && req.session.userName)
-    ) {
-      res.redirect("/home");
-    }
-
+ 
     res.render("authenticate/login", { display: "display:none" });
   },
   loginAuth: async (req, res) => {
     const { mail, pass } = req.body;
-    
+    console.log(mail,pass);
     let flag = 0;
     let hash;
     const item = await loginModel.authenticator(mail, pass);
@@ -38,7 +32,9 @@ const loginControllers = {
       req.session.phone=item.phone
       req.session.adress=item.adress
       req.session.user_Id = item.user_id;
-      req.session.email = item.email;
+      req.session.userEmail = item.email;
+      req.session.profilePic=item.profile_pic
+      req.session.connection='siteConnected'
     
       flag=1
     }
@@ -52,7 +48,8 @@ const loginControllers = {
       req.session.phoneCode=data.phone_code;
       req.session.phone=data.phone
       req.session.admin_id= data.admin_id;
-      req.session.email = data.email;
+      req.session.adminEmail = data.email;
+      req.session.profilePic=data.profile_pic
       flag=2
     }
    })
@@ -72,6 +69,37 @@ else{
 
 
   },
+
+  //org login auth
+  orgLoginAuth: async(req,res)=>{
+    const { mail, pass } = req.body;
+   
+    let flag = 0;
+
+    const orgData= await dataFetchModels.getOrg()
+
+    orgData.map(data=>{
+  
+   
+      if(data.email==mail && data.password==pass){
+      
+        console.log('org true');
+        req.session.orgName = data.name;
+        req.session.orgLogin = true;
+        req.session.orgId= data.id;
+        req.session.orgEmail = data.email;
+        req.session.profilePic=data.profile_pic
+        flag=1
+      }
+     })
+     if(flag==1){
+      res.send({data:'org'})
+    }
+    else{
+      res.send({ data: false});
+    }
+},
+
   register: async (req, res) => {
     if (
       req.isAuthenticated() ||
@@ -92,9 +120,9 @@ else{
       req.session.userName = req.user.name;
       req.session.userLogin = true;
       req.session.user_Id = req.user.id;
-      req.session.email = req.user.email;
+      req.session.userEmail = req.user.email;
       req.session.profilePic = req.user.photos[0].value;
-
+      req.session.connection='socialConnected'
       res.redirect("/home");
     } else {
       res.redirect("/");
@@ -111,14 +139,12 @@ else{
       req.session.userLogin = true;
       req.session.user_Id = req.user.id;
 
-      req.session.email = req.user.email;
+      req.session.userEmail = req.user.email;
       req.session.profilePic = proPic;
-//save to session storage
+      req.session.connection='socialConnected'
       res.redirect("/home");
     }
-    // else {
-    //     res.redirect("/");
-    // }
+
   },
   loginAuthenticate: async (req, res) => {
     const { mail, pass } = req.body;
@@ -133,23 +159,51 @@ else{
         req.session.userLogin = true;
 
         req.session.user_Id = item.user_Id;
-
+        req.session.userEmail = item.email;
         res.redirect("/home");
       }
     });
     res.end("done");
   },
 
+  mailConfirmed: async(req,res)=>{
+    const token=req.params
+    console.log(token);
 
+    const data = await  dataFetchModels.usersInfo()
+   console.log(data);
+    data.map((item) => {
+
+    
+      if (token.token == item.verificaion_token) {
+        req.session.userName = item.first_name + " " + item.last_name;
+        req.session.userLogin = true;
+        req.session.userEmail=item.email
+        req.session.user_Id = item.user_id;
+          console.log(req.session);
+
+        res.render('authenticate/confirmMail')
+      }
+    });
+
+ 
+
+  },
 //admin
 adminLoginPage: async(req,res)=>{
   res.render('authenticate/adminLogin')
 },
 
+//prg
+orgLoginPage: async(req,res)=>{
+  res.render('authenticate/orgLogin')
+},
+
 
 
   logout: async (req, res) => {
-    console.log(req.session)
+   localStorage.removeItem('longitude')
+   localStorage.removeItem('latitude')
     req.session = null
     res.redirect('/');
   },

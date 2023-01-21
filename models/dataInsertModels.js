@@ -3,7 +3,7 @@ const connection = require("../database/db");
 const dataInsertModels = {
   registration: async (values) => {
     const sqlquery =
-      "INSERT INTO `users` (`first_name`, `last_name`, `email`, `password`, `birthdate`, `gender`, `phone_code`, `phone`) VALUES (?,?,?,?,?,?,?,?)";
+      "INSERT INTO `users` (`first_name`, `last_name`, `email`, `password`, `birthdate`, `gender`, `phone_code`, `phone`,`verificaion_token`) VALUES (?,?,?,?,?,?,?,?,?)";
 
     try {
       const rows = await connection.promise().execute(sqlquery, values);
@@ -170,7 +170,40 @@ console.log(values);
       console.log(err);
       return err;
     }
-  }
+  },
+  insertOrg: async(values,id)=>{
+    console.log(values);
+    const sqlquery="INSERT INTO `organizations`(`name`, `mission`, `adressLine1`, `city`, `country`, `postal`, `state`, `tin`, `logoUrl`, `themes`, `websiteLink`, `email`, `password`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)"
+    try {
+      const rows = await connection.promise().execute(sqlquery,values);
+      return rows[0];
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  },
+
+  insertProject: async(values,id)=>{
+    const sqlquery="INSERT INTO `projects`( `title`, `activities`,`summary`,`longTermImpact`, `need`,`contactAddress`, `contactCity`, `contactCountry`,  `contactPostal`, `contactState`, `contactTitle`, `themeName`,`country`,   `contactName`,`contactUrl`, `goal`,`org_id`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+    try {
+      const rows = await connection.promise().execute(sqlquery,values);
+      return rows[0];
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  },
+  updateProject: async(values,id)=>{
+    const sqlquery="UPDATE `projects` SET `title`=?,`activities`=?, `summary`=?,`longTermImpact`=?,`need`=?,`contactAddress`=?,`contactCity`=?,`contactCountry`=?,`contactPostal`=?,`contactState`=?,`contactTitle`=?,`themeName`=?,`country`=?,`contactName`=?,`contactUrl`=?,`goal`=? WHERE `p_id`=?"
+    try {
+      const rows = await connection.promise().execute(sqlquery,values,[id]);
+      console.log(rows);
+      return rows[0];
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  },
 };
 
 module.exports = dataInsertModels;

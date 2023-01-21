@@ -42,7 +42,7 @@ registerForm.addEventListener('keyup', (e) => {
     axios
     .post('/registration', formData)
     .then((response) => {
-      console.log(response);
+     
       if(response.data.affectedRows==1){
 
       
@@ -63,7 +63,7 @@ registerForm.addEventListener('keyup', (e) => {
             clearInterval(timerInterval)
           }
         }).then((result) => {
-          window.location.href = '/';
+          window.location.href = '/confirmMail';
           /* Read more about handling dismissals below */
           if (result.dismiss === Swal.DismissReason.timer) {
             console.log('I was closed by the timer')

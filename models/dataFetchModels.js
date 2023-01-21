@@ -58,7 +58,7 @@ const dataFetchModels = {
     }
   },
   getOrg: async ()=>{
-    const sqlquery="SELECT * FROM `organizations` WHERE activeProjects>0"
+    const sqlquery="SELECT * FROM `organizations`"
     try {
       const rows = await connection.promise().execute(sqlquery);
 
@@ -181,7 +181,7 @@ try {
 countData: async()=>{
   const sqlquery="SELECT COUNT(*) as usersCount FROM `users`"
   const sqlquery2="SELECT COUNT(*) as projectCount FROM `projects` where status='active';"
-  const sqlquery3="SELECT COUNT(*) as orgCount FROM `organizations` WHERE activeProjects>0;"
+  const sqlquery3="SELECT COUNT(*) as orgCount FROM `organizations` WHERE activeProjects>0 ;"
   try {
     const rows = await connection.promise().execute(sqlquery);
     const rows2 = await connection.promise().execute(sqlquery2);
@@ -205,7 +205,7 @@ countData: async()=>{
   
   getAllInvoiceList: async()=>{
     
-    const sqlquery="SELECT invoice_id,invoice_number,amount,transaction_time,u.first_name,u.last_name,u.email FROM `invoices` as i JOIN users as u WHERE i.user_id=u.user_id OR i.user_id=u.social_id;"
+    const sqlquery="SELECT invoice_id,invoice_number,amount,transaction_time,u.first_name,u.last_name,u.email FROM `invoices` as i JOIN users as u WHERE i.user_id=u.user_id OR i.user_id=u.social_id ORDER BY `i`.`transaction_time` DESC"
     
     try {
       const rows = await connection.promise().execute(sqlquery);
@@ -214,7 +214,43 @@ countData: async()=>{
     } catch (err) {
       return err;
     }
-  }
+  },
+  getLocationProject: async(value)=>{
+    const sqlquery="SELECT *  FROM `projects` WHERE country=?"
+    try {
+      const rows = await connection.promise().execute(sqlquery,[value]);
+
+      return rows[0];
+    } catch (err) {
+      return err;
+    }
+  },
+  getBangladeshProject: async(value)=>{
+    const sqlquery="SELECT *  FROM `projects` WHERE country='Bangladesh'"
+    try {
+      const rows = await connection.promise().execute(sqlquery);
+
+      return rows[0];
+    } catch (err) {
+      return err;
+    }
+  },
+
+
+
+  //organization
+  getOrgProjects: async(values)=>{
+    const sqlquery="SELECT *  FROM `projects` WHERE org_id=?"
+    const sqlquery2="SELECT * FROM `projects` WHERE org_id=? ORDER BY `projects`.`funding` DESC LIMIT 4;"
+    try {
+      const rows = await connection.promise().execute(sqlquery,[values]);
+      const rows2 = await connection.promise().execute(sqlquery2,[values]);
+      return [rows[0],rows2[0]];
+    } catch (err) {
+      return err;
+    }
+  },
+
 };
 
 module.exports = dataFetchModels;

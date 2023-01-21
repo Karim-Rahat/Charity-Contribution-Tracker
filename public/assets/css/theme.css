@@ -24489,7 +24489,7 @@ h5, .h5 {
     margin-left: 3.125rem;
   }
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xxl + .content .navbar-top {
-    padding-left: 13.5rem;
+    /* padding-left: 13.5rem; */
   }
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xxl.navbar-card, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xxl.navbar-vibrant, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xxl.navbar-inverted {
     width: 4.125rem;
@@ -24657,7 +24657,7 @@ h5, .h5 {
     margin-left: 3.125rem;
   }
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xl + .content .navbar-top {
-    padding-left: 13.5rem;
+    /* padding-left: 13.5rem; */
   }
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xl.navbar-card, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xl.navbar-vibrant, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xl.navbar-inverted {
     width: 4.125rem;
@@ -24825,7 +24825,7 @@ h5, .h5 {
     margin-left: 3.125rem;
   }
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-lg + .content .navbar-top {
-    padding-left: 13.5rem;
+    /* padding-left: 13.5rem; */
   }
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-lg.navbar-card, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-lg.navbar-vibrant, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-lg.navbar-inverted {
     width: 4.125rem;
@@ -24993,7 +24993,7 @@ h5, .h5 {
     margin-left: 3.125rem;
   }
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-md + .content .navbar-top {
-    padding-left: 13.5rem;
+    /* padding-left: 13.5rem; */
   }
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-md.navbar-card, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-md.navbar-vibrant, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-md.navbar-inverted {
     width: 4.125rem;
@@ -25161,7 +25161,7 @@ h5, .h5 {
     margin-left: 3.125rem;
   }
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-sm + .content .navbar-top {
-    padding-left: 13.5rem;
+    /* padding-left: 13.5rem; */
   }
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-sm.navbar-card, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-sm.navbar-vibrant, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-sm.navbar-inverted {
     width: 4.125rem;
@@ -25328,7 +25328,7 @@ h5, .h5 {
   margin-left: 3.125rem;
 }
 .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xs + .content .navbar-top {
-  padding-left: 13.5rem;
+  /* padding-left: 13.5rem; */
 }
 .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xs.navbar-card, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xs.navbar-vibrant, .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xs.navbar-inverted {
   width: 4.125rem;

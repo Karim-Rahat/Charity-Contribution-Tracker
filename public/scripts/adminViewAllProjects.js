@@ -32,12 +32,12 @@ async function getProjectDatas() {
 function allProject(data) {
   projects.innerHTML = "";
   data.map((el, i) => {
+   
+    // match org id
+    const orgName = org.filter((org) => org.id == el.org_id);
     const img = JSON.parse(el.imageLink);
 
     const fundPercentage = ~~((el.funding / el.goal) * 100);
-    // match org id
-    const orgName = org.filter((org) => org.id == el.org_id);
-
     const fundPercentages=`style=width:${fundPercentage}%`
     fundPer=~~(fundPercentage) 
 

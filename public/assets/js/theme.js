@@ -7143,7 +7143,7 @@ console.log(content);
    
         sum+=item.amount
         
-        todayTotal.innerText=sum
+        todayTotal.innerText=sum.toFixed(2)
       
             arr[hour]+=(item.amount)
             console.log(arr);
@@ -7160,7 +7160,7 @@ console.log(content);
   });
   if(content[1].yesterdayTotal!=null){
     console.log(yesterdayTotal);
-    yesterdayTotal.innerText=content[1].yesterdayTotal
+    yesterdayTotal.innerText=content[1].yesterdayTotal.toFixed(2)
   }
  
   var dataset = {

@@ -27,6 +27,8 @@ async function getDatas() {
     .catch((error) => {
       console.log(error);
     });
+    //stop spinner
+    document.getElementById("loading-spinner").style.display = "none";
 }
 
 function cartListGen(cartData) {
@@ -39,22 +41,22 @@ function cartListGen(cartData) {
   cartData.map((item, i) => {
     const projectData = project.filter((el) => el.p_id == item.project_id);
 
-    const img = JSON.parse(projectData[0].imageLink);
+
     amount = amount + item.amount;
 console.log(amount);
     totalItem = cartData.length;
     itemNo.innerText = totalItem;
 
     let element = `<div class="row gx-card mx-0 align-items-center border-bottom border-200">
-      <div class="col-4 py-3">
+      <div class="col-3 py-3">
       
         <div class="d-flex align-items-center"><a href="/project/${item.project_id}">
-        <img class="img-fluid rounded-1 me-3 d-block d-md-block" src="${img[5].url}" alt="" width="200" height="100" /></a>
+        <img class="img-fluid rounded-1 me-3 d-block d-md-block" src="${projectData[0].imageLink}" alt="" width="200" height="100" /></a>
          
         </div>
       </div>
 
-      <div class="col-4 py-3>
+      <div class="col-5 py-3>
      
       <h5 class="fs-0">
       <a class="text-900" href="">${item.title}</a></h5>
@@ -103,8 +105,9 @@ console.log(amount);
 
   cartContent.insertAdjacentHTML("beforeend", totalElement);
 
-  const footer = `   <button type="button" class="btn btn-primary" id="chkOutBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  const footer = `   <button type="button" id="paypal-button-container" class="btn btn-primary" id="chkOutBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Donate
+  
   </button>
   
   <!-- Modal -->
@@ -113,9 +116,10 @@ console.log(amount);
       <div class="modal-content">
         <div class="modal-header">
           
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" onclick="paypals()" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
+       
           <a href="/init/${amount}" alt="SSLCommerz" style="border:none" ><img style="width:90%;height:auto;" src="/content/SSLCommerz-Pay-With-logo-All-Size-05.png" /></a>
         </div>
   
@@ -189,7 +193,6 @@ async function delItem(c_id) {
   }
 }
 
-async function chkout() {
-  let data = new FormData();
-  // data.append("cartData",JSON.stringify(cartData));
-}
+
+
+

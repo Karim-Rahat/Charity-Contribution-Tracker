@@ -1,35 +1,31 @@
 const paymentModels = require("../models/paymentModel");
-
 const express = require("express");
-const app = express();
-
 const SSLCommerzPayment = require("sslcommerz-lts");
 const store_id = "nurul637c5bde20663";
 const store_passwd = "nurul637c5bde20663@ssl";
 const is_live = false; //true for live, false for sandbox
 const { Convert } = require("easy-currencies");
+const {Converter} =require("easy-currencies");
+const converter = new Converter("AlphaVantage","F7Y2A7RQY26QUJ57");
 const { v4: uuidv4 } = require("uuid");
 const dataInsertModels = require("../models/dataInsertModels");
-const dataFetchController = require("./dataFetchController");
+
 const dataFetchModels = require("../models/dataFetchModels");
 
-//import module
 const localStorage = require("localStorage");
-
-// constructor function to create a storage directory inside our project for all our localStorage setItem.
-
-//sslcommerz init
 
 const paymentControllers = {
   ssl: async (req, res) => {
     let sumAmount = 0;
     const amount = req.params.amount;
     const transId = uuidv4();
-    const convert = await Convert().from("USD").fetch();
 
-    console.log(convert.rates);
-    const value = await Convert(amount).from("USD").to("BDT");
     
+    const value = await converter.convert(amount, "USD", "BDT");
+
+
+
+
     console.log('Converted Amount=',value);
     sumAmount = sumAmount + value;
 
@@ -79,13 +75,13 @@ const paymentControllers = {
 
   paymentSuccess: async (req, res) => {
     const data = req.body;
-    //current date
+
     let date = new Date();
     date.toISOString().split("T")[0] + " " + date.toTimeString().split(" ")[0];
-    //convert bdt to usd
-    const amount = await Convert(data.amount).from("BDT").to("USD");
-    const storeAmount = await Convert(data.store_amount).from("BDT").to("USD");
-
+    const amount =  await converter.convert(data.amount, "BDT", "USD");
+ 
+    const storeAmount = await converter.convert(data.store_amount,"BDT", "USD");
+    console.log(amount,storeAmount);
     const userId = localStorage.getItem("userId");
     const values = [
       userId,
@@ -96,25 +92,33 @@ const paymentControllers = {
       data.tran_id,
       date,
     ];
+    console.log(values);
 
     const insertedData = await dataInsertModels.insertPaymentData(values);
-
+    console.log(insertedData);
     if (insertedData.affectedRows > 0) {
       const getCrntCartData = await dataFetchModels.getCartData([userId]);
-
-      await getCrntCartData.map(async (item) => {
- 
-       let val = [item.amount, item.project_id];
-   console.log(val,'value');
-        const saveDonationMoney = await dataInsertModels.saveDonationMoney(val);
-       console.log(saveDonationMoney,'savedonation');
+       await getCrntCartData.map(async (item) => {
+        let val = [item.amount, item.project_id];
         await dataInsertModels.changeStatusOfCart(item.c_id, data.val_id);
+         await dataInsertModels.saveDonationMoney(val);
+
       });
 
-
-      await res.redirect("/invoiceList");
+      res.redirect("/invoiceList");
     }
   },
-};
+
+
+
+
+
+
+
+
+
+}
 
 module.exports = paymentControllers;
+
+

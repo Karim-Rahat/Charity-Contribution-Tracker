@@ -1,4 +1,8 @@
-
+function getDatas(){
+  
+  //stop spinner after loading
+  document.getElementById("loading-spinner").style.display = "none";
+}
         //save birthdate and gender
         async function genderBdate() {
             let genderCheck = document.getElementsByClassName('gender');

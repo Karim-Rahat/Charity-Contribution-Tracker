@@ -1,0 +1,237 @@
+<%-include("../template_three/header"); %>
+<body>
+  <main class="main" id="top">
+    <div class="container" data-layout="container">
+      <%-include("../template_three/navbar"); %>
+
+    <div class="content">
+      <%-include("../template_three/bodynav"); %>
+      <div class="card mb-3">
+        <div class="bg-holder d-none d-lg-block bg-card" style="background-image:url(../../assets/img/icons/spot-illustrations/corner-4.png);">
+        </div>
+        <!--/.bg-holder-->
+
+        <div class="card-body position-relative">
+          <div class="row">
+            <div class="col-lg-8">
+              <h3>Add a Project</h3>
+              <p class="mb-0"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+
+
+    <form id="submitForm"  action="/insertProject" onsubmit="return validate(this)" method="post"  >
+        <div class="form-floating mb-3">
+            <input class="form-control"  name="title"  minlength="100" type="text" placeholder="Title" required/>
+            <label for="name">Title</label>
+
+        </div>
+
+
+        <div class="row gx-2">
+            <div class="mb-3 col-sm-6">
+        <div class="form-floating mb-3">
+            <textarea class="form-control" id="activiies" minlength="100" type="text" name="activiies" placeholder="activiies" style="height: 10rem;" data-sb-validations="required"></textarea>
+            <label for="activiies">activiies</label>
+            <div class="invalid-feedback" data-sb-feedback="activiies:required">activiies is required.</div>
+        </div> </div>
+        <div class="mb-3 col-sm-6">
+        <div class="form-floating mb-3">
+            <textarea class="form-control" id="summary" type="text" name="summary" placeholder="summary" style="height: 10rem;" data-sb-validations="required"></textarea>
+            <label for="summary">summary</label>
+            <div class="invalid-feedback" data-sb-feedback="summary:required">summary is required.</div>
+        </div></div>
+
+</div>
+
+
+
+<div class="row gx-2">
+    <div class="mb-3 col-sm-6">
+        <div class="form-floating mb-3">
+            <textarea class="form-control"  type="text" name="longTermImpact" placeholder="summary" style="height: 10rem;" data-sb-validations="required"></textarea>
+            <label for="longTermImpact">Long Term Impact</label>
+            <div class="invalid-feedback" data-sb-feedback="summary:required">summary is required.</div>
+        </div></div>
+        
+        <div class="mb-3 col-sm-6">
+            <div class="form-floating mb-3">
+                <textarea class="form-control"  type="text" name="need" placeholder="summary" style="height: 10rem;" data-sb-validations="required"></textarea>
+                <label for="longTermImpact">Challenge</label>
+                <div class="invalid-feedback" data-sb-feedback="summary:required">summary is required.</div>
+            </div></div>
+    
+    </div>
+        
+
+
+    <div class="row gx-2">
+    <div class="form-floating mb-3">
+        <input class="form-control" id="contactAddress" type="text" name="contactAddress" placeholder="contact address" required/>
+        <label for="address">Address</label>
+        <div class="invalid-feedback" data-sb-feedback="address:required">Address is required.</div>
+    </div>
+
+        <div class="mb-3 col-sm-6">
+            <div class="form-floating mb-3">
+            <input class="form-control" id="contactCity" type="text" name="contactCity" placeholder="contact city" required/>
+            <label for="address">City</label>
+            <div class="invalid-feedback" data-sb-feedback="address:required">City is required.</div>
+        </div>
+        </div>
+        <div class="mb-3 col-sm-6">
+        <div class="form-floating mb-3">
+            <select class="form-select" id="contactCountry" name="contactCountry" aria-label="contact country">
+                <%country.map(item=>{ %>
+                    <option name="phoneCode" class="form-control" value="<%=item.country%>">
+                      <p class="px-4  lh-1 "> <%=item.country%> </p> 
+                       </p>
+                    </option>
+            <% })%>
+            </select>
+            <label for="country">Contact Country</label>
+        </div>
+        </div>
+        </div>
+
+        <div class="row gx-2">
+            <div class="mb-3 col-sm-4">
+        <div class="form-floating mb-3">
+            <input class="form-control" id="postal" type="number" name="contactPostal" placeholder="contact postal" required/>
+            <label for="postal">contact postal</label>
+            <div class="invalid-feedback" data-sb-feedback="postal:required">postal is required.</div>
+        </div>
+</div>
+<div class="mb-3 col-sm-4">
+        <div class="form-floating mb-3">
+            <input class="form-control" id="state" type="text" name="contactState" placeholder="contact state" required/>
+            <label for="state">contact state</label>
+            <div class="invalid-feedback" data-sb-feedback="state:required">state is required.</div>
+        </div>
+    </div>
+
+    <div class="mb-3 col-sm-4">
+        <div class="form-floating mb-3">
+            <input class="form-control" type="text" name="contactTitle" placeholder="contact title" required/>
+            <label for="tin">contact title</label>
+            <div class="invalid-feedback" data-sb-feedback="tin:required">TIN is required.</div>
+        </div>
+
+    </div>
+
+    </div>
+
+
+
+    <div class="row gx-2">
+        <div class="mb-3 col-sm-4">
+        <div class="form-floating mb-3">
+            <select class="form-select" id="newField13" name="theme" aria-label="New Field 13">
+                <%themes.map(item=>{ %>
+                    <option name="phoneCode" class="form-control" value="<%=item.t_id%>">
+                      <p class="px-4  lh-1 "> <%=item.t_name%></p> 
+            
+                    </option>
+            <% })%>
+            </select>
+            <label for="newField13">Themes</label>
+        </div></div>
+
+
+        <div class="mb-3 col-sm-4">
+        <div class="form-floating mb-3">
+            <select class="form-select" id="country" name="country" aria-label="Country">
+                <%country.map(item=>{ %>
+                    <option name="phoneCode" class="form-control" value="<%=item.country%>">
+                      <p class="px-4  lh-1 "> <%=item.country%> </p> 
+                       </p>
+                    </option>
+            <% })%>
+            </select>
+            <label for="country">Contact Country</label>
+        </div></div>
+
+        <div class="mb-3 col-sm-4">
+            <div class="form-floating mb-3">
+                <input class="form-control"  type="text" name="contactName" placeholder="contact name" required/>
+                <label for="contact name">contact name</label>
+                
+            </div>
+    
+        </div>
+
+</div>
+
+
+
+
+<div class="row gx-2">
+
+    <div class="mb-3 col-sm-6">
+        <div class="form-floating mb-3">
+            <input class="form-control" id="websiteLink" name="websiteLink" type="text" placeholder="website link" required/>
+            <label for="websiteLink">website link</label>
+            <div class="invalid-feedback" data-sb-feedback="websiteLink:required">website link is required.</div>
+        </div></div>
+
+
+    <div class="mb-3 col-sm-6">
+        <div class="form-floating mb-3">
+            <input class="form-control"  name="goal" min="1000" type="number" placeholder="Set goal amount" required/>
+            <label for="websiteLink">Goal Amount</label>
+            <div class="invalid-feedback" data-sb-feedback="websiteLink:required">Goal ammount is required</div>
+        </div></div>
+
+</div>
+
+
+        <div class="d-grid">
+            <button class="btn btn-primary btn-lg" type="submit" id="submitButton"  >Publish</button>
+        </div>
+    </form>
+</div>
+</div>
+
+</main>
+
+
+
+
+<%include("../template_three/customize"); %>
+<%-include("../template_three/scripts"); %>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+
+
+document.getElementById('submitButton').addEventListener('click',(e)=>{
+    e.preventDefault();
+    Swal.fire({
+  title: 'Do you want to submit the form?',
+  showDenyButton: true,
+  showCancelButton: true,
+  confirmButtonText: 'submit',
+  denyButtonText: `Don't submit`,
+}).then((result) => {
+  /* Read more about isConfirmed, isDenied below */
+  if (result.isConfirmed) {
+   
+    Swal.fire('Saved!', '', 'success')
+    document.getElementById('submitForm').submit();
+  } else if (result.isDenied) {
+  
+    Swal.fire('Changes are not saved', '', 'info')
+   
+  }
+})
+}) 
+
+
+</script>
+</body>
+
+</html>
+

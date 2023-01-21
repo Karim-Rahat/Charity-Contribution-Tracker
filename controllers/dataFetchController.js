@@ -1,7 +1,8 @@
 
-const { getCartData } = require("../models/dataFetchModels");
 const dataFetchModels = require("../models/dataFetchModels");
-
+const LocalStorage = require('node-localstorage').LocalStorage;
+const localStorage = new LocalStorage('./localstorage');
+const opencage = require('opencage-api-client');
 const dataFetchController={
 getUserEmail:async(req,res)=>{
    const data= await dataFetchModels.usersList();
@@ -61,6 +62,49 @@ countryWiseOrg: async(req,res)=>{
 getAllInvoiceList: async(req,res)=>{
     const data= await dataFetchModels.getAllInvoiceList()
     res.send(data)
-}
+},
+geoLocation: async(req,res)=>{
+
+const {longitude,latitude}=req.body
+
+localStorage.setItem('longitude',longitude)
+localStorage.setItem('latitude',latitude)
+},
+getLocationProject: async(req,res)=>{
+
+    if(localStorage.getItem('longitude')){
+        const x=localStorage.getItem('longitude')
+        const y= localStorage.getItem('latitude')
+        const geo=JSON.stringify(`${y},${x}`)
+        let country
+           await opencage
+            .geocode({q:geo, language: 'en' })
+            .then((data) => {
+              if (data.results.length > 0) {
+                const place = data.results[0];
+                console.log(place.components.country);
+                country = place.components.country
+              } 
+            })
+         
+        const getLocationProject= await dataFetchModels.getLocationProject(country)
+        
+        res.send(getLocationProject)
+
+    }
+
+},
+
+    //organization
+
+    getOrgProjects: async(req,res)=>{
+        const orgId=req.session.orgId
+        const data= await dataFetchModels.getOrgProjects(orgId)
+        res.send(data)
+    },
+
+
+
+
 }
 module.exports=dataFetchController

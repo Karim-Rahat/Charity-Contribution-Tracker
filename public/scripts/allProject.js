@@ -34,6 +34,7 @@ async function getDatas() {
 
   //pagination
   paginationProject(project);
+  document.getElementById("loading-spinner").style.display = "none";
 }
 
 //sorting
@@ -61,7 +62,6 @@ themeSelection.addEventListener("change", (e) => {
   if (tflag == 1 && cflag == 1) {
     sortedThemeProject = [];
     sortedCountryProject = [];
-    // console.log('b',sortedCountryProject.length);
     themeSort(project, selectedValueTheme);
     countrySort(sortedThemeProject, selectedValueCountry);
   }
@@ -71,7 +71,7 @@ themeSelection.addEventListener("change", (e) => {
     themeSort(project, selectedValueTheme);
   }
   if (tflag == 0 && cflag == 1) {
-    //  console.log('bbb',sortedCountryProject.length);
+  
     sortedCountryProject = [];
     countrySort(project, selectedValueCountry);
   }
@@ -88,28 +88,27 @@ countryThemeSelection.addEventListener("change", (e) => {
     paginationProject(project);
     cflag = 0;
   } else {
-    // paginationProject(sortedCountryProject);
+
     cflag = 1;
   }
 
   if (tflag == 1 && cflag == 1) {
-    //  console.log('c',sortedThemeProject.length);
+  
     sortedCountryProject = [];
 
     countrySort(sortedThemeProject, selectedValueCountry);
-    //  themeSort(sortedCountryProject,selectedValueTheme)
+    
   }
   if (tflag == 0 && cflag == 1) {
-    // console.log('cc');
     sortedCountryProject = [];
     countrySort(project, selectedValueCountry);
   }
   if (tflag == 1 && cflag == 0) {
-    // console.log('ccc');
+
 
     themeSort(sortedThemeProject, selectedValueTheme);
   }
-  // console.log(tflag,cflag);
+
 });
 
 function themeSort(project, selectedValue) {
@@ -134,25 +133,25 @@ function countrySort(project, selectedValue) {
       console.log("a");
     }
   });
-  // console.log(sortedCountryProject);
+
   paginationProject(sortedCountryProject);
 }
 
 function allProject(data) {
   projects.innerHTML = "";
   data.map((el, i) => {
-    const img = JSON.parse(el.imageLink);
+    lazyload();
 
     const fundPercentage = ~~((el.funding / el.goal) * 100);
     // match org id
     const orgName = org.filter((org) => org.id == el.org_id);
 
-    let element = ` <div class="card mb-3 mx-auto " style="width: 80%;">
+    let element = ` <div class="card mb-3 mx-auto dropShadow" style="width: 80%">
     <div class="row g-0">
       <div class="col-md-4 allProjImg">
-        <img src="${
-          img[5].url
-        }" class="img-fluid img-fluids rounded-start" alt="...">
+        <img  class="lazyload img-fluid img-fluids rounded-start" data-src="${
+          el.imageLink
+        }"  alt="...">
       </div>
       <div class="col-md-8">
         <div class="card-body">
@@ -161,7 +160,7 @@ function allProject(data) {
             <div class="pl-2">${el.country} </div>
           </div>
           <h3 class="card-title">
-            <a href="projects/${el.p_id}">${el.title} </a>
+            <a href="project/${el.p_id}">${el.title} </a>
           </h3>
           <p class="card-text">By
             <a href=""> ${orgName[0].name} </a>
@@ -203,6 +202,7 @@ function allProject(data) {
 
     projects.insertAdjacentHTML("beforeend", element);
   });
+
 }
 
 //donation button

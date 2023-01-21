@@ -8,7 +8,6 @@ const multer = require('multer');
 require('dotenv').config();
 const { clearCache } = require('ejs');
 const app = express();
-const axios = require('axios').default;
 var cors = require('cors')
 const passport = require("passport");
 
@@ -17,6 +16,20 @@ const GoogleStrategy = require('passport-google-oauth2').Strategy;
 const cookieParser = require('cookie-parser');
 const router = require('./routes/routes')
 const config = require('./config');
+
+//socket io
+const http = require('http');
+const server = http.createServer(app);
+const { Server } = require("socket.io");
+const io = new Server(server);
+
+io.on('connection', (socket) => {
+  console.log('a user connected');
+  socket.emit('chat', {message: 'a new client connected'})
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
+});
 
 const storage = multer.diskStorage({
   destination(req, file, cb) {
@@ -50,14 +63,7 @@ app.use(upload.single('photo'));
 app.use('/node', express.static(__dirname + '/node_modules'));
 app.use(express.static('public'));
 
-// const options = {
-//   host: process.env.DB_HOST,
-//   port: process.env.PORT,
-//   client: redisClient,
-// };
 
-// session_store
-//session_store
 app.set("trust proxy", 1); // trust first proxy
 app.use(
   session({
@@ -83,8 +89,6 @@ var cors_set = {
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(cors(cors_set));
-
-
 passport.serializeUser((user, cb) => {
   cb(null, user);
 });
@@ -151,7 +155,7 @@ passport.use(
 
 app.use(router);
 
-const server = app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Listening at http://127.0.0.1:${process.env.PORT}`);
   console.log(process.env.Token);
 });

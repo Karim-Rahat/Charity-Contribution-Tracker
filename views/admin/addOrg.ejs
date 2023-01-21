@@ -1,0 +1,197 @@
+<%-include("../template_two/header"); %>
+<body>
+  <main class="main" id="top">
+    <div class="container" data-layout="container">
+      <%-include("../template_two/navbar"); %>
+
+    <div class="content">
+      <%-include("../template_two/bodynav"); %>
+      <div class="card mb-3">
+        <div class="bg-holder d-none d-lg-block bg-card" style="background-image:url(../../assets/img/icons/spot-illustrations/corner-4.png);">
+        </div>
+        <!--/.bg-holder-->
+
+        <div class="card-body position-relative">
+          <div class="row">
+            <div class="col-lg-8">
+              <h3>Add an organization</h3>
+              <p class="mb-0"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+
+
+    <form id="submitForm"  action="/insertOrg" method="post"  enctype="multipart/form-data">
+        <div class="form-floating mb-3">
+            <input class="form-control" id="orgName" name="orgName" type="text" placeholder="Name" required/>
+            <label for="name">Name</label>
+            <div class="invalid-feedback" data-sb-feedback="name:required">Name is required.</div>
+        </div>
+        <div class="form-floating mb-3">
+            <textarea class="form-control" id="mission" type="text" name="mission" placeholder="Mission" style="height: 10rem;" data-sb-validations="required"></textarea>
+            <label for="mission">Mission</label>
+            <div class="invalid-feedback" data-sb-feedback="mission:required">Mission is required.</div>
+        </div>
+
+        <div class="row gx-2">
+            <div class="mb-3 col-sm-4">
+            <div class="form-floating mb-3">
+            <input class="form-control" id="address" type="text" name="address" placeholder="Address" required/>
+            <label for="address">Address</label>
+            <div class="invalid-feedback" data-sb-feedback="address:required">Address is required.</div>
+        </div>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <div class="form-floating mb-3">
+            <input class="form-control" id="city" type="text" name="city" placeholder="city" required/>
+            <label for="address">City</label>
+            <div class="invalid-feedback" data-sb-feedback="address:required">City is required.</div>
+        </div>
+        </div>
+        <div class="mb-3 col-sm-4">
+        <div class="form-floating mb-3">
+            <select class="form-select" id="country" name="country" aria-label="Country">
+                <%country.map(item=>{ %>
+                    <option name="phoneCode" class="form-control" value="<%=item.country%>">
+                      <p class="px-4  lh-1 "> <%=item.country%> </p> 
+                       </p>
+                    </option>
+            <% })%>
+            </select>
+            <label for="country">Country</label>
+        </div>
+        </div>
+        </div>
+
+        <div class="row gx-2">
+            <div class="mb-3 col-sm-4">
+        <div class="form-floating mb-3">
+            <input class="form-control" id="postal" type="number" name="postal" placeholder="postal" required/>
+            <label for="postal">postal</label>
+            <div class="invalid-feedback" data-sb-feedback="postal:required">postal is required.</div>
+        </div>
+</div>
+<div class="mb-3 col-sm-4">
+        <div class="form-floating mb-3">
+            <input class="form-control" id="state" type="text" name="state" placeholder="state" required/>
+            <label for="state">state</label>
+            <div class="invalid-feedback" data-sb-feedback="state:required">state is required.</div>
+        </div>
+    </div>
+
+
+    <div class="mb-3 col-sm-4">
+        <div class="form-floating mb-3">
+            <input class="form-control" id="tin" type="number" name="tin" placeholder="TIN" required/>
+            <label for="tin">TIN</label>
+            <div class="invalid-feedback" data-sb-feedback="tin:required">TIN is required.</div>
+        </div>
+
+    </div>
+    </div>
+
+
+
+      
+        <div class="form-floating mb-3">
+            <select class="form-select" id="newField13" name="theme" aria-label="New Field 13">
+                <%themes.map(item=>{ %>
+                    <option name="phoneCode" class="form-control" value="<%=item.t_id%>">
+                      <p class="px-4  lh-1 "> <%=item.t_name%></p> 
+            
+                    </option>
+            <% })%>
+            </select>
+            <label for="newField13">Themes</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="websiteLink" name="websiteLink" type="text" placeholder="website link" required/>
+            <label for="websiteLink">website link</label>
+            <div class="invalid-feedback" data-sb-feedback="websiteLink:required">website link is required.</div>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="email" name="email" type="email" placeholder="Enter email" required/>
+            <label for="email">Email</label>
+            <div class="invalid-feedback" data-sb-feedback="email:required">website link is required.</div>
+        </div>
+        <div class="row gx-2">
+            <div class="mb-3 col-sm-6">
+        
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="pasword" name="password" type="password" placeholder="pasword" required/>
+                    <label for="pasword">pasword</label>
+                    <div class="invalid-feedback" data-sb-feedback="pasword:required">pasword is required.</div>
+                </div>
+        
+            </div>
+            <div class="mb-3 col-sm-6">
+        
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="confirmPasword" name="confirmPassword" type="password" placeholder="pasword" required/>
+                    <label for="pasword">Confirm pasword</label>
+                    <div class="invalid-feedback" data-sb-feedback="pasword:required">Confirm pasword is required.</div>
+                </div>
+        
+            </div>
+        
+        </div>
+
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Select a image for this project</label>
+            <input class="form-control" name="photo" accept="image/*" type="file" id="formFile" required>
+          </div>
+
+   
+
+        <div class="d-grid">
+            <button class="btn btn-primary btn-lg" type="submit" id="submitButton" >Publish</button>
+        </div>
+    </form>
+</div>
+</div>
+
+</main>
+
+
+
+
+
+
+
+<%-include("../template_two/scripts"); %>
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+
+
+document.getElementById('submitButton').addEventListener('click',(e)=>{
+    e.preventDefault();
+    Swal.fire({
+  title: 'Do you want to submit the form?',
+  showDenyButton: true,
+  showCancelButton: true,
+  confirmButtonText: 'submit',
+  denyButtonText: `Don't submit`,
+}).then((result) => {
+  /* Read more about isConfirmed, isDenied below */
+  if (result.isConfirmed) {
+   
+    Swal.fire('Saved!', '', 'success')
+    document.getElementById('submitForm').submit();
+  } else if (result.isDenied) {
+  
+    Swal.fire('Changes are not saved', '', 'info')
+   
+  }
+})
+}) 
+
+</script>
+</body>
+
+</html>
+

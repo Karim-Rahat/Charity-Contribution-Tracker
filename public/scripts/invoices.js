@@ -23,6 +23,7 @@ async function getDatas() {
 
       //call the function
      genInvList(invoiceList,userData)
+     document.getElementById("loading-spinner").style.display = "none";
     }
 
     function genInvList(data,user){
@@ -43,7 +44,7 @@ ${item.tran_id}
 </td>
 <td class="status py-2 align-middle text-center fs-0 white-space-nowrap"><span class="badge badge rounded-pill d-block badge-soft-success">Completed<span class="ms-1 fas fa-check" data-fa-transform="shrink-2"></span></span>
 </td>
-<td class="amount py-2 align-middle text-end fs-0 fw-medium">$${item.amount}</td>
+<td class="amount py-2 align-middle text-end fs-0 fw-medium">$${item.amount.toFixed(2)}</td>
 <td class="py-2 align-middle white-space-nowrap text-end">
   <div class="dropdown font-sans-serif position-static">
     <button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal" type="button" id="order-dropdown-0" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><span class="fas fa-ellipsis-h fs--1"></span></button>

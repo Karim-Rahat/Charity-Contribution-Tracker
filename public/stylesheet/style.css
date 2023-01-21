@@ -4,16 +4,16 @@ body {
   float: right;
   margin-right: 6px;
   margin-top: -30px;
-  position: relative;
+  position: reNavBarlative;
   z-index: 1;
   color: black;
   font-weight: bold;
 }
 .tags {
-  background-color: rgb(226, 220, 220);
+  /* background-color: rgb(226, 220, 220); */
   width: 100%;
   min-height: 80px;
-  color: black;
+
   align-items: center;
 }
 .navItem {
@@ -30,24 +30,13 @@ a:link {
   background-color: transparent;
   text-decoration: none;
 }
-/* #loading {
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  left: 0px;
-  position: fixed;
-  display: block;
-  z-index: 99;
-}
 
-#loading-image {
-  position: absolute;
-  top: 40%;
-  left: 45%;
-  z-index: 100;
-} */
 .allProjImg {
   margin: auto;
+  
+
+ max-height: 250px;
+    overflow: hidden;
 }
 
 .correct {
@@ -152,6 +141,8 @@ a:link {
 .hiddenBtn {
   width: 50%;
   height: 40px;
+
+  line-height: normal;
   color: white;
   background-color: rgb(255, 163, 43);
   border-radius: none;
@@ -179,15 +170,14 @@ a:link {
   font-weight: bolder;
 }
 .textBlack {
-  color: black;
+  /* color: black; */
 }
 .paginations {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-#pagination-container {
-}
+
 .sortNavBar {
   width: 100%;
   height: 100px;
@@ -219,8 +209,8 @@ a:link {
 }
 .donationOption {
   display: flex;
-  background-color: #b3d9ff;
-
+ 
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   font-weight: bold;
   align-items: center;
   justify-content: center;
@@ -243,6 +233,14 @@ a:link {
   font-weight: bold;
   font-size: large;
 }
+.dropShadow{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.dropShadow2{
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+
 
 @media only screen and (max-width: 900px) {
   .parent {

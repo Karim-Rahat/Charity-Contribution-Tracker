@@ -1,13 +1,16 @@
 <%- include('../template/header'); %>
 <link href="vendors/flatpickr/flatpickr.min.css" rel="stylesheet" />
 
-  <body>
-
-    <main class="main " id="top">
-      <%- include('../template/navbar'); %>
+  <body onload="getDatas()">
+    <%- include('../template/navbar'); %>
+    <main class="main" id="top">
+  
       <div class="content mt-4 ">
 
+
+
         <div class="row">
+          
           <div class="col-10 mx-auto">
             <div class="card mb-3 btn-reveal-trigger">
               <div class="card-header position-relative min-vh-25 mb-8">
@@ -30,7 +33,7 @@
                    <% if(data.profile_pic.substring(0, 5)=="photo"){ %>
                     <img src="uploads/<%=data.profile_pic%>" width="200" alt="" data-dz-thumbnail="data-dz-thumbnail" />
                  <%  } else{ %> 
-                 <img src="<%=data.profile_pic%>" width="200" alt="" data-dz-thumbnail="data-dz-thumbnail" />
+                 <img src="<%=usersInfo.profilePic%>" width="200" alt="" data-dz-thumbnail="data-dz-thumbnail" />
 
                  <% } %> 
                     <input class="d-none" id="profile-image" type="file" name="photo" onchange="changePicture()"/>
@@ -48,291 +51,347 @@
           </div>
         </div>
         <div class="col-10 mx-auto">
-          <div class="row g-0 ">
-            <div class="col-lg-8 pe-lg-2 mx-auto">
-              <div class="card mb-3">
-                <div class="card-header">
-                  <h5 class="mb-0">Profile Settings</h5>
-                </div>
-                <div class="card-body bg-light">
-                  <form class="row g-3">
-                    <div class="col-lg-6">
-                      <label class="form-label" for="first-name">First Name</label>
-                      <input class="form-control" id="firstName" type="text" value="<%= data.first_name %>" />
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item"><a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#tab-home" role="tab" aria-controls="tab-home" aria-selected="true">My Account</a></li>
+           
+            <li class="nav-item"><a class="nav-link" id="profile-tab2" data-bs-toggle="tab" href="#tab-profile2" role="tab" aria-controls="tab-profile2" aria-selected="false">Non-Profit</a></li>
+          </ul>
+          <div class="tab-content border-x border-bottom p-3" id="myTabContent">
+           
+            <!-- account content  -->
+            <div class="tab-pane fade show active" id="tab-home" role="tabpanel" aria-labelledby="home-tab">
+              <div class="row g-0 ">
+                <div class="col-lg-8 pe-lg-2 mx-auto">
+                  <div class="card mb-3">
+                    <div class="card-header">
+                      <h5 class="mb-0">Profile Settings</h5>
                     </div>
-                    <div class="col-lg-6">
-                      <label class="form-label" for="last-name">Last Name</label>
-                      <input class="form-control" id="lastName" type="text" value="<%= data.last_name %>" />
-                    </div>
-                    <div class="col-lg-6">
-                      <label class="form-label" for="email1">Email</label>
-                      <% if(data.idRef=="facebook" || data.idRef=="google" ) { %>
-                      <input class="form-control" disabled id="email" type="text" value="<%=data.email%>" />
-                      <p class="text-danger" style="font-size: 12px;margin-left: 2px;">Facebook or Google Connected email cannot be changed.</p>
-                      <% } else {%> 
-                   <input class="form-control" id="email" type="text" value="<%= data.email %>" />
-                    
-                   <% } %> 
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="row g-1">
-                        <div class="col-5">
-                          <label class="form-label" for="countryCode">Country code</label>
-                          <select name="countryCode" id="phoneCode" class="form-control" id="countryCode">
-                            <%countryCode.map(item=>{ %>
-                              <option name="phoneCode"  class="form-control" <%=item.phonecode==data.phone_code?"selected":""%>  value="<%=item.phonecode%>" >
-                       
-                       
-                                <p class="px-1  lh-1 ">
-                                  <%=item.name.substring(0,3)%> 
-                                </p>
-                                <p class=" ml-2 lh-1">
-                                  +<%=item.phonecode %> 
-                                </p>
-                                
-                              </option>
-                              <% })%>
-
-                          </select>
+                    <div class="card-body bg-light">
+                      <form class="row g-3">
+                        <div class="col-lg-6">
+                          <label class="form-label" for="first-name">First Name</label>
+                          <input class="form-control" id="firstName" type="text" value="<%= data.first_name %>" />
                         </div>
-                        <div class="col-7">
-                          
-                          <label class="form-label" for="phoneNum">Phone</label>
-                          <input class="form-control" placeholder="Enter your phone number" minlength="6" size="10"
-                            maxlength="10" type="telephone" autocomplete="on" name="phone" value="<%= data.phone %> " id="phone" required />
-                   
+                        <div class="col-lg-6">
+                          <label class="form-label" for="last-name">Last Name</label>
+                          <input class="form-control" id="lastName" type="text" value="<%= data.last_name %>" />
+                        </div>
+                        <div class="col-lg-6">
+                          <label class="form-label" for="email1">Email</label>
+                          <% if(data.idRef=="facebook" || data.idRef=="google" ) { %>
+                          <input class="form-control" disabled id="email" type="text" value="<%=data.email%>" />
+                          <p class="text-danger" style="font-size: 12px;margin-left: 2px;">Facebook or Google Connected email cannot be changed.</p>
+                          <% } else {%> 
+                       <input class="form-control" id="email" type="text" value="<%= data.email %>" />
+                        
+                       <% } %> 
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="row g-1">
+                            <div class="col-5">
+                              <label class="form-label" for="countryCode">Country code</label>
+                              <select name="countryCode" id="phoneCode" class="form-control" id="countryCode">
+                                <%countryCode.map(item=>{ %>
+                                  <option name="phoneCode"  class="form-control" <%=item.phonecode==data.phone_code?"selected":""%>  value="<%=item.phonecode%>" >
+                           
+                           
+                                    <p class="px-1  lh-1 ">
+                                      <%=item.name.substring(0,3)%> 
+                                    </p>
+                                    <p class=" ml-2 lh-1">
+                                      +<%=item.phonecode %> 
+                                    </p>
+                                    
+                                  </option>
+                                  <% })%>
+    
+                              </select>
+                            </div>
+                            <div class="col-7">
+                              
+                              <label class="form-label" for="phoneNum">Phone</label>
+                              <input class="form-control" placeholder="Enter your phone number" minlength="6" size="10"
+                                maxlength="10" type="telephone" autocomplete="on" name="phone" value="<%= data.phone %> " id="phone" required />
+                       
+                              </div>
                           </div>
-                      </div>
-
-                    </div>
-                   
-
-                   <div class="col-12">
-                       <!-- toast  -->
-                <button class="btn btn-primary" id="liveToastBtn" type="button" hidden>Show live toast</button>
-                <div class="d-flex flex-center" style="z-index: 11111">
-                  <div class="toast fade" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
-                    <div class="toast-header bg-danger text-white"><strong class="me-auto">Warning</strong>
-                      <button class="btn-close btn-close-white" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
-                    </div>
-                    <div class="toast-body">Please Fill the required fields</div>
-                  </div>
-                </div>
-                <!-- toast  -->
-                   </div>
-             
-                   
-                    <div class="col-12 d-flex justify-content-end">
-                      <button class="btn btn-primary" onclick="generalSettings()" type="button">Update </button>
-                    </div>
-                    <div  id="genSettingsAlert" hidden  class="alert alert-success mt-2" role="alert">Successfully updated!</div>
-                  </form>
-                </div>
-              </div>
-
-
-              <div class="card mb-3">
-                <div class="card-header">
-                  <h5 class="mb-0">Linked Account</h5>
-                </div>
-                <div class="card-body bg-light">
-                  <div class="col-lg-6 mt-4">
-                      <% if(data.idRef=="facebook") { %>
-                      
-                        <div class="d-grid gap-2" style="width:90%;height:50px;background-color: rgb(47, 47, 110);">
-                          <button class="btn  text-left text-white" type="button">
-                            <i class="fa-brands fa-square-facebook"></i>
-                            Connected with Facebook
-                          </button>
+    
                         </div>
-                          <% }%>
-                          <% if(data.idRef=="google") { %>
-                      
-                            <div class="d-grid gap-2" style="width:90%;height:50px;background-color: #dd4b39;">
+                       
+    
+                       <div class="col-12">
+                           <!-- toast  -->
+                    <button class="btn btn-primary" id="liveToastBtn" type="button" hidden>Show live toast</button>
+                    <div class="d-flex flex-center" style="z-index: 11111">
+                      <div class="toast fade" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header bg-danger text-white"><strong class="me-auto">Warning</strong>
+                          <button class="btn-close btn-close-white" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">Please Fill the required fields</div>
+                      </div>
+                    </div>
+                    <!-- toast  -->
+                       </div>
+                 
+                       
+                        <div class="col-12 d-flex justify-content-end">
+                          <button class="btn btn-primary" onclick="generalSettings()" type="button">Update </button>
+                        </div>
+                        <div  id="genSettingsAlert" hidden  class="alert alert-success mt-2" role="alert">Successfully updated!</div>
+                      </form>
+                    </div>
+                  </div>
+    
+    
+                  <div class="card mb-3">
+                    <div class="card-header">
+                      <h5 class="mb-0">Linked Account</h5>
+                    </div>
+                    <div class="card-body bg-light">
+                      <div class="col-lg-6 mt-4">
+                          <% if(data.idRef=="facebook") { %>
+                          
+                            <div class="d-grid gap-2" style="width:90%;height:50px;background-color: rgb(47, 47, 110);">
                               <button class="btn  text-left text-white" type="button">
-                                <i class="fa-brands fa-google"></i>
-                                Connected with Google
+                                <i class="fa-brands fa-square-facebook"></i>
+                                Connected with Facebook
                               </button>
                             </div>
                               <% }%>
-                              <% if(data.idRef=="registration") { %>
-                      
-                                <div class="d-grid gap-2" style="width:90%;height:50px;background-color: rgb(27, 116, 167);">
+                              <% if(data.idRef=="google") { %>
+                          
+                                <div class="d-grid gap-2" style="width:90%;height:50px;background-color: #dd4b39;">
                                   <button class="btn  text-left text-white" type="button">
-                                    <i class="fa-solid fa-user"></i>
-                                    Not Connected
+                                    <i class="fa-brands fa-google"></i>
+                                    Connected with Google
                                   </button>
                                 </div>
-                                  <% }%>                               
+                                  <% }%>
+                                  <% if(data.idRef=="registration") { %>
+                          
+                                    <div class="d-grid gap-2" style="width:90%;height:50px;background-color: rgb(27, 116, 167);">
+                                      <button class="btn  text-left text-white" type="button">
+                                        <i class="fa-solid fa-user"></i>
+                                        Not Connected
+                                      </button>
+                                    </div>
+                                      <% }%>                               
+                  </div>
+                </div>
+              </div>
+                           
+                   
+    
+              <div class="card mb-3">
+                <div class="card-header">
+                  <h5 class="mb-0">Adress</h5>
+                </div>
+                <div class="card-body bg-light">
+                  <div class="col-lg-12 ">
+                    <form class="row g-3">
+                  
+                      <div class="col-lg-12">
+                        <label class="form-label" for="street-adress">Street Adress</label>
+                        <input class="form-control" id="street-adress" name="street-adress" type="text" value="<%=data.street_adress%>" />
+                      </div>
+                      <div class="col-lg-4">
+                        <label class="form-label" for="city">City</label>
+                        <input class="form-control" id="city" name="city" type="text" value="<%=data.city%>" />
+                      </div>
+    
+                      <div class="col-lg-4">
+                        <label class="form-label" for="state">State</label>
+                        <input class="form-control" id="state" name="state" type="text" value="<%=data.state%>" />
+                      </div>
+                      <div class="col-lg-4">
+                        <label class="form-label" for="zipcode">Zip Code</label>
+                        <input class="form-control" id="zipcode" name="zipcode" type="number"  value="<%=data.zipcode%>"/>
+                      </div>
+    
+    
+    
+                      <div class="col-12 d-flex justify-content-end">
+                        <button class="btn btn-primary" onclick="changeAdress()" type="button">Update </button>
+                      </div>
+                      <div  id="saveAdressAlert" hidden  class="alert alert-success mt-2" role="alert">Successfully updated!</div>
+                    </form>                   
               </div>
             </div>
           </div>
-                       
-               
-
-          <div class="card mb-3">
-            <div class="card-header">
-              <h5 class="mb-0">Adress</h5>
-            </div>
-            <div class="card-body bg-light">
-              <div class="col-lg-12 ">
-                <form class="row g-3">
-              
-                  <div class="col-lg-12">
-                    <label class="form-label" for="street-adress">Street Adress</label>
-                    <input class="form-control" id="street-adress" name="street-adress" type="text" value="<%=data.street_adress%>" />
-                  </div>
-                  <div class="col-lg-4">
-                    <label class="form-label" for="city">City</label>
-                    <input class="form-control" id="city" name="city" type="text" value="<%=data.city%>" />
-                  </div>
-
-                  <div class="col-lg-4">
-                    <label class="form-label" for="state">State</label>
-                    <input class="form-control" id="state" name="state" type="text" value="<%=data.state%>" />
-                  </div>
-                  <div class="col-lg-4">
-                    <label class="form-label" for="zipcode">Zip Code</label>
-                    <input class="form-control" id="zipcode" name="zipcode" type="number"  value="<%=data.zipcode%>"/>
-                  </div>
-
-
-
-                  <div class="col-12 d-flex justify-content-end">
-                    <button class="btn btn-primary" onclick="changeAdress()" type="button">Update </button>
-                  </div>
-                  <div  id="saveAdressAlert" hidden  class="alert alert-success mt-2" role="alert">Successfully updated!</div>
-                </form>                   
-          </div>
-        </div>
-      </div>
-
-
-
-
-          </div>
-
-
-            
-            <div class="col-lg-4 ps-lg-2">
-              <div class="sticky-sidebar">
-                <div class="card mb-3 overflow-hidden">
-                  <div class="card-header">
-                    <h5 class="mb-0">Birthdate & Gender</h5>
-                  </div>
-                  <div class="card-body bg-light">
-
-                  
-                    <div class="ps-2">
-                      <form action="/saveGenderBdate" method="post">
-                        <h6 class="fw-bold">Change Gender<span class="fs--2 ms-1 text-primary"
-                          data-bs-toggle="tooltip" data-bs-placement="top"
-                          title=""><span
-                            class="fas fa-question-circle"></span></span></h6>
-                        <div class="form-check mb-0 lh-1">
-                          <input class="form-check-input gender" type="radio" value="male" id="gender"
-                            name="view-settings" />
-                          <label class="form-check-label mb-0" for="everyone">Male
-                          </label>
-                        </div>
-                        <div class="form-check mb-0 lh-1">
-                          <input class="form-check-input gender" type="radio" value="female" id="gender"
-                            checked="checked" name="view-settings" />
-                          <label class="form-check-label mb-0" for="my-followers">Female
-                          </label>
-                        </div>
-                        <div class="form-check mb-2 lh-1">
-                          <input class="form-check-input gender" type="radio" value="others" id="gender"
-                            name="view-settings" />
-                          <label class="form-check-label mb-0" for="only-me">Others
-                          </label>
-                        </div>
-
-                        <!-- birthdate -->
-                        <h6 class="fw-bold">Change Birthdate<span class="fs--2 ms-1 text-primary"
-                          data-bs-toggle="tooltip" data-bs-placement="top"><span
-                            class="fas fa-question-circle"></span></span></h6>
-                        <div class=" mb-2 lh-1 col-12">
-                          
-                          <div class="col-6">
-                           
-                            <input class="form-control datetimepicker" id="datepicker" max="" type="date" placeholder="d/m/y" 
-                            value="<%=new Date(data.birthdate).toLocaleDateString("en")%>"/>
-                        
-                          </div>
-                             
-                          <div class="col-6 mt-2">
-                            <p class="fs--3 text-black">
-                              <h6 class="fw-bold">Birthdate: </h6>
-                              
-                               <span class="fw-bold mt-2" id="displayBdate"><%=new Date(data.birthdate).toLocaleDateString('en',{ year: 'numeric', month: 'long', day: 'numeric'})%></span>
-                            </p>
-                       </div>
-                            </div>
-
-                        <!-- end birthdate  -->
-                        <button class="btn btn-primary d-block w-100" onclick="genderBdate()" type="button">Update </button>
-                        
-                        <div  id="genBdateAlert" hidden  class="alert alert-success mt-2" role="alert">Successfully updated!</div>
-                      </form>
-                        </div>
-
-
-                  </div>
-                </div>
-
-                <div class="card mb-3">
-                  <div class="card-header">
-                    <h5 class="mb-0">Change Password</h5>
-                  </div>
-                  <div class="card-body bg-light">
-                    <form id="passwordForm">
-                      <div class="mb-3">
-                        <label class="form-label" for="old-password">Old Password</label>
-                        <input class="form-control" id="old-password" type="password" />
-                        <h6 class="text-danger mt-1" id="oldPassAlert" style="display: none;">Old password doesn't matched!!</h6>
-                      </div>
-                      <div class="mb-3">
-                        <label class="form-label" for="new-password">New Password</label>
-                        <input class="form-control" name="password" id="new-password" type="password" />
-                        <span class="correct" id="passSign1" style="display:none"> 
-                          <i class="fa-solid fa-check"></i>
-                        </span>
-                        <span class="incorrect" id="crossSign1" style="display:none">
-                          <i class="fa-solid fa-xmark"></i>
-                        </span>
-
-                      </div>
-                      <div class="mb-3">
-                        <label class="form-label" for="confirm-password">Confirm Password</label>
-                        <input class="form-control" name="confirmPassword" id="confirm-password" type="password" />
-                        <span class="correct" id="passSign2" style="display:none"> 
-                          <i class="fa-solid fa-check"></i>
-                        </span>
-                        <span class="incorrect" id="crossSign2" style="display:none">
-                          <i class="fa-solid fa-xmark"></i>
-                        </span>
-
-                      </div>
-                      <h6 class="text-danger mt-1" id="newPassAlert" style="display: none;">New & Confirm Password doesn't matched!!</h6>
-                    
-                    
-                        <!-- alert -->
-
-                        <div class="alert  alert-warning py-1" id="passAlert1" style="display: none;" role="alert">Password Not Matched !</div>
-                        <div class="alert  alert-warning py-1" id="passAlert2" style="display: none;" role="alert">    Passwords must be at least one numeric digit, one uppercase and one lowercase letter !</div>
-
-                        <div  id="passSaveAlert" hidden  class="alert alert-success mt-2" role="alert">Password successfully changed!</div>
-                      <button class="btn btn-primary d-block w-100" onclick="changePass()" type="button">Update Password </button>
-                    </form>
-                  </div>
-                </div>
+    
+    
+    
     
               </div>
-            </div>
+    
+    
+                
+                <div class="col-lg-4 ps-lg-2">
+                  <div class="sticky-sidebar">
+                    <div class="card mb-3 overflow-hidden">
+                      <div class="card-header">
+                        <h5 class="mb-0">Birthdate & Gender</h5>
+                      </div>
+                      <div class="card-body bg-light">
+    
+                      
+                        <div class="ps-2">
+                          <form action="/saveGenderBdate" method="post">
+                            <h6 class="fw-bold">Change Gender<span class="fs--2 ms-1 text-primary"
+                              data-bs-toggle="tooltip" data-bs-placement="top"
+                              title=""><span
+                                class="fas fa-question-circle"></span></span></h6>
+                            <div class="form-check mb-0 lh-1">
+                              <input class="form-check-input gender" type="radio" value="male" id="gender"
+                                name="view-settings" />
+                              <label class="form-check-label mb-0" for="everyone">Male
+                              </label>
+                            </div>
+                            <div class="form-check mb-0 lh-1">
+                              <input class="form-check-input gender" type="radio" value="female" id="gender"
+                                checked="checked" name="view-settings" />
+                              <label class="form-check-label mb-0" for="my-followers">Female
+                              </label>
+                            </div>
+                            <div class="form-check mb-2 lh-1">
+                              <input class="form-check-input gender" type="radio" value="others" id="gender"
+                                name="view-settings" />
+                              <label class="form-check-label mb-0" for="only-me">Others
+                              </label>
+                            </div>
+    
+                            <!-- birthdate -->
+                            <h6 class="fw-bold">Change Birthdate<span class="fs--2 ms-1 text-primary"
+                              data-bs-toggle="tooltip" data-bs-placement="top"><span
+                                class="fas fa-question-circle"></span></span></h6>
+                            <div class=" mb-2 lh-1 col-12">
+                              
+                              <div class="col-6">
+                               
+                                <input class="form-control datetimepicker" id="datepicker" max="" type="date" placeholder="d/m/y" 
+                                value="<%=new Date(data.birthdate).toLocaleDateString("en")%>"/>
+                            
+                              </div>
+                                 
+                              <div class="col-6 mt-2">
+                                <p class="fs--3 text-black">
+                                  <h6 class="fw-bold">Birthdate: </h6>
+                                  
+                                   <span class="fw-bold mt-2" id="displayBdate"><%=new Date(data.birthdate).toLocaleDateString('en',{ year: 'numeric', month: 'long', day: 'numeric'})%></span>
+                                </p>
+                           </div>
+                                </div>
+    
+                            <!-- end birthdate  -->
+                            <button class="btn btn-primary d-block w-100" onclick="genderBdate()" type="button">Update </button>
+                            
+                            <div  id="genBdateAlert" hidden  class="alert alert-success mt-2" role="alert">Successfully updated!</div>
+                          </form>
+                            </div>
+    
+    
+                      </div>
+                    </div>
+    
+                    <div class="card mb-3">
+                      <div class="card-header">
+                        <h5 class="mb-0">Change Password</h5>
+                      </div>
+                      <div class="card-body bg-light">
+                        <form id="passwordForm">
+                          <div class="mb-3">
+                            <label class="form-label" for="old-password">Old Password</label>
+                            <input class="form-control" id="old-password" type="password" />
+                            <h6 class="text-danger mt-1" id="oldPassAlert" style="display: none;">Old password doesn't matched!!</h6>
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label" for="new-password">New Password</label>
+                            <input class="form-control" name="password" id="new-password" type="password" />
+                            <span class="correct" id="passSign1" style="display:none"> 
+                              <i class="fa-solid fa-check"></i>
+                            </span>
+                            <span class="incorrect" id="crossSign1" style="display:none">
+                              <i class="fa-solid fa-xmark"></i>
+                            </span>
+    
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label" for="confirm-password">Confirm Password</label>
+                            <input class="form-control" name="confirmPassword" id="confirm-password" type="password" />
+                            <span class="correct" id="passSign2" style="display:none"> 
+                              <i class="fa-solid fa-check"></i>
+                            </span>
+                            <span class="incorrect" id="crossSign2" style="display:none">
+                              <i class="fa-solid fa-xmark"></i>
+                            </span>
+    
+                          </div>
+                          <h6 class="text-danger mt-1" id="newPassAlert" style="display: none;">New & Confirm Password doesn't matched!!</h6>
+                        
+                        
+                            <!-- alert -->
+    
+                            <div class="alert  alert-warning py-1" id="passAlert1" style="display: none;" role="alert">Password Not Matched !</div>
+                            <div class="alert  alert-warning py-1" id="passAlert2" style="display: none;" role="alert">    Passwords must be at least one numeric digit, one uppercase and one lowercase letter !</div>
+    
+                            <div  id="passSaveAlert" hidden  class="alert alert-success mt-2" role="alert">Password successfully changed!</div>
+                          <button class="btn btn-primary d-block w-100" onclick="changePass()" type="button">Update Password </button>
+                        </form>
+                      </div>
+                    </div>
         
+                  </div>
+                </div>
+            
+    
+            </div>
+            </div>
+<!-- acount content end  -->
 
+            <div class="tab-pane fade" id="tab-profile" role="tabpanel" aria-labelledby="profile-tab">
+             
+              <div class="card mb-3">
+                <div class="bg-holder d-none d-lg-block bg-card" style="background-image:url(../../assets/img/icons/spot-illustrations/corner-4.png);">
+                </div> <!--/.bg-holder-->
+                <div class="card-body position-relative">
+                  <div class="row">
+                    <div class="col-lg-8">
+                      <h3>Fundraiser Page</h3>
+                      <p class="mt-2">
+                       <b> You don't have any fundraiser pages at the moment. Why not create one now?</b>
+Create a fundraiser page for the Contribution Tracker's project of your choice. Complete a race, start an an employee competition, or have a bake sale—any occasion can be charitable. To get started, create a fundraiser and search for projects to add to your page. Then, invite your network to contribute to your fundraiser and start raising money towards your projects!
+                        The page header is a nice little feature to add appropriate spacing around the headings on a page. This is particularly helpful on a web page where you may have several post titles and need a way to add distinction to each of them.</p>
+                        <a class="btn btn-link ps-0 btn-sm" href="/createFunraiser" target="_blank">Create Now<span class="fas fa-chevron-right ms-1 fs--2"></span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="tab-profile2" role="tabpanel2" aria-labelledby="profile-tab">
+             
+              <div class="card mb-3">
+                <div class="bg-holder d-none d-lg-block bg-card" style="background-image:url(../../assets/img/icons/spot-illustrations/corner-4.png);">
+                </div> <!--/.bg-holder-->
+                <div class="card-body position-relative">
+                  <div class="row">
+                    <div class="col-lg-8">
+                      <h3>Non-Profits registration</h3>
+                      <b class="mb-4">Start application for Non-profit Organization</b> <br>
+                     
+                      <p class="mt-2">
+                       
+                        <button data-tf-popup="xOKytf8a" data-tf-opacity="100" data-tf-size="100" data-tf-iframe-props="title=non-profit" data-tf-transitive-search-params style="all:unset;font-family:Helvetica,Arial,sans-serif;display:inline-block;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background-color:#163a75;color:#fff;font-size:14px;border-radius:25px;padding:0 23px;font-weight:bold;height:30px;cursor:pointer;line-height:30px;text-align:center;margin:0;text-decoration:none;">Apply Now!</button><script src="//embed.typeform.com/next/embed.js"></script>
+                      </p>
+                      
+                       
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
+         
 
       </div>
 
@@ -343,7 +402,7 @@
 
     <script src="assets/js/flatpickr.js"></script>
     <script src="scripts/settings.js"></script>
-    <%-include("../template/customize"); %>
+ 
       <%-include("../template/scripts"); %>
  
 
