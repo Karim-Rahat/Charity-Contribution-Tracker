@@ -42,7 +42,7 @@ const element=`
     #${el.id}
   </td>
   <td class="align-middle text-center fw-semi-bold" style="width: 150px">
-    ${el.totalProjects} 
+    ${el.activeProjects} 
     </td>
 
 
@@ -67,7 +67,7 @@ projects.insertAdjacentHTML("beforeend", element);
   function paginationProject(project) {
   $("#pagination-container").pagination({
     dataSource: project,
-    pageSize: 10,
+    pageSize: 5,
     showGoInput: true,
     showGoButton: true,
     formatGoInput: "<%=input%>",

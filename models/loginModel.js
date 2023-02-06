@@ -1,7 +1,6 @@
 const connection = require("../database/DB");
 
-
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 
 async function comparePasswords(plainTextPassword, hashedPassword) {
   const isMatch = await bcrypt.compare(plainTextPassword, hashedPassword);
@@ -15,23 +14,15 @@ const loginModel = {
     try {
       const rows = await connection.promise().execute(sqlquery);
 
-      rows[0].map(async (item,i) => {
-        if(item.password!=null){
-
-      
-        if (mail == item.email) {
-       
-        data=rows[0][i];
-     
-
-        
-          
-       
+      rows[0].map(async (item, i) => {
+        if (item.password != null) {
+          if (mail == item.email) {
+            data = rows[0][i];
+          }
         }
-      }
       });
-      
-      return data
+
+      return data;
     } catch (err) {
       return err;
     }
@@ -47,10 +38,10 @@ const loginModel = {
       return err;
     }
   },
-  adminAuth: async(values)=>{
+  adminAuth: async (values) => {
     const sqlquery = "SELECT * from admin where email=? AND password=?";
     try {
-      const rows = await connection.promise().execute(sqlquery,values);
+      const rows = await connection.promise().execute(sqlquery, values);
       return rows[0];
     } catch (err) {
       return err;
@@ -71,17 +62,10 @@ const loginModel = {
     try {
       const rows = await connection.promise().execute(sqlquery);
 
-       
-       return rows[0][0].password;
-     
-
-        
-          
-   
+      return rows[0][0].password;
     } catch (err) {
       return err;
     }
   },
-  
-}
-  module.exports=loginModel
+};
+module.exports = loginModel;

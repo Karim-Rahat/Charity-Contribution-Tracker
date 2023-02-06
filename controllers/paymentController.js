@@ -93,7 +93,13 @@ const paymentControllers = {
       date,
     ];
     console.log(values);
-
+    io.on('connection', (socket) => {
+      console.log('a user connected');
+      socket.on('message', (message) => {
+          console.log(`received message: ${message}`);
+      });
+  });
+  
     const insertedData = await dataInsertModels.insertPaymentData(values);
     console.log(insertedData);
     if (insertedData.affectedRows > 0) {

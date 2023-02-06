@@ -35,8 +35,6 @@ function allProject(data) {
    
     // match org id
     const orgName = org.filter((org) => org.id == el.org_id);
-    const img = JSON.parse(el.imageLink);
-
     const fundPercentage = ~~((el.funding / el.goal) * 100);
     const fundPercentages=`style=width:${fundPercentage}%`
     fundPer=~~(fundPercentage) 
@@ -46,7 +44,7 @@ const element=`
 <tr class="border-bottom border-200">
   <td>
     <div class="d-flex align-items-center position-relative">
-      <img class="rounded-1 border border-200" src="${img[5].url}" width="60" alt="">
+      <img class="rounded-1 border border-200" src="${el.imageLink}" width="60" alt="">
       <div class="flex-1 ms-3">
         <h6 class="mb-1 fw-semi-bold text-nowrap"><a class="text-900 stretched-link" href="#!">${el.title} </a></h6>
         <p class="fw-semi-bold mb-0 text-500">${orgName[0].name} </p>
@@ -83,7 +81,7 @@ projects.insertAdjacentHTML("beforeend", element);
   function paginationProject(project) {
   $("#pagination-container").pagination({
     dataSource: project,
-    pageSize: 10,
+    pageSize: 5,
     showGoInput: true,
     showGoButton: true,
     formatGoInput: "<%=input%>",

@@ -1,5 +1,3 @@
-console.log("login");
-
 async function login() {
   console.log(mail.value);
   console.log(pass.value);
@@ -13,9 +11,9 @@ async function login() {
   });
   const content = await rawResponse.json();
 
-  if (content.data == true)      window.location.href = '/home';
-  if(content.data=='admin') window.location.href='/dashboard';
-  if(content.data==false) alerts.style.display = "block";
+  if (content.data == true) window.location.href = "/home";
+  if (content.data == "admin") window.location.href = "/dashboard";
+  if (content.data == false) alerts.style.display = "block";
 }
 
 //hide alert when re-enter data
@@ -27,12 +25,11 @@ Array.from(inp).map((item) => {
   });
 });
 
-
 //org login
 async function orgLogin() {
   console.log(mail.value);
   console.log(pass.value);
-  var data = new FormData();
+  let data = new FormData();
 
   data.append("mail", mail.value);
   data.append("pass", pass.value);
@@ -42,9 +39,9 @@ async function orgLogin() {
   });
   const content = await rawResponse.json();
 
-  if (content.data == true)      window.location.href = '/home';
-  if(content.data=='org') window.location.href='/org';
-  if(content.data==false) alerts.style.display = "block";
+  if (content.data == true) window.location.href = "/home";
+  if (content.data == "org") window.location.href = "/org";
+  if (content.data == false) alerts.style.display = "block";
 }
 
 //hide alert when re-enter data

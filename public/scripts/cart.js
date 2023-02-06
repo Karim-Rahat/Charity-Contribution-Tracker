@@ -27,8 +27,8 @@ async function getDatas() {
     .catch((error) => {
       console.log(error);
     });
-    //stop spinner
-    document.getElementById("loading-spinner").style.display = "none";
+  //stop spinner
+  document.getElementById("loading-spinner").style.display = "none";
 }
 
 function cartListGen(cartData) {
@@ -41,9 +41,8 @@ function cartListGen(cartData) {
   cartData.map((item, i) => {
     const projectData = project.filter((el) => el.p_id == item.project_id);
 
-
     amount = amount + item.amount;
-console.log(amount);
+    console.log(amount);
     totalItem = cartData.length;
     itemNo.innerText = totalItem;
 
@@ -83,11 +82,7 @@ console.log(amount);
     </div>
   </div>
 
- 
 
-
-      
-     
  
       </div>`;
     cartContent.insertAdjacentHTML("beforeend", element);
@@ -166,7 +161,7 @@ cartContent.addEventListener("focusout", async (e) => {
     method: "POST",
     body: data,
   });
-  getDatas()
+  getDatas();
 });
 
 //delete item from cart and database
@@ -192,7 +187,3 @@ async function delItem(c_id) {
       });
   }
 }
-
-
-
-

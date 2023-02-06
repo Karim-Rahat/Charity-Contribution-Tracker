@@ -50,8 +50,10 @@ router.get('/getCartData',dataFetchController.getCartData)
 router.get('/getInvoiceList',dataFetchController.getInvoiceList)
 router.get('/getUserInfo',dataFetchController.getUserInfo)
 router.get('/project/:id',appController.getOneProjects)
+router.get('/getLocationProject',dataFetchController.getLocationProject)
 router.get('/saveToCart/:title/:pid/:amount',dataInsertController.saveToCart)
 
+//insert data
 router.post('/updateCartAmount',dataInsertController.updateCartAmount)
 router.post('/delCartItem',dataInsertController.delCartItem)
 router.post('/saveGenderBdate',dataInsertController.saveGenderBdate)
@@ -60,10 +62,9 @@ router.post('/changePicture', dataInsertController.changePicture)
 router.post('/changePassword',dataInsertController.changePassword)
 router.post('/changeAdress',dataInsertController.changeAdress)
 router.post('/geoLocation',dataFetchController.geoLocation)
-router.get('/getLocationProject',dataFetchController.getLocationProject)
+
 //payment
 router.get('/init/:amount',paymentControllers.ssl)
-
 
 //admin 
 router.get('/admin-login',middleware.isLoggedIn,loginControllers.adminLoginPage)
@@ -77,9 +78,7 @@ router.get('/viewAllOrganization',middleware.isAdminLoggedIn,appController.viewA
 router.get('/addOrg',middleware.isAdminLoggedIn,appController.addOrg)
 router.post('/insertOrg',dataInsertController.insertOrg)
 
-
-
-//orgnazitation page
+//orgnazitation 
 router.get('/org-login',middleware.isLoggedIn,loginControllers.orgLoginPage)
 router.post('/orgLoginAuth',loginControllers.orgLoginAuth)
 router.get('/org',middleware.isOrgLoggedIn,appController.organization)
@@ -87,18 +86,13 @@ router.get('/addProject',middleware.isOrgLoggedIn,appController.addProject)
 router.post('/insertProject',dataInsertController.insertProject)
 router.get('/editProject/:id',appController.editProject)
 router.post('/updateProject/:id',dataInsertController.updateProject)
-module.exports = router;
+
 
 
 
 //ssl
 
 router.post("/ssl-payment-notification", async (req, res) => {
-
-  /** 
-  * If payment notification
-  */
-
   return res.status(200).json(
     {
       data: req.body,
@@ -108,14 +102,8 @@ router.post("/ssl-payment-notification", async (req, res) => {
 })
 
 router.post("/ssl-payment-success",paymentControllers.paymentSuccess)
-// router.get('/clearCartAfterPayment',dataInsertController.clearCartAfterPayment)
-
-
-// router.post("/ssl-payment-fail",paymentControllers.paymentFailed)
 
 router.post("/ssl-payment-cancel", async (req, res) => {
-
-
   return res.status(200).json(
     {
       data: req.body,
@@ -155,3 +143,5 @@ router.get(
     failureRedirect: "/error",
   })
 );
+
+module.exports = router;

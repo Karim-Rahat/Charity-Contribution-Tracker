@@ -155,9 +155,10 @@ passport.use(
 
 app.use(router);
 
-app.listen(process.env.PORT, () => {
+server.listen(process.env.PORT, () => {
   console.log(`Listening at http://127.0.0.1:${process.env.PORT}`);
   console.log(process.env.Token);
 });
 
 module.exports = app;
+module.exports= io;

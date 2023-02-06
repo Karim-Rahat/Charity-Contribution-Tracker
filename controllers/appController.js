@@ -7,7 +7,7 @@ const LocalStorage = require('node-localstorage').LocalStorage;
 const localStorage = new LocalStorage('./localstorage');
 const Stripe = require('stripe');
 const opencage = require('opencage-api-client');
-const axios = require('axios');
+const io=require('../app')
 const stripe = Stripe('sk_test_51MPUWsSHAjMEnXvtwKcDo5kAKcXhJ1uczhnydwMn56akkSHxjTPAdW4697wffO0X1UkxqsiNEvKAiiuVNkiQlmyC00MyYMbh90');
 const appController = {
   confirmMail: async (req, res) => {
@@ -25,6 +25,8 @@ const appController = {
     
     });
   },
+  
+  
   allProject: async (req, res) => {
     // const data = await dataFetchModels.getProjects();
     const themes = await dataFetchModels.getThemes();
